@@ -1,0 +1,31 @@
+@use "variables" as v;
+.logo-word { 
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+.nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none; 
+    margin-left: 20px; 
+    font-weight: 600; 
+}
+.btn { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 10px 16px; 
+    border-radius: 10px; 
+    text-decoration: none;
+}
+.btn-primary {
+    background: linear-gradient(90deg, v.$blue, v.$cyan); 
+    color: v.$charcoal; 
+    font-weight: 700; 
+}
+.btn-outline { 
+    border: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.9); 
+}
+.btn-ghost { 
+    background: transparent; 
+}
