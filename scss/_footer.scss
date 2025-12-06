@@ -1,0 +1,6 @@
+/* Footer */
+
+@use "variables" as v;
+
+.site-footer { padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.03); }
+.footer-inner { display:flex; align-items:center; justify-content:space-between; }
