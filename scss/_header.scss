@@ -1,33 +1,111 @@
 @use "variables" as v;
-/* HEADER STYLES */
 
-.logo-word { 
-    font-weight: 700;
-    letter-spacing: 0.6px;
+/* ---------- BASE HEADER ---------- */
+.site-header {
+    width: 100%;
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
 }
-.nav a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none; 
-    margin-left: 20px; 
-    font-weight: 600; 
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.btn { 
-    display: inline-flex; 
-    align-items: center; 
-    gap: 10px; 
-    padding: 10px 16px; 
-    border-radius: 10px; 
+
+/* ---------- LAYOUT ---------- */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+/* ---------- NAV DESKTOP ---------- */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s ease;
+
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 10px;
     text-decoration: none;
 }
-.btn-primary {
-    background: linear-gradient(90deg, v.$blue, v.$cyan); 
-    color: v.$charcoal; 
-    font-weight: 700; 
+
+.btn-ghost {
+    background: transparent;
 }
-.btn-outline { 
-    border: 1px solid rgba(255,255,255,0.06);
-    color: rgba(255,255,255,0.9); 
+
+/* ---------- MOBILE MENU ---------- */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+        width: 26px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 2px;
+        transition: 0.3s ease;
+    }
 }
-.btn-ghost { 
-    background: transparent; 
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 850px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.85);
+        width: 100%;
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+    }
+
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
