@@ -11,184 +11,182 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-inner container">
-            <a href="./index.html" class="logo">
-                <img src="./asets/vitagraphic®.png" alt="Logo VitaDev" />
+    <div class="bg-wrap" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="nav-glass" role="banner" aria-label="Principal">
+        <div class="nav-left">
+            <a class="logo" href="#">
+                <span class="dot"></span>
+                <span>conexa.ai</span>
             </a>
+        </div>
 
-            <button class="nav-toggle" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
-            </button>
+        <nav class="nav-center" role="navigation">
+            <a href="#">Home</a>
+            <a href="#">Nuestras soluciones</a>
+            <a href="#">Cómo funciona</a>
+            <a href="#">Blog</a>
+            <a href="#">Dudas</a>
+        </nav>
 
-            <nav class="nav">
-                <a href="#servicios">Servicios</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#recursos">Recursos</a>
-                <a href="#contacto" class="btn btn-ghost">Contacto</a>
-            </nav>
+        <div class="nav-right">
+            <button class="nav-toggle" id="navToggle">☰</button>
+            <a class="btn" href="#">Solicite un diagnóstico</a>
         </div>
     </header>
 
+    <!-- HERO -->
+    <main class="hero">
+        <div class="hero-inner">
+            <div class="kicker">
+                <span class="led"></span>
+                Conecte. Automatize. Converta.
+            </div>
+
+            <h1 class="hero-title">
+                IA estratégica e empática para escalar seu atendimento, automatizar tarefas e aumentar suas vendas.
+            </h1>
+
+            <p class="hero-sub">
+                Implementamos soluções conversacionais e automações para escalar seus resultados com menos fricção.
+            </p>
+
+            <div class="cta-wrap">
+                <button class="btn-cta">Solicite um diagnóstico gratuito →</button>
+                <a class="btn-ghost" href="#">Ver casos</a>
+            </div>
+
+            <div class="pills">
+                <span class="pill">Setup personalizado</span>
+                <span class="pill">Automação de processos</span>
+                <span class="pill">Atendimento inteligente</span>
+                <span class="pill">Otimização contínua</span>
+                <span class="pill">Foco em conversão</span>
+            </div>
+        </div>
+
+        <div class="bottom-shadow"></div>
+    </main>
+    </section>
 
 
-    <main>
-        <section class="hero">
-            <div class="container hero-inner">
+    <!-- SOLUCIONES -->
+    <section id="servicios" class="section section--alt">
+        <div class="container">
+            <h2 class="section-title">Soluciones modulares a medida</h2>
+            <p class="section-lead">Diseñadas para crecer con tu negocio: desde landing pages hasta plataformas
+                SaaS.</p>
 
-                <!-- TEXTO -->
-                <div class="hero-copy">
-                    <p class="kicker">Agencia · Desarrollo web a medida</p>
 
-                    <h1 class="hero-title">
-                        Desarrollo a medida. <span>Sin límites.</span>
-                    </h1>
-
-                    <p class="lead">
-                        Soluciones full-stack, escalables y precisas para empresas que quieren crecer con tecnología
-                        clara y fiable.
+            <div class="cards-grid">
+                <article class="card">
+                    <h3>Arquitectura y backend</h3>
+                    <p>APIs robustas, microservicios y bases de datos bien modeladas para tolerancia y escala.</p>
+                </article>
+                <article class="card">
+                    <h3>Front‑end y UX</h3>
+                    <p>Interfaces accesibles, performantes y con una estética minimalista enfocada en conversión.
                     </p>
+                </article>
+                <article class="card">
+                    <h3>Automatización</h3>
+                    <p>Workflows y procesos que reducen tareas manuales y aceleran la entrega de valor.</p>
+                </article>
+                <article class="card">
+                    <h3>Soporte y crecimiento</h3>
+                    <p>Monitoreo, SRE básico y roadmap de producto para seguir escalando sin fricciones.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-                    <div class="hero-ctas">
-                        <a href="#contacto" class="btn btn-primary">Solicitar presupuesto</a>
-                        <a href="#proyectos" class="btn btn-outline">Ver proyectos</a>
-                    </div>
 
-                    <ul class="hero-features">
-                        <li>Webs rápidas y accesibles</li>
-                        <li>Arquitectura escalable</li>
-                        <li>Mantenimiento y soporte</li>
-                    </ul>
-                </div>
+    <!-- SHOWCASE / PROYECTOS -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <h2 class="section-title">Proyectos destacados</h2>
+            <div class="showcase-grid">
+                <figure class="showcase-item">
+                    <img src="/assets/project-1.webp" alt="Proyecto 1" />
 
-                <!-- MEDIA -->
-                <figure class="hero-media">
-                    <div class="globe-overlay" aria-hidden="true"></div>
-
-                    <div class="card-mock">
-                        <img src="./asets/mockup-mac.png" alt="Mockup de proyecto VitaDev" />
-                    </div>
+                    <figcaption>
+                        <strong>eCommerce escalable</strong><br />
+                        <span>Optimización de performance y migración a nube</span><br />
+                        <span>Accesible y optimizado para SEO técnico</span>
+                    </figcaption>
                 </figure>
+
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <!-- SOLUCIONES -->
-        <section id="servicios" class="section section--alt">
-            <div class="container">
-                <h2 class="section-title">Soluciones modulares a medida</h2>
-                <p class="section-lead">Diseñadas para crecer con tu negocio: desde landing pages hasta plataformas
-                    SaaS.</p>
+    <!-- CTA BAND -->
+    <section class="cta-band">
+        <div class="container cta-inner">
+            <h3>¿Listo para escalar tu producto con código sólido?</h3>
+            <a href="#contacto" class="btn btn-primary">Hablemos</a>
+        </div>
+    </section>
 
 
-                <div class="cards-grid">
-                    <article class="card">
-                        <h3>Arquitectura y backend</h3>
-                        <p>APIs robustas, microservicios y bases de datos bien modeladas para tolerancia y escala.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Front‑end y UX</h3>
-                        <p>Interfaces accesibles, performantes y con una estética minimalista enfocada en conversión.
-                        </p>
-                    </article>
-                    <article class="card">
-                        <h3>Automatización</h3>
-                        <p>Workflows y procesos que reducen tareas manuales y aceleran la entrega de valor.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Soporte y crecimiento</h3>
-                        <p>Monitoreo, SRE básico y roadmap de producto para seguir escalando sin fricciones.</p>
-                    </article>
-                </div>
+    <!-- RECURSOS / BLOG -->
+    <section id="recursos" class="section section--alt">
+        <div class="container">
+            <h2 class="section-title">Contenidos que no ayudan</h2>
+            <div class="resources-grid">
+                <article class="resource">
+                    <h4>Cómo optimizar carga en React</h4>
+                    <p>Mejores prácticas y herramientas para reducir TTI y LCP.</p>
+                </article>
+                <article class="resource">
+                    <h4>APIs seguras</h4>
+                    <p>Autenticación, autorización y protección contra abuso.</p>
+                </article>
+                <article class="resource">
+                    <h4>Guía de despliegue</h4>
+                    <p>Pipelines y monitoreo para mantener uptime constante.</p>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <!-- SHOWCASE / PROYECTOS -->
-        <section id="proyectos" class="section">
-            <div class="container">
-                <h2 class="section-title">Proyectos destacados</h2>
-                <div class="showcase-grid">
-                    <figure class="showcase-item">
-                        <img src="/assets/project-1.webp" alt="Proyecto 1" />
-
-                        <figcaption>
-                            <strong>eCommerce escalable</strong><br />
-                            <span>Optimización de performance y migración a nube</span><br />
-                            <span>Accesible y optimizado para SEO técnico</span>
-                        </figcaption>
-                    </figure>
-
-                </div>
+    <!-- CONTACT -->
+    <section id="contacto" class="section contact">
+        <div class="container contact-inner">
+            <div class="contact-card">
+                <h2>Hablemos de tu proyecto</h2>
+                <p>Cuéntanos tus objetivos y te proponemos una arquitectura y presupuesto.</p>
+                <form class="contact-form">
+                    <label>
+                        <span>Nombre</span>
+                        <input type="text" name="name" placeholder="Tu nombre" />
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="correo@ejemplo.com" />
+                    </label>
+                    <label>
+                        <span>Mensaje</span>
+                        <textarea name="message" rows="4" placeholder="Breve descripción"></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
-        </section>
 
 
-        <!-- CTA BAND -->
-        <section class="cta-band">
-            <div class="container cta-inner">
-                <h3>¿Listo para escalar tu producto con código sólido?</h3>
-                <a href="#contacto" class="btn btn-primary">Hablemos</a>
-            </div>
-        </section>
-
-
-        <!-- RECURSOS / BLOG -->
-        <section id="recursos" class="section section--alt">
-            <div class="container">
-                <h2 class="section-title">Contenidos que no ayudan</h2>
-                <div class="resources-grid">
-                    <article class="resource">
-                        <h4>Cómo optimizar carga en React</h4>
-                        <p>Mejores prácticas y herramientas para reducir TTI y LCP.</p>
-                    </article>
-                    <article class="resource">
-                        <h4>APIs seguras</h4>
-                        <p>Autenticación, autorización y protección contra abuso.</p>
-                    </article>
-                    <article class="resource">
-                        <h4>Guía de despliegue</h4>
-                        <p>Pipelines y monitoreo para mantener uptime constante.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- CONTACT -->
-        <section id="contacto" class="section contact">
-            <div class="container contact-inner">
-                <div class="contact-card">
-                    <h2>Hablemos de tu proyecto</h2>
-                    <p>Cuéntanos tus objetivos y te proponemos una arquitectura y presupuesto.</p>
-                    <form class="contact-form">
-                        <label>
-                            <span>Nombre</span>
-                            <input type="text" name="name" placeholder="Tu nombre" />
-                        </label>
-                        <label>
-                            <span>Email</span>
-                            <input type="email" name="email" placeholder="correo@ejemplo.com" />
-                        </label>
-                        <label>
-                            <span>Mensaje</span>
-                            <textarea name="message" rows="4" placeholder="Breve descripción"></textarea>
-                        </label>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
-
-
-                <aside class="contact-info">
-                    <h3>VitaDev</h3>
-                    <p>Desarrollo a medida · Código sólido · Soporte</p>
-                    <ul>
-                        <li>Email: hola@vitadev.dev</li>
-                        <li>Ubicación: Argentina (remoto)</li>
-                    </ul>
-                </aside>
-            </div>
-        </section>
+            <aside class="contact-info">
+                <h3>VitaDev</h3>
+                <p>Desarrollo a medida · Código sólido · Soporte</p>
+                <ul>
+                    <li>Email: hola@vitadev.dev</li>
+                    <li>Ubicación: Argentina (remoto)</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
     </main>
 
 
