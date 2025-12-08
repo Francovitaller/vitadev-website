@@ -93,6 +93,7 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.92rem;
 }
+
 //section de cards proyectos
 
 .v-section-modulos {
@@ -145,10 +146,10 @@
 /* ---------- CARD ---------- */
 .v-mod-card {
     background: v.$glass-bg;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     padding: 30px;
-    text-align: left;
+    text-align: center;
     backdrop-filter: blur(12px) saturate(140%);
     display: flex;
     flex-direction: column;
@@ -158,7 +159,7 @@
 
 .v-mod-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255,255,255,0.12);
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* CARD TITLE */
@@ -201,59 +202,301 @@
     margin: 0;
 }
 
+/* PORTFOLIO*/
 
-/* Resources */
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.resource {
-    background: rgba(255, 255, 255, 0.015);
-    padding: 18px;
-    border-radius: 10px;
-}
-
-
-/* Contact */
-.contact {
-    padding: 72px 0;
-}
-
-.contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 32px;
-    align-items: start;
-}
-
-.contact-card {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 28px;
-    border-radius: 14px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 12px;
-    color: v.$gray;
-}
-
-.contact-form input,
-.contact-form textarea {
+.blog-section {
     width: 100%;
-    padding: 12px;
+    margin: 0 auto;
+    background-color: v.$bg-color;
+    color: v.$text;
+    text-align: center;
+}
+
+// Estilos del encabezado
+.blog-header {
+    width: 100%;
+    padding: 0 24px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+
+    .blog-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        color: v.$white;
+    }
+
+    .blog-description {
+        font-size: 1em;
+        color: v.$muted; // Texto grisáceo para la descripción
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+// Contenedor de las tarjetas
+.articles-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+    }
+}
+
+// Estilos para cada tarjeta
+.article-card {
+    flex: 1;
+    background-color: v.$glass-bg;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    background: rgba(0, 0, 0, 0.5);
-    color: v.$white;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    &:hover {
+        transform: translateY(-5px);
+        border: 1px solid rgba(45, 106, 255, 0.3);
+    }
+
+    //imagen 1
+    .article-image-placeholder {
+        height: 200px;
+        background-image: url(../asets/webdread.png);
+        background-color: v.$charcoal;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+
+        >* {
+            display: none;
+        }
+    }
+
+    //imagen 2 
+    .article-image-placeholder2 {
+        height: 200px;
+        background-image: url(../asets/sitiowebpucara.png);
+        background-color: v.$charcoal;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+
+        >* {
+            display: none;
+        }
+    }
+
+    //imagen 3 
+    .article-image-placeholder3 {
+        height: 200px;
+        background-image: url(../asets/xboxsitio.png);
+        background-color: v.$charcoal;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+
+        >* {
+            display: none;
+        }
+    }
+
+    .article-content {
+        padding: 20px;
+
+        .article-text {
+            color: v.$text;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        .read-more {
+            color: v.$muted; // Color inicial del enlace
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 2px;
+            transition: color 0.3s, border-bottom-color 0.3s;
+
+            &:hover {
+                color: v.$cyan; // Cambio de color al hacer hover
+                border-bottom-color: v.$cyan;
+            }
+        }
+    }
 }
 
+// Estilos del pie de página y botón
+.blog-footer {
+    text-align: center;
 
-.contact-info {
-    color: v.$gray;
+    .view-more-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        // Usamos tu variable de gradiente $cta-bg para el fondo del botón
+        background-image: v.$cta-bg;
+        color: v.$charcoal; // Texto oscuro sobre el CTA de color
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 1.1em;
+        transition: transform 0.3s, opacity 0.3s;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.02);
+            opacity: 0.95;
+        }
+
+        .arrow-icon {
+            margin-left: 10px;
+            font-size: 1.2em;
+            transition: margin-left 0.3s;
+        }
+
+        &:hover .arrow-icon {
+            margin-left: 15px;
+        }
+    }
 }
+
+/* CONTACTO */
+
+// Contenedor principal para centrar el formulario
+.contact-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$bg-color;
+    color: v.$text;
+    text-align: center;
+}
+
+// Encabezado
+.contact-header {
+    // Reducimos el margen inferior
+    margin-bottom: 30px;
+
+    .contact-title {
+        // Reducimos ligeramente el tamaño de la fuente
+        font-size: 2em;
+        color: v.$white;
+        margin-bottom: 8px;
+    }
+
+    .contact-subtitle {
+        font-size: 0.9em;
+        color: v.$muted;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+.contact-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px 60px;
+}
+
+// Estilos del Formulario
+.contact-form {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    // Reducimos el espacio entre elementos
+    gap: 15px;
+    // Reducimos el padding interno del formulario
+    padding: 25px;
+    background-color: v.$glass-bg;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 0.85em;
+            color: v.$muted;
+            margin-bottom: 5px; // Reducimos el espacio debajo del label
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            padding: 10px 12px; // Reducimos el padding de los inputs
+            background-color: v.$charcoal;
+            color: v.$text;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            font-size: 0.95em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: v.$blue;
+                box-shadow: 0 0 0 2px rgba(45, 106, 255, 0.3);
+            }
+
+            &::placeholder {
+                color: v.$muted;
+                opacity: 0.5;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    }
+
+    .submit-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        // Reducimos el padding del botón
+        padding: 12px 25px;
+        background-image: v.$cta-bg;
+        color: v.$charcoal;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 1em; // Mantenemos un buen tamaño de fuente en el botón
+        border: none;
+        cursor: pointer;
+        margin-top: 5px; // Reducimos el margen superior
+        transition: transform 0.3s, opacity 0.3s;
+
+        &:hover {
+            transform: scale(1.01);
+            opacity: 0.95;
+        }
+
+        .arrow-icon {
+            margin-left: 8px;
+            font-size: 1.1em;
+            transition: margin-left 0.3s;
+        }
+
+        &:hover .arrow-icon {
+            margin-left: 13px;
+        }
+    }
+}
+
 
 /* Responsive */
 @media (max-width: 1000px) {
@@ -295,6 +538,133 @@
         font-size: 32px;
     }
 }
+
+/* ============================
+   RESPONSIVE CONTACTO
+   ============================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    .contact-formulario {
+        padding: 0 20px 50px;
+    }
+
+    .contact-form {
+        width: 55%;
+        padding: 22px;
+        gap: 14px;
+
+        .form-group input,
+        .form-group textarea {
+            font-size: 0.9em;
+        }
+
+        .submit-button {
+            padding: 12px 24px;
+            font-size: 0.95em;
+        }
+    }
+
+    .contact-header .contact-title {
+        font-size: 1.8em;
+    }
+
+    .contact-header .contact-subtitle {
+        font-size: 0.85em;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+
+    .contact-formulario {
+        padding: 0 18px 50px;
+    }
+
+    .contact-form {
+        width: 75%;
+        padding: 20px;
+        gap: 13px;
+
+        .submit-button {
+            padding: 12px 22px;
+            font-size: 0.9em;
+        }
+    }
+
+    .contact-header .contact-title {
+        font-size: 1.6em;
+    }
+}
+
+/* Móviles medianos */
+@media (max-width: 576px) {
+
+    .contact-formulario {
+        padding: 0 16px 45px;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 18px;
+        gap: 12px;
+
+        .form-group label {
+            font-size: 0.8em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 9px 10px;
+            font-size: 0.85em;
+        }
+
+        .submit-button {
+            padding: 11px 20px;
+            font-size: 0.85em;
+
+            .arrow-icon {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .contact-header .contact-title {
+        font-size: 1.45em;
+        margin-bottom: 6px;
+    }
+
+    .contact-header .contact-subtitle {
+        font-size: 0.8em;
+        max-width: 300px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 380px) {
+
+    .contact-form {
+        padding: 15px;
+        gap: 10px;
+
+        .form-group input,
+        .form-group textarea {
+            font-size: 0.8em;
+            padding: 8px;
+        }
+
+        .submit-button {
+            font-size: 0.8em;
+            padding: 10px 18px;
+        }
+    }
+
+    .contact-header .contact-title {
+        font-size: 1.3em;
+    }
+}
+
 
 
 // pequeños detalles visuales
