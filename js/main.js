@@ -9,24 +9,24 @@ navToggle.addEventListener("click", () => {
         const mobileNav = document.createElement("div");
         mobileNav.id = "mobileNav";
         mobileNav.style.cssText = `
-      position:fixed;
-      left:50%;
-      transform:translateX(-50%);
-      top:86px;
-      width:calc(100% - 40px);
-      max-width:720px;
-      background:rgba(6,6,6,0.65);
-      backdrop-filter: blur(8px);
-      border-radius:12px;
-      padding:12px;
-      z-index:39;
-      border:1px solid rgba(255,255,255,0.04)
+        position:fixed;
+        left:50%;
+        transform:translateX(-50%);
+        top:86px;
+        width:calc(100% - 40px);
+        max-width:720px;
+        background:rgba(6,6,6,0.65);
+        backdrop-filter: blur(8px);
+        border-radius:12px;
+        padding:12px;
+        z-index:39;
+        border:1px solid rgba(255,255,255,0.04)
     `;
         mobileNav.innerHTML = `
-      <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Home</a>
-      <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Nossas soluções</a>
-      <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Como funciona</a>
-      <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Blog</a>
+        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Home</a>
+        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Nuestras soluciones</a>
+        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Como funciona</a>
+        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Blog</a>
     `;
         document.body.appendChild(mobileNav);
         navToggle.textContent = "✕";

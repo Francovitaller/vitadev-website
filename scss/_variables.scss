@@ -7,6 +7,14 @@ $cyan: #00E0A1;
 $gray: #A7B0C2;
 $max-width: 1200px;
 
+// Custom Variables
+$bg-img: url("../asets/fondooriginal.png");
+$bg-color: #060606;
+$glass-bg: rgba(255,255,255,0.03);
+$cta-bg: linear-gradient(90deg, $blue, $cyan);
+$text: #e9eef0;
+$muted: rgba(255,255,255,0.6);
+$max-width: 1200px;
 
 // Mixins
 @mixin container() {

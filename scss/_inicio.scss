@@ -1,15 +1,20 @@
 @use "variables" as v;
 
-/* INICIO STYLES */
+/* Hero de mi sitio web */
 
 
 .hero {
+    background: v.$bg-img;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 100vh;
     padding: 140px 20px 60px;
     position: relative;
     z-index: 10;
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -18,7 +23,7 @@
 }
 
 .kicker {
-    color: #bdfc3a;
+    color: v.$cyan;
     font-weight: 700;
     margin-bottom: 14px;
     display: flex;
@@ -30,7 +35,7 @@
     width: 34px;
     height: 12px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #3fe0ff, #bdfc3a);
+    background: v.$cta-bg;
 }
 
 .hero-title {
@@ -54,7 +59,7 @@
 }
 
 .btn-cta {
-    background: var(--cta-bg);
+    background: v.$cta-bg;
     border: none;
     padding: 18px 34px;
     border-radius: 999px;
@@ -70,11 +75,13 @@
     color: white;
 }
 
-/* pills */
+/* pilas */
+
 .pills {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 12px;
     flex-wrap: wrap;
 }
@@ -85,33 +92,6 @@
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.92rem;
-}
-
-/* bottom shadow */
-.bottom-shadow {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 150px;
-    background: linear-gradient(180deg, transparent, black);
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px) {
-    .nav-center {
-        display: none
-    }
-
-    .nav-toggle {
-        display: block
-    }
-}
-
-@media(max-width:520px) {
-    .nav-right .btn {
-        display: none
-    }
 }
 
 /* Cards section */
