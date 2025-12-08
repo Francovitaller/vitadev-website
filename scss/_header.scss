@@ -23,14 +23,11 @@ header.nav-glass {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-weight: 700;
 }
 
 .logo img {
-    width: 36px;
-    height: 36px;
+    height: 115px;
+    margin: -35px;
 }
 
 /* nav */
