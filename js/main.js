@@ -48,4 +48,4 @@ window.addEventListener("scroll", () => {
         header.style.transform = "translateX(-50%) scale(1)";
         header.style.boxShadow = "none";
     }
-});
+})

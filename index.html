@@ -11,13 +11,17 @@
 </head>
 
 <body>
-    <!-- BACKGROUND -->
+    <!-- Fondo del sitio, un solo color por default -->
+
+
     <div class="bg-wrap" aria-hidden="true"></div>
 
-    <!-- HEADER -->
+    <!-- Header del sitio glass de forma circular -->
+
+
     <header class="nav-glass" role="banner" aria-label="Navegación principal">
         <div class="nav-left">
-            <a class="logo" href="#">
+            <a class="logo" href="./index.html" aria-label="VitaDev - Ir al inicio">
                 <img src="./asets/vitadev_logo_sin_fondo.png" alt="Logo VitaDev" />
             </a>
         </div>
@@ -38,7 +42,7 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- Hero -->
     <main class="hero" role="main">
         <div class="hero-inner">
 
@@ -48,25 +52,25 @@
                 Conecta con tus clientes 24/7
             </div>
 
-            <!-- TITLE -->
+            <!-- Title -->
             <h1 class="hero-title">
                 Desarrollo web a medida para escalar tu negocio con soluciones rápidas, modernas y enfocadas en
                 resultados reales
             </h1>
 
-            <!-- SUBTEXT -->
+            <!-- Subtext -->
             <p class="hero-sub">
                 Construimos sitios web optimizados y automatizaciones inteligentes para que tu negocio funcione de forma
                 más rápida y eficiente.
             </p>
 
-            <!-- CTA -->
+            <!-- Call to action -->
             <div class="cta-wrap">
                 <button class="btn-cta">Cotizá tu idea →</button>
                 <a class="btn-ghost" href="#">Ver portfolio</a>
             </div>
 
-            <!-- PILLS -->
+            <!-- Pills -->
             <div class="pills">
                 <span class="pill">Diseño responsive</span>
                 <span class="pill">Carga ultrarrápida</span>
@@ -80,7 +84,7 @@
     </main>
 
 
-    <!-- Section de cards proyectos -->
+    <!-- Section solucion -->
     <section class="v-section-modulos">
         <div class="v-container">
 
@@ -95,7 +99,7 @@
 
             <div class="v-modulos-grid">
 
-                <!-- CARD 1 -->
+                <!-- Card 1 -->
                 <div class="v-mod-card">
                     <h3 class="v-mod-card-title">Desarrollo Web Profesional</h3>
                     <p class="v-mod-card-text">
@@ -106,7 +110,7 @@
                     </div>
                 </div>
 
-                <!-- CARD 2 -->
+                <!-- Card 2 -->
                 <div class="v-mod-card">
                     <h3 class="v-mod-card-title">Automatización de Procesos</h3>
                     <p class="v-mod-card-text">
@@ -117,7 +121,7 @@
                     </div>
                 </div>
 
-                <!-- CARD 3 -->
+                <!-- Card 3 -->
                 <div class="v-mod-card">
                     <h3 class="v-mod-card-title">Sistemas a Medida</h3>
                     <p class="v-mod-card-text">
@@ -128,7 +132,7 @@
                     </div>
                 </div>
 
-                <!-- CARD 4 -->
+                <!-- Card 4 -->
                 <div class="v-mod-card">
                     <h3 class="v-mod-card-title">Consultoría Estratégica</h3>
                     <p class="v-mod-card-text">
@@ -144,7 +148,7 @@
     </section>
 
 
-    <!-- PORTFOLIO -->
+    <!-- Portfolio -->
 
     <section class="blog-section">
         <div class="blog-header">
@@ -207,15 +211,18 @@
 
 
 
-    <!--CONTACTO-->
+    <!-- Contact -->
 
     <section class="contact-section">
         <div class="contact-container">
             <div class="contact-header">
-                <h2 class="contact-title">¿Listo para empezar?</h2>
+                <h2 class="contact-title">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
                 <p class="contact-subtitle">
-                    Hablemos de tu próximo proyecto. Envíanos un mensaje y te responderemos lo antes posible.
+                    Estamos acá para ayudarte a convertir tus ideas en una realidad digital profesional.
+Completá el formulario y contanos que necesitas.
+Respondemos rápido y sin vueltas, para que puedas avanzar cuanto antes.
                 </p>
+                <img src="./asets/Gemini_Generated_Image_20cxcu20cxcu20cx-removebg-preview.png" alt="">
             </div>
             <div class="contact-formulario">
                 <form class="contact-form">
@@ -230,10 +237,29 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="email">Telefono/Whatsapp</label>
+                        <input type="number" id="email" name="email" required placeholder="">
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="message">Mensaje</label>
                         <textarea id="message" name="message" rows="5" required
                             placeholder="Escribe tu mensaje aquí..."></textarea>
                     </div>
+
+
+                    <div class="form-group">
+                        <label for="servicio">Servicio en el que estás interesado</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="" disabled selected>Elegí un servicio</option>
+                            <option value="web">Diseño Web</option>
+                            <option value="seo">SEO</option>
+                            <option value="marketing">Landing Page</option>
+                            <option value="tienda">Tienda Online (E-commerce)</option>
+                        </select>
+                    </div>
+
 
                     <button type="submit" class="submit-button">
                         Enviar Mensaje
@@ -276,8 +302,10 @@
 
                 <div class="social-icons">
                     <a href=""><img src="./asets/iconos/facebook.icon.png" alt=""></a>
-                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank"><img src="./asets/iconos/icono.instagram.png" alt=""></a>
-                    <a href="https://www.tiktok.com/@_vitadev" target="_blank"><img src="./asets/iconos/icono.tiktok.png" alt=""></a>
+                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank"><img
+                            src="./asets/iconos/icono.instagram.png" alt=""></a>
+                    <a href="https://www.tiktok.com/@_vitadev" target="_blank"><img
+                            src="./asets/iconos/icono.tiktok.png" alt=""></a>
                 </div>
             </div>
 
@@ -289,14 +317,9 @@
     </footer>
 
 
+<!-- Tu script -->
+<script src="./js/main.js"></script>
 
-    <!-- Pequeño script inline para año. No es JS necesario, se puede eliminar si no queres JS. -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-    <!-- script para abrir el menu de responsive -->
-    <script src="./js/main.js"></script>
 
 </body>
 
