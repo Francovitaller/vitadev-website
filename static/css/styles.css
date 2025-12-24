@@ -21,7 +21,7 @@ body {
 }
 
 .hero {
-  background: url("../asets/fondohero.jpg");
+  background: url("../assets/fondohero.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -111,7 +111,7 @@ body {
 
 .v-section-modulos {
   padding: 120px 20px;
-  background-image: url(../asets/Fondovolt.jpg);
+  background-image: url(../assets/Fondovolt.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -273,7 +273,7 @@ body {
 }
 .article-card .article-image-placeholder {
   height: 200px;
-  background-image: url(../asets/webdread.png);
+  background-image: url(../assets/webdread.png);
   background-color: #0F1115;
   background-size: cover;
   background-position: center;
@@ -284,7 +284,7 @@ body {
 }
 .article-card .article-image-placeholder2 {
   height: 200px;
-  background-image: url(../asets/sitiowebpucara.png);
+  background-image: url(../assets/sitiowebpucara.png);
   background-color: #0F1115;
   background-size: cover;
   background-position: center;
@@ -295,7 +295,7 @@ body {
 }
 .article-card .article-image-placeholder3 {
   height: 200px;
-  background-image: url(../asets/xboxsitio.png);
+  background-image: url(../assets/xboxsitio.png);
   background-color: #0F1115;
   background-size: cover;
   background-position: center;
