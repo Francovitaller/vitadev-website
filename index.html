@@ -26,13 +26,12 @@
             </a>
         </div>
 
-        <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
-            <a href="#">Inicio</a>
-            <a href="#">Nuestras soluciones</a>
-            <a href="#">Cómo funciona</a>
-            <a href="#">Blog</a>
-            <a href="#">Dudas</a>
-        </nav>
+    <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
+    <a href="#inicio">Inicio</a>
+    <a href="#soluciones">Nuestras soluciones</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
 
         <div class="nav-right">
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
@@ -43,7 +42,7 @@
     </header>
 
     <!-- Hero -->
-    <main class="hero" role="main">
+    <main id="inicio" class="hero" role="main">
         <div class="hero-inner">
 
             <!-- Kicker -->
@@ -85,7 +84,7 @@
 
 
     <!-- Section solucion -->
-    <section class="v-section-modulos">
+    <section id="soluciones" class="v-section-modulos">
         <div class="v-container">
 
             <div class="v-modulos-kicker">
@@ -213,7 +212,7 @@
 
     <!-- Contact -->
 
-    <section class="contact-section">
+    <section id="contacto" class="contact-section">
         <div class="contact-container">
             <div class="contact-header">
                 <h2 class="contact-title">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
@@ -233,12 +232,12 @@ Respondemos rápido y sin vueltas, para que puedas avanzar cuanto antes.
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@gmail.com">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Telefono/Whatsapp</label>
-                        <input type="number" id="email" name="email" required placeholder="">
+                        <label for="number">Telefono/Whatsapp</label>
+                        <input type="number" id="number" name="number" required placeholder="">
                     </div>
 
 

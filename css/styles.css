@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 html, body {
   height: 100%;
 }
