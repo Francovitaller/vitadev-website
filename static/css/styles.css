@@ -755,9 +755,9 @@ header.nav-glass {
   color: rgba(255, 255, 255, 0.65);
   font-size: 14px;
 }
-.footer {
+
   /* Redes sociales */
-}
+
 .footer .social-icons {
   display: flex;
   gap: 12px;
