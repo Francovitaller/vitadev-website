@@ -1,0 +1,95 @@
+@use "variables" as v;
+
+.about {
+    padding: 6rem 1.5rem;
+    animation: fadeUp v.$anim-medium v.$ease-smooth both;
+
+    &__container {
+        max-width: v.$max-width;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__header {
+        max-width: 800px;
+        margin: 0 auto 4rem;
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: v.$muted;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__divider {
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: v.$blue;
+        margin: 0 auto 2rem;
+        border-radius: 2px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+.card {
+    background: v.$glass-bg;
+    border-radius: 16px;
+    overflow: hidden;
+    padding-bottom: 2rem;
+    backdrop-filter: blur(12px);
+    transition: transform v.$anim-fast v.$ease-smooth;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    &__icon {
+        width: 48px;
+        height: 48px;
+        background: v.$blue;
+        border-radius: 50%;
+        margin: -24px auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: v.$white;
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        margin-bottom: 0.75rem;
+    }
+
+    p,
+    ul {
+        color: v.$muted;
+        font-size: 0.95rem;
+        padding: 0 1.5rem;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - VitaDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+<body>
+    <header class="nav-glass" role="banner" aria-label="Navegación principal">
+        <div class="nav-left">
+            <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
+                <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
+            </a>
+        </div>
+
+        <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('home') }}">Nuestras soluciones</a>
+            <a href="{{ url_for('home') }}">Contacto</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
+        </nav>
+
+
+        <div class="nav-right">
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
+                ☰
+            </button>
+            <a class="btn" href="#">Cotizá tu idea</a>
+        </div>
+    </header>
+    <main>
+    <section class="about reveal">
+        <div class="about__container">
+            <header class="about__header">
+                <h2>¿Quiénes somos?</h2>
+                <span class="about__divider"></span>
+
+                <p>
+                    Brithers es una empresa multinacional de <strong>desarrollo de software</strong>
+                    que se formó hace más de 20 años a partir de la fusión de dos destacadas startup
+                    <em>Carvear</em> y <em>Bortic</em>, la primera orientada al desarrollo web mientras
+                    que la segunda al móvil.
+                </p>
+
+                <p>
+                    Somos un equipo de profesionales con diferentes habilidades y experiencias,
+                    programadores, diseñadores gráficos y desarrolladores que disfrutamos nuestro
+                    trabajo reflejándolo en los buenos resultados obtenidos por nuestra empresa.
+                </p>
+
+                <p>
+                    Acompañamos a nuestros clientes garantizando productos de calidad, diseño único
+                    y soluciones seguras, siempre alineadas a las últimas tendencias tecnológicas.
+                </p>
+            </header>
+
+            <div class="about__cards">
+                <article class="card reveal reveal-delay" style="--delay: 0.1s">
+                    <img src="assets/mision.jpg" alt="Nuestra Misión">
+                    <div class="card__icon">🎯</div>
+                    <h3>Nuestra Misión</h3>
+                    <p>
+                        Crear soluciones confiables e innovadoras de software que permitan a empresas
+                        y personas organizar su información de forma eficiente, segura y accesible.
+                    </p>
+                </article>
+
+                <article class="card reveal reveal-delay" style="--delay: 0.25s">
+                    <img src="assets/vision.jpg" alt="Nuestra Visión">
+                    <div class="card__icon">👁</div>
+                    <h3>Nuestra Visión</h3>
+                    <p>
+                        Ser referentes en el campo de la información ofreciendo soluciones que
+                        impulsen la productividad y mejoren la organización empresarial y personal.
+                    </p>
+                </article>
+
+                <article class="card reveal reveal-delay" style="--delay: 0.4s">
+                    <img src="assets/valores.jpg" alt="Nuestros Valores">
+                    <div class="card__icon">📋</div>
+                    <h3>Nuestros Valores</h3>
+                    <ul>
+                        <li>Innovación</li>
+                        <li>Compromiso</li>
+                        <li>Eficacia</li>
+                        <li>Responsabilidad</li>
+                        <li>Trabajo en equipo</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+    </main>
+        <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-col">
+                <h4 class="footer-title">Servicios</h4>
+                <p>Desarrollo Web</p>
+                <p>Apps web a Medida</p>
+                <p>Sistemas de Gestión</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contacto</h4>
+                <p>vitadev03@gmail.com</p>
+                <p>+54 11 2759 2733</p>
+                <p>Argentina (Buenos Aires) </p>
+            </div>
+
+            <div class="footer-col social">
+                <h4 class="footer-title">Redes</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
+                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                    </a>
+                    <a href="https://www.tiktok.com/@_vitadev" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>VitaDev © 2025 — Desarrollo Web a Medida</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/scroll-reveal.js" defer></script>
+
+
+</body>
+
+</html>

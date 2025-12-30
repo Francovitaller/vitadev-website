@@ -5,10 +5,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>VitaDev — Desarrollo Web</title>
+
+    <!-- SEO Meta Tags -->
+
     <meta name="description"
         content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales." />
 
+    <!-- link to css -->
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/assets/isologofv.png" type="image/x-icon">
 </head>
 
 <body>
@@ -26,6 +34,8 @@
             <a href="#inicio">Inicio</a>
             <a href="#soluciones">Nuestras soluciones</a>
             <a href="#contacto">Contacto</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
         </nav>
 
         <div class="nav-right">
@@ -46,14 +56,12 @@
                 </div>
 
                 <h1 class="hero-title">
-                    Desarrollo web a medida para escalar tu negocio con soluciones rápidas, modernas y enfocadas en
-                    resultados reales
+                    Desarrollo web a medida para hacer crecer tu negocio
                 </h1>
 
                 <p class="hero-sub">
                     Construimos sitios web optimizados y automatizaciones inteligentes para que tu negocio funcione de
-                    forma
-                    más rápida y eficiente.
+                    forma más rápida y eficiente.
                 </p>
 
                 <div class="cta-wrap">
@@ -71,6 +79,10 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- section de soluciones -->
+
 
         <section id="soluciones" class="v-section-modulos">
             <div class="v-container">
@@ -147,7 +159,7 @@
                     <li>Vendedor</li>
                 </ul>
 
-                <a href="#" class="join-btn">Sumate</a>
+                <a href="#contacto" class="join-btn">Sumate</a>
             </div>
         </section>
 
@@ -242,22 +254,15 @@
             <div class="footer-col">
                 <h4 class="footer-title">Servicios</h4>
                 <p>Desarrollo Web</p>
-                <p>Aplicaciones a Medida</p>
-                <p>Automatizaciones</p>
+                <p>Apps web a Medida</p>
+                <p>Sistemas de Gestión</p>
             </div>
 
             <div class="footer-col">
                 <h4 class="footer-title">Contacto</h4>
-                <p>vitadev@studio.com</p>
-                <p>+54 11 0000 0000</p>
-                <p>Argentina</p>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-title">Legales</h4>
-                <p>Política de Privacidad</p>
-                <p>Términos y Condiciones</p>
-                <p>Soporte</p>
+                <p>vitadev03@gmail.com</p>
+                <p>+54 11 2759 2733</p>
+                <p>Argentina (Buenos Aires) </p>
             </div>
 
             <div class="footer-col social">

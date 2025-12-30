@@ -1,25 +1,7 @@
 @use "variables" as v;
 
-header.nav-glass {
-    position: fixed;
-    top: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 56px);
-    max-width: v.$max-width;
-    padding: 14px 26px;
-    background: v.$glass-bg;
-    backdrop-filter: blur(10px) saturate(120%);
-    border-radius: 36px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 40;
-}
-
 .portfolio {
-    padding: 80px 0;
+    padding: 170px 0;
     background-color: v.$bg-color;
 
     &__container {
@@ -80,6 +62,7 @@ header.nav-glass {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 32px;
+        object-fit: cover;
     }
 }
 
@@ -94,43 +77,49 @@ header.nav-glass {
 
     &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 10px 30px rgb(15, 19, 245);
     }
 
     &__logo {
         background: rgba(255, 255, 255, 0.08);
-        height: 140px;
+        height: 220px;
         border-radius: 8px;
         margin-bottom: 20px;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: v.$text;
-        font-weight: 700;
-        font-size: 1.2rem;
-    }
-
-    h3 {
-        margin: 0 0 10px;
-        color: v.$white;
-    }
-
-    p {
-        margin: 0;
-        color: v.$muted;
-        font-size: 0.95rem;
-        line-height: 1.4;
     }
 }
+
+h3 {
+    margin: 0 0 10px;
+    color: v.$white;
+}
+
+p {
+    margin: 0;
+    color: v.$muted;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+
+.card__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 @keyframes fade {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-

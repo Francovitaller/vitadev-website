@@ -49,3 +49,24 @@ window.addEventListener("scroll", () => {
         header.style.boxShadow = "none";
     }
 })
+const container = document.getElementById('container');
+const illuminatedItem = document.querySelector('.illuminated-item');
+const flashlight = document.querySelector('.flashlight');
+const blurFilter = document.querySelector('#blur-filter feGaussianBlur');
+
+// You can customize the intensity of the blur filter and light radius 
+const filterIntensity = 100;
+const lightRadius = 500;
+//-----------------------------------------------------
+const flashlightOffset = lightRadius / 2;
+
+blurFilter.setAttribute('stdDeviation', filterIntensity);
+flashlight.style.width = flashlight.style.height = `${lightRadius}px`;
+
+const followMouseFlashlight = ({ clientX, clientY }) => {
+    const { left, top } = illuminatedItem.getBoundingClientRect();
+    flashlight.style.left = `${clientX - left - flashlightOffset}px`;
+    flashlight.style.top = `${clientY - top - flashlightOffset}px`;
+};
+
+container.addEventListener('mousemove', followMouseFlashlight);

@@ -9,6 +9,10 @@ app = Flask(__name__)
 def portfolio():
     return render_template("portfolio.html")
 
+@app.route("/aboutus")
+def aboutus():
+    return render_template("aboutus.html")
+
 # Mostrar el formulario
 @app.route("/")
 def home():

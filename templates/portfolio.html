@@ -15,15 +15,17 @@
 
     <header class="nav-glass" role="banner" aria-label="Navegación principal">
         <div class="nav-left">
-            <a class="logo" href="./index.html" aria-label="VitaDev - Ir al inicio">
+            <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
                 <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
             </a>
         </div>
 
         <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
-            <a href="#inicio">Inicio</a>
-            <a href="#soluciones">Nuestras soluciones</a>
-            <a href="#contacto">Contacto</a>
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('home') }}">Nuestras soluciones</a>
+            <a href="{{ url_for('home') }}">Contacto</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
         </nav>
 
         <div class="nav-right">
@@ -40,46 +42,26 @@
             <h2 class="portfolio__title">Nuestros Proyectos</h2>
 
             <div class="portfolio__tabs">
-                <button class="tab">Aplicaciones web</button>
-                <button class="tab active">Aplicaciones móviles</button>
-                <button class="tab">Suites informáticas</button>
+                <button class="tab active">Desarrollo Web</button>
             </div>
 
             <div class="portfolio__grid">
                 <article class="card">
-                    <div class="card__logo">Pucara Turismo<br></div>
-                    <h3></h3>
-                    <p></p>
+                    <div class="card__logo"><a href="https://pucaraturismo.com.ar/" target="_blank"><img src="{{ url_for('static', filename='assets/isologopucara.png') }}" alt="Logo Pucara Turismo"></a></div>
+                    <h3>Pucara Turismo</h3>
+                    <p>Desarrollo web para empresa de turismo</p>
                 </article>
 
                 <article class="card">
-                    <div class="card__logo">Dread Mar I</div>
-                    <h3></h3>
-                    <p></p>
+                    <div class="card__logo"><a href="https://coderhouse-dreadmari-francovitaller.vercel.app/" target="_blank"><img src="{{ url_for('static', filename='assets/isologodmi.png') }}" alt="Logo Dread Mar I"></a></div>
+                    <h3>Dread Mar I</h3>
+                    <p>Sitio Institucional</p>
                 </article>
 
                 <article class="card">
-                    <div class="card__logo"></div>
-                    <h3></h3>
-                    <p></p>
-                </article>
-
-                <article class="card">
-                    <div class="card__logo"></div>
-                    <h3></h3>
-                    <p></p>
-                </article>
-
-                <article class="card">
-                    <div class="card__logo"><br></div>
-                    <h3></h3>
-                    <p></p>
-                </article>
-
-                <article class="card">
-                    <div class="card__logo"></div>
-                    <h3></h3>
-                    <p></p>
+                    <div class="card__logo"><a href="https://xbox-web.netlify.app/" target="_blank"><img src="{{ url_for('static', filename='assets/isologoxbox.png') }}" alt="Logo Page Xbox"></a></div>
+                    <h3>Page Xbox</h3>
+                    <p>Rebranding Xbox</p>
                 </article>
             </div>
         </div>
@@ -97,7 +79,7 @@
 
             <div class="footer-col">
                 <h4 class="footer-title">Contacto</h4>
-                <p>vitadev@studio.com</p>
+                <p>vitadev03@gmail.com</p>
                 <p>+54 11 0000 0000</p>
                 <p>Argentina</p>
             </div>

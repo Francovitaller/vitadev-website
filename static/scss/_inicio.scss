@@ -1,17 +1,58 @@
 @use "variables" as v;
 
 // hero de sitio web
+body {
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+
+    & article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        flex: 1;
+        background-size: cover;
+    }
+
+    & h2 {
+        z-index: 1;
+        color: #FFF;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 4px 4px 12px rgba(0, 0, 0, 0.4);
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+    }
+}
+
+.illuminated-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.flashlight {
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8);
+    transition: filter 0.5s ease;
+    pointer-events: none;
+
+    filter: blur(100px);
+    /* fallback */
+    filter: url(#blur-filter);
+    /* actual filter using SVG */
+}
 
 .hero {
-    background: v.$bg-img;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #000000;
     min-height: 100vh;
-    padding: 140px 20px 60px;
     position: relative;
     z-index: 10;
     display: flex;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -19,22 +60,24 @@
 }
 
 .hero-inner {
-    max-width: 980px;
+    max-width: v.$max-width;
+    padding: 0 20px;
     animation: fadeUp 1s v.$ease-smooth forwards;
 }
 
 .kicker {
     color: v.$cyan;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .kicker .led {
     width: 34px;
     height: 12px;
+    margin-top: 2.5px;
     border-radius: 999px;
     background: v.$cta-bg;
 }
@@ -94,9 +137,9 @@
 .btn-ghost:hover {
     transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.05);
-}
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
-// section de tags o habilidades
+}
 
 .pills {
     margin-top: 50px;
@@ -105,7 +148,6 @@
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
-
 }
 
 .pill {
@@ -124,17 +166,16 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-//section de cards proyectos
+// section de tags o habilidades
 
 .v-section-modulos {
     padding: 120px 20px;
     color: v.$text;
+    background-color: v.$bg-color;
     position: relative;
     width: 100%;
     height: 100vh;
 }
-
-// contenedor principal
 
 .v-container {
     max-width: v.$max-width;
@@ -144,7 +185,6 @@
     text-align: center;
 }
 
-// kicker
 .v-modulos-kicker {
     display: flex;
     align-items: center;
@@ -349,9 +389,6 @@
         }
     }
 }
-/* =========================
-   CLIENTS SLIDER
-   ========================= */
 
 .clients-section {
     padding: 100px 20px;
@@ -610,176 +647,8 @@
     }
 }
 
+//pequeños detalles visuales
 
-/* Responsive */
-@media (max-width: 1000px) {
-    .hero-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 680px) {
-    .header-inner {
-        padding: 12px 0;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .showcase-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-title {
-        font-size: 32px;
-    }
-}
-
-/* ============================ RESPONSIVE CONTACTO
-   ============================ */
-
-/* Tablets */
-@media (max-width: 992px) {
-
-    .contact-formulario {
-        padding: 0 20px 50px;
-    }
-
-    .contact-form {
-        width: 55%;
-        padding: 22px;
-        gap: 14px;
-
-        .form-group input,
-        .form-group textarea {
-            font-size: 0.9em;
-        }
-
-        .submit-button {
-            padding: 12px 24px;
-            font-size: 0.95em;
-        }
-    }
-
-    .contact-header .contact-title {
-        font-size: 1.8em;
-    }
-
-    .contact-header .contact-subtitle {
-        font-size: 0.85em;
-    }
-}
-
-/* Móviles grandes */
-@media (max-width: 768px) {
-
-    .contact-formulario {
-        padding: 0 18px 50px;
-    }
-
-    .contact-form {
-        width: 75%;
-        padding: 20px;
-        gap: 13px;
-
-        .submit-button {
-            padding: 12px 22px;
-            font-size: 0.9em;
-        }
-    }
-
-    .contact-header .contact-title {
-        font-size: 1.6em;
-    }
-}
-
-/* Móviles medianos */
-@media (max-width: 576px) {
-
-    .contact-formulario {
-        padding: 0 16px 45px;
-    }
-
-    .contact-form {
-        width: 100%;
-        padding: 18px;
-        gap: 12px;
-
-        .form-group label {
-            font-size: 0.8em;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 9px 10px;
-            font-size: 0.85em;
-        }
-
-        .submit-button {
-            padding: 11px 20px;
-            font-size: 0.85em;
-
-            .arrow-icon {
-                font-size: 1em;
-            }
-        }
-    }
-
-    .contact-header .contact-title {
-        font-size: 1.45em;
-        margin-bottom: 6px;
-    }
-
-    .contact-header .contact-subtitle {
-        font-size: 0.8em;
-        max-width: 300px;
-    }
-}
-
-/* Móviles pequeños */
-@media (max-width: 380px) {
-
-    .contact-form {
-        padding: 15px;
-        gap: 10px;
-
-        .form-group input,
-        .form-group textarea {
-            font-size: 0.8em;
-            padding: 8px;
-        }
-
-        .submit-button {
-            font-size: 0.8em;
-            padding: 10px 18px;
-        }
-    }
-
-    .contact-header .contact-title {
-        font-size: 1.3em;
-    }
-}
-
-
-
-// pequeños detalles visuales
 a {
     color: inherit;
 }
