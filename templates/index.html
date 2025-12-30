@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -8,14 +9,15 @@
         content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales." />
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head> 
+</head>
 
 <body>
+
     <div class="bg-wrap" aria-hidden="true"></div>
 
     <header class="nav-glass" role="banner" aria-label="Navegación principal">
         <div class="nav-left">
-            <a class="logo" href="./index.html" aria-label="VitaDev - Ir al inicio">
+            <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
                 <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
             </a>
         </div>
@@ -34,199 +36,206 @@
         </div>
     </header>
 
-    <main id="inicio" class="hero" role="main">
-        <div class="hero-inner">
-            <div class="kicker">
-                <span class="led"></span>
-                Conecta con tus clientes 24/7
-            </div>
-            <h1 class="hero-title">
-                Desarrollo web a medida para escalar tu negocio con soluciones rápidas, modernas y enfocadas en
-                resultados reales
-            </h1>
-            <p class="hero-sub">
-                Construimos sitios web optimizados y automatizaciones inteligentes para que tu negocio funcione de forma
-                más rápida y eficiente.
-            </p>
-            <div class="cta-wrap">
-                <button class="btn-cta">Cotizá tu idea →</button>
-                <a class="btn-ghost" href="{{ url_for('portfolio') }}">Ver portfolio</a>
-            </div>
-            <div class="pills">
-                <span class="pill">Diseño responsive</span>
-                <span class="pill">Carga ultrarrápida</span>
-                <span class="pill">SEO técnico</span>
-                <span class="pill">Integraciones a medida</span>
-                <span class="pill">Optimización continua</span>
-                <span class="pill">Enfoque en conversión</span>
-            </div>
-        </div>
-    </main>
+    <main role="main">
 
-    <section id="soluciones" class="v-section-modulos">
-        <div class="v-container">
-            <div class="v-modulos-kicker">
-                <span class="v-led"></span>
-                Soluciones web modulares a medida
-            </div>
-            <h2 class="v-modulos-title">
-                Soluciones personalizadas para potenciar tu presencia digital
-            </h2>
-            <div class="v-modulos-grid">
-                <div class="v-mod-card">
-                    <h3 class="v-mod-card-title">Desarrollo Web Profesional</h3>
-                    <p class="v-mod-card-text">
-                        Sitios modernos, rápidos y optimizados para mejorar la experiencia de tus usuarios.
-                    </p>
-                    <div class="v-mod-card-img">
-                        <img src="{{ url_for('static', filename='assets/desarrollador-de-software.png') }}" alt="Desarrollo Web">
-                    </div>
+        <section id="inicio" class="hero">
+            <div class="hero-inner">
+                <div class="kicker">
+                    <span class="led"></span>
+                    Conecta con tus clientes 24/7
                 </div>
 
-                <div class="v-mod-card">
-                    <h3 class="v-mod-card-title">Automatización de Procesos</h3>
-                    <p class="v-mod-card-text">
-                        Integraciones, flujos automáticos y tareas repetitivas delegadas a sistemas.
-                    </p>
-                    <div class="v-mod-card-img">
-                        <img src="{{ url_for('static', filename='assets/automatizacion.png') }}" alt="Automatización">
-                    </div>
-                </div>
+                <h1 class="hero-title">
+                    Desarrollo web a medida para escalar tu negocio con soluciones rápidas, modernas y enfocadas en
+                    resultados reales
+                </h1>
 
-                <div class="v-mod-card">
-                    <h3 class="v-mod-card-title">Sistemas a Medida</h3>
-                    <p class="v-mod-card-text">
-                        Dashboards, paneles de control y herramientas internas construidas para tu operación.
-                    </p>
-                    <div class="v-mod-card-img">
-                        <img src="{{ url_for('static', filename='assets/reporte-de-desempeno.png') }}" alt="Sistemas a Medida">
-                    </div>
-                </div>
-
-                <div class="v-mod-card">
-                    <h3 class="v-mod-card-title">Consultoría Estratégica</h3>
-                    <p class="v-mod-card-text">
-                        Diagnóstico, optimización continua y crecimiento digital escalable.
-                    </p>
-                    <div class="v-mod-card-img">
-                        <img src="{{ url_for('static', filename='assets/servicios-de-consultoria.png') }}" alt="Consultoría">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="blog-section">
-        <div class="blog-header">
-            <h2 class="blog-title">Soluciones creadas a medida</h2>
-            <p class="blog-description">
-                Explorá algunos de los trabajos que mejor representan mi estilo, mi proceso y mi compromiso con cada
-                proyecto.
-            </p>
-        </div>
-
-        <div class="articles-container">
-            <article class="article-card">
-                <div class="article-image-placeholder">
-                </div>
-                <div class="article-content">
-                    <p class="article-text">
-                        Dread es una marca dedicada a crear estilo, identidad y presencia. Diseñamos productos únicos
-                        con estética moderna, calidad premium y una visión auténtica que conecta con quienes buscan
-                        destacar.
-                    </p>
-                    <a href="#" class="read-more">Ver más</a>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="article-image-placeholder2">
-                </div>
-                <div class="article-content">
-                    <p class="article-text">
-                        Pucara Turismo es una agencia dedicada a crear experiencias de viaje auténticas, seguras y
-                        memorables. Ofrecemos excursiones, paquetes y servicios personalizados para que disfrutes lo
-                        mejor de cada destino con comodidad, guía profesional y atención cercana. Descubrí nuevos
-                        lugares con la tranquilidad de viajar con especialistas.
-                    </p>
-                    <a href="#" class="read-more">Ver más</a>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="article-image-placeholder3">
-                </div>
-                <div class="article-content">
-                    <p class="article-text">
-                        Xbox es la plataforma de videojuegos donde la potencia, la innovación y la comunidad se unen.
-                        Disfrutá títulos exclusivos, juego online de alto rendimiento y experiencias inmersivas
-                        diseñadas para llevar tu forma de jugar al siguiente nivel.
-                    </p>
-                    <a href="#" class="read-more">Ver más</a>
-                </div>
-            </article>
-        </div>
-
-        <div class="blog-footer">
-            <a href="#" class="view-more-button">
-                Ver Portfolio
-                <span class="arrow-icon">→</span>
-            </a>
-        </div>
-    </section>
-
-
-
-
-    <section id="contacto" class="contact-section">
-        <div class="contact-container">
-            <div class="contact-header">
-                <h2 class="contact-title">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
-                <p class="contact-subtitle">
-                    Estamos acá para ayudarte a convertir tus ideas en una realidad digital profesional.
-                    Completá el formulario y contanos que necesitas.
-                    Respondemos rápido y sin vueltas, para que puedas avanzar cuanto antes.
+                <p class="hero-sub">
+                    Construimos sitios web optimizados y automatizaciones inteligentes para que tu negocio funcione de
+                    forma
+                    más rápida y eficiente.
                 </p>
-                <img src="" alt="">
+
+                <div class="cta-wrap">
+                    <button class="btn-cta">Cotizá tu idea →</button>
+                    <a class="btn-ghost" href="{{ url_for('portfolio') }}">Ver portfolio</a>
+                </div>
+
+                <div class="pills">
+                    <span class="pill">Diseño responsive</span>
+                    <span class="pill">Carga ultrarrápida</span>
+                    <span class="pill">SEO técnico</span>
+                    <span class="pill">Integraciones a medida</span>
+                    <span class="pill">Optimización continua</span>
+                    <span class="pill">Enfoque en conversión</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="soluciones" class="v-section-modulos">
+            <div class="v-container">
+                <div class="v-modulos-kicker">
+                    <span class="v-led"></span>
+                    Soluciones web modulares a medida
+                </div>
+
+                <h2 class="v-modulos-title">
+                    Soluciones personalizadas para potenciar tu presencia digital
+                </h2>
+
+                <div class="v-modulos-grid">
+                    <div class="v-mod-card">
+                        <h3 class="v-mod-card-title">Desarrollo Web Profesional</h3>
+                        <p class="v-mod-card-text">
+                            Sitios modernos, rápidos y optimizados para mejorar la experiencia de tus usuarios.
+                        </p>
+                        <div class="v-mod-card-img">
+                            <img src="{{ url_for('static', filename='assets/desarrollador-de-software.png') }}"
+                                alt="Desarrollo Web">
+                        </div>
+                    </div>
+
+                    <div class="v-mod-card">
+                        <h3 class="v-mod-card-title">Automatización de Procesos</h3>
+                        <p class="v-mod-card-text">
+                            Integraciones, flujos automáticos y tareas repetitivas delegadas a sistemas.
+                        </p>
+                        <div class="v-mod-card-img">
+                            <img src="{{ url_for('static', filename='assets/automatizacion.png') }}"
+                                alt="Automatización">
+                        </div>
+                    </div>
+
+                    <div class="v-mod-card">
+                        <h3 class="v-mod-card-title">Sistemas a Medida</h3>
+                        <p class="v-mod-card-text">
+                            Dashboards, paneles de control y herramientas internas construidas para tu operación.
+                        </p>
+                        <div class="v-mod-card-img">
+                            <img src="{{ url_for('static', filename='assets/reporte-de-desempeno.png') }}"
+                                alt="Sistemas a Medida">
+                        </div>
+                    </div>
+
+                    <div class="v-mod-card">
+                        <h3 class="v-mod-card-title">Consultoría Estratégica</h3>
+                        <p class="v-mod-card-text">
+                            Diagnóstico, optimización continua y crecimiento digital escalable.
+                        </p>
+                        <div class="v-mod-card-img">
+                            <img src="{{ url_for('static', filename='assets/servicios-de-consultoria.png') }}"
+                                alt="Consultoría">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="join-section">
+            <div class="join-overlay"></div>
+
+            <div class="join-content reveal">
+                <h2 class="join-title">Trabajá con nosotros</h2>
+
+                <p class="join-text">
+                    Si te sentís identificado con alguno de los siguientes puestos envíanos un mail.<br>
+                    Completá el asunto con el nombre del rol que pretendés, tu nombre y tu currículum adjunto.
+                </p>
+
+                <ul class="join-roles">
+                    <li>Programador</li>
+                    <li>Diseñador gráfico</li>
+                    <li>Vendedor</li>
+                </ul>
+
+                <a href="#" class="join-btn">Sumate</a>
+            </div>
+        </section>
+
+        <section class="clients-section">
+            <div class="clients-header">
+                <h2 class="clients-title">Confían en nosotros</h2>
+                <span class="clients-line"></span>
             </div>
 
-            <div class="contact-formulario">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder="Tu Nombre Completo">
+            <div class="clients-slider">
+                <div class="clients-track">
+                    <div class="client-logo">
+                        <img src="assets/logos/tate.png" alt="Tate">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="ejemplo@gmail.com">
+                    <div class="client-logo">
+                        <img src="assets/logos/cornaglia.png" alt="Cornaglia & Asociados">
                     </div>
-                    <div class="form-group">
-                        <label for="number">Telefono/Whatsapp</label>
-                        <input type="number" id="number" name="number" required placeholder="">
+                    <div class="client-logo">
+                        <img src="assets/logos/ramosapp.png" alt="Ramos App">
                     </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Escribe tu mensaje aquí..."></textarea>
+                    <div class="client-logo">
+                        <img src="assets/logos/guiasdels.png" alt="Guías Dels">
                     </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio en el que estás interesado</label>
-                        <select id="servicio" name="servicio" required>
-                            <option value="" disabled selected>Elegí un servicio</option>
-                            <option value="web">Diseño Web</option>
-                            <option value="seo">SEO</option>
-                            <option value="marketing">Landing Page</option>
-                            <option value="tienda">Tienda Online (E-commerce)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="submit-button">
-                        Enviar Mensaje
-                        <span class="arrow-icon">→</span>
-                    </button>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
+
+            <div class="clients-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+
+        <section id="contacto" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2 class="contact-title">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+                    <p class="contact-subtitle">
+                        Estamos acá para ayudarte a convertir tus ideas en una realidad digital profesional.
+                    </p>
+                    <img src="{{ url_for('static', filename='assets/Contactoimagen2.png') }}" alt="">
+                </div>
+
+                <div class="contact-formulario">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="number">Telefono/Whatsapp</label>
+                            <input type="number" id="number" name="number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servicio">Servicio en el que estás interesado</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Elegí un servicio</option>
+                                <option value="web">Diseño Web</option>
+                                <option value="seo">SEO</option>
+                                <option value="marketing">Landing Page</option>
+                                <option value="tienda">Tienda Online (E-commerce)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            Enviar Mensaje
+                            <span class="arrow-icon">→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="footer">
         <div class="footer-inner container">
@@ -254,11 +263,13 @@
             <div class="footer-col social">
                 <h4 class="footer-title">Redes</h4>
                 <div class="social-icons">
-                    <a href=""><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
-                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank"><img
-                            src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt=""></a>
-                    <a href="https://www.tiktok.com/@_vitadev" target="_blank"><img
-                            src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
+                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                    </a>
+                    <a href="https://www.tiktok.com/@_vitadev" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -268,11 +279,9 @@
         </div>
     </footer>
 
-    <!-- tu JS principal -->
     <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
-
-    <!-- JS para móviles -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
 
 </html>

@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Document</title>
 </head>
+
 <body>
-    porno
+
+    <header>
+    <div class="bg-wrap" aria-hidden="true"></div>
+
+    <header class="nav-glass" role="banner" aria-label="Navegación principal">
+        <div class="nav-left">
+            <a class="logo" href="./index.html" aria-label="VitaDev - Ir al inicio">
+                <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
+            </a>
+        </div>
+
+        <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
+            <a href="#inicio">Inicio</a>
+            <a href="#soluciones">Nuestras soluciones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="nav-right">
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
+                ☰
+            </button>
+            <a class="btn" href="#">Cotizá tu idea</a>
+        </div>
+    </header>
+
+    <main>
+    <section class="portfolio">
+        <div class="portfolio__container">
+            <h2 class="portfolio__title">Nuestros Proyectos</h2>
+
+            <div class="portfolio__tabs">
+                <button class="tab">Aplicaciones web</button>
+                <button class="tab active">Aplicaciones móviles</button>
+                <button class="tab">Suites informáticas</button>
+            </div>
+
+            <div class="portfolio__grid">
+                <article class="card">
+                    <div class="card__logo">Pucara Turismo<br></div>
+                    <h3></h3>
+                    <p></p>
+                </article>
+
+                <article class="card">
+                    <div class="card__logo">Dread Mar I</div>
+                    <h3></h3>
+                    <p></p>
+                </article>
+
+                <article class="card">
+                    <div class="card__logo"></div>
+                    <h3></h3>
+                    <p></p>
+                </article>
+
+                <article class="card">
+                    <div class="card__logo"></div>
+                    <h3></h3>
+                    <p></p>
+                </article>
+
+                <article class="card">
+                    <div class="card__logo"><br></div>
+                    <h3></h3>
+                    <p></p>
+                </article>
+
+                <article class="card">
+                    <div class="card__logo"></div>
+                    <h3></h3>
+                    <p></p>
+                </article>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-col">
+                <h4 class="footer-title">Servicios</h4>
+                <p>Desarrollo Web</p>
+                <p>Aplicaciones a Medida</p>
+                <p>Automatizaciones</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contacto</h4>
+                <p>vitadev@studio.com</p>
+                <p>+54 11 0000 0000</p>
+                <p>Argentina</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Legales</h4>
+                <p>Política de Privacidad</p>
+                <p>Términos y Condiciones</p>
+                <p>Soporte</p>
+            </div>
+
+            <div class="footer-col social">
+                <h4 class="footer-title">Redes</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
+                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                    </a>
+                    <a href="https://www.tiktok.com/@_vitadev" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>VitaDev © 2025 — Desarrollo Web a Medida</p>
+        </div></footer>
+
 </body>
+
 </html>

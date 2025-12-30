@@ -2,7 +2,6 @@
 
 // hero de sitio web
 
-
 .hero {
     background: v.$bg-img;
     background-position: center;
@@ -16,10 +15,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .hero-inner {
     max-width: 980px;
+    animation: fadeUp 1s v.$ease-smooth forwards;
 }
 
 .kicker {
@@ -42,6 +43,7 @@
     font-size: clamp(28px, 6vw, 56px);
     font-weight: 700;
     margin-bottom: 20px;
+    animation: fadeUp 0.8s v.$ease-smooth forwards;
 }
 
 .hero-sub {
@@ -49,6 +51,8 @@
     opacity: 0.85;
     max-width: 760px;
     margin: 0 auto 32px;
+    animation: fadeUp 1s v.$ease-soft forwards;
+    animation-delay: 0.15s;
 }
 
 .cta-wrap {
@@ -73,6 +77,23 @@
     border-radius: 999px;
     text-decoration: none;
     color: white;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+    transition:
+        transform v.$anim-fast v.$ease-smooth,
+        box-shadow v.$anim-fast v.$ease-smooth,
+        background v.$anim-fast;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 // section de tags o habilidades
@@ -84,6 +105,7 @@
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+
 }
 
 .pill {
@@ -92,16 +114,20 @@
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.92rem;
+    transition:
+        transform 0.25s v.$ease-soft,
+        background 0.25s ease;
+}
+
+.pill:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 //section de cards proyectos
 
 .v-section-modulos {
     padding: 120px 20px;
-    background-image: url(../asets/Fondovolt.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: v.$text;
     position: relative;
     width: 100%;
@@ -165,11 +191,15 @@
     flex-direction: column;
     justify-content: space-between;
     transition: 0.3s ease;
+    animation: scaleIn 0.7s v.$ease-smooth forwards;
+    transition:
+        transform 0.35s v.$ease-smooth,
+        box-shadow 0.35s v.$ease-smooth;
 }
 
 .v-mod-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
 
 // card title
@@ -189,159 +219,99 @@
 
 // card image
 .v-mod-card-img img {
-    width: 100%;
-    height: 12px;
+    width: 70%;
+    height: auto;
     opacity: 0.9;
 }
 
-// CTA BAND
-.cta-band {
-    padding: 48px 0;
-    background: linear-gradient(90deg, rgba(45, 106, 255, 0.06), rgba(0, 224, 161, 0.03));
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
-}
+/* trabaja con nostros */
 
-.cta-inner {
+.join-section {
+    position: relative;
+    min-height: 50vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-}
-
-.cta-inner h3 {
-    margin: 0;
-}
-
-// PORTFOLIO
-
-.blog-section {
-    width: 100%;
-    margin: 0 auto;
-    background-color: v.$bg-color;
-    color: v.$text;
-    text-align: center;
-}
-
-// Encabezado del blog
-.blog-header {
-    width: 100%;
-    padding: 0 24px;
-    margin-bottom: 50px;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    background-image: url("../assets/imagenfondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
-    .blog-title {
-        text-align: center;
-        font-size: 2.5em;
-        margin-bottom: 15px;
-        line-height: 1.2;
-        color: v.$white;
-    }
-
-    .blog-description {
-        font-size: 1em;
-        color: v.$muted; 
-        max-width: 700px;
-        margin: 0 auto;
-    }
-}
-
-// Contenedor de las tarjetas
-.articles-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    gap: 30px;
-    margin-bottom: 60px;
-
-    @media (max-width: 992px) {
-        flex-direction: column;
-    }
-}
-
-// Estilos para cada tarjeta
-.article-card {
-    flex: 1;
-    background-color: v.$glass-bg;
-    border-radius: 8px;
+    color: v.$white;
     overflow: hidden;
-    text-align: left;
-    transition: transform 0.3s ease, border 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-    &:hover {
-        transform: translateY(-5px);
-        border: 1px solid rgba(45, 106, 255, 0.3);
-    }
+/* Overlay con paleta VitaDev */
+.join-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
 
-    //imagen 1
-    .article-image-placeholder {
-        height: 200px;
-        background-image: url(../asets/webdread.png);
-        background-color: v.$charcoal;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
+/* Contenido */
+.join-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 40px 20px;
+}
 
-        >* {
-            display: none;
-        }
-    }
+/* Título */
+.join-title {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
-    //imagen 2 
-    .article-image-placeholder2 {
-        height: 200px;
-        background-image: url(../asets/sitiowebpucara.png);
-        background-color: v.$charcoal;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
+/* Texto */
+.join-text {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 720px;
+    margin: 0 auto 30px;
+}
 
-        >* {
-            display: none;
-        }
-    }
+/* Roles */
+.join-roles {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
 
-    //imagen 3 
-    .article-image-placeholder3 {
-        height: 200px;
-        background-image: url(../asets/xboxsitio.png);
-        background-color: v.$charcoal;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-
-        >* {
-            display: none;
-        }
-    }
-
-    .article-content {
-        padding: 20px;
-
-        .article-text {
-            color: v.$text;
-            margin-bottom: 25px;
-            font-size: 1.1em;
-            line-height: 1.4;
-        }
-
-        .read-more {
-            color: v.$muted; // Color inicial del enlace
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 2px;
-            transition: color 0.3s, border-bottom-color 0.3s;
-
-            &:hover {
-                color: v.$cyan; // Cambio de color al hacer hover
-                border-bottom-color: v.$cyan;
-            }
-        }
+    li {
+        font-size: 15px;
+        margin-bottom: 6px;
+        opacity: 0.9;
     }
 }
+
+/* Botón */
+.join-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+
+    background: transparent;
+    color: v.$white;
+    border: 2px solid v.$white;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.join-btn:hover {
+    background: v.$white;
+    color: v.$charcoal;
+    transform: translateY(-2px);
+}
+
 
 // Estilos del pie de página y botón
 .blog-footer {
@@ -379,6 +349,87 @@
         }
     }
 }
+/* =========================
+   CLIENTS SLIDER
+   ========================= */
+
+.clients-section {
+    padding: 100px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+/* Header */
+.clients-header {
+    margin-bottom: 60px;
+}
+
+.clients-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.clients-line {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #1e63ff;
+    margin: 0 auto;
+}
+
+/* Slider */
+.clients-slider {
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.clients-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Logos */
+.client-logo {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-logo img {
+    max-width: 220px;
+    opacity: 0.4;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.client-logo img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* Dots */
+.clients-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: #1e63ff;
+}
+
 
 /* CONTACTO */
 .contact-section {
@@ -456,7 +507,13 @@
         color: v.$muted;
         max-width: 70%;
         margin: 0 auto;
-        
+
+    }
+
+    img {
+        width: 50%;
+        height: auto;
+        margin-top: 20px;
     }
 }
 
@@ -595,8 +652,7 @@
     }
 }
 
-/* ============================
-   RESPONSIVE CONTACTO
+/* ============================ RESPONSIVE CONTACTO
    ============================ */
 
 /* Tablets */
