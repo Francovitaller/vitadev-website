@@ -5,6 +5,9 @@ from email.message import EmailMessage
 
 app = Flask(__name__)
 
+@app.route("/portfolio")
+def portfolio():
+    return render_template("portfolio.html")
 
 # Mostrar el formulario
 @app.route("/")
