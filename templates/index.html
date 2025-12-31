@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    
+
     <canvas id="fluid-canvas"></canvas>
 
     <div class="bg-wrap" aria-hidden="true"></div>
@@ -199,13 +199,38 @@
 
 
         <section id="contacto" class="contact-section">
+            <div class="contact-info">
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="icon"><img src="{{ url_for('static', filename='assets/direccion-icon.png') }}" alt=""></div>
+                        <h4>DIRECCIÓN</h4>
+                        <p>Buenos Aires<br>ARGENTINA</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon"><img src="{{ url_for('static', filename='assets/whatsapp-icon.png') }}" alt=""></div>
+                        <h4>WHATSAPP</h4>
+                        <p>+54 9 1127592733</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon"><img src="{{ url_for('static', filename='assets/gmail-icon.png') }}" alt=""></div>
+                        <h4>EMAIL</h4>
+                        <p>vitadev03@gmail.com</p>
+                    </div>
+
+                </div>
+
+                <div class="image-box">
+                <img src="{{ url_for('static', filename='assets/Contactoimagen2.png') }}" alt="">
+                </div>
+            </div>
             <div class="contact-container">
                 <div class="contact-header">
                     <h2 class="contact-title">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
                     <p class="contact-subtitle">
                         Estamos acá para ayudarte a convertir tus ideas en una realidad digital profesional.
                     </p>
-                    <img src="{{ url_for('static', filename='assets/Contactoimagen2.png') }}" alt="">
                 </div>
 
                 <div class="contact-formulario">
@@ -278,6 +303,10 @@
                     <a href="https://www.tiktok.com/@_vitadev" target="_blank">
                         <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
                     </a>
+                    <a href="https://www.tiktok.com/@_vitadev" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}" alt=""></a>
+                        <a href="https://www.tiktok.com/@_vitadev" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}" alt=""></a>
                 </div>
             </div>
         </div>

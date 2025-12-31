@@ -258,22 +258,26 @@
     color: v.$white;
     overflow: hidden;
 }
+
 .join-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
 }
+
 .join-content {
     position: relative;
     z-index: 2;
     max-width: 900px;
     padding: 40px 20px;
 }
+
 .join-title {
     font-size: clamp(28px, 5vw, 48px);
     font-weight: 700;
     margin-bottom: 20px;
 }
+
 .join-text {
     font-size: 16px;
     line-height: 1.6;
@@ -281,6 +285,7 @@
     max-width: 720px;
     margin: 0 auto 30px;
 }
+
 .join-roles {
     list-style: none;
     padding: 0;
@@ -429,183 +434,196 @@
     background: #1e63ff;
 }
 
-
 /* CONTACTO */
 .contact-section {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 100px 20px;
     color: v.$text;
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
-// Contenedor principal para centrar el formulario
-.contact-container {
-    width: 100%;
+/* GRID PRINCIPAL */
+#contacto {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 80px 20px;
-    justify-content: center;
-    align-items: center;
-    color: v.$text;
-    text-align: center;
+    gap: 4rem;
+    max-width: v.$max-width;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.form-group {
+/* ===================== */
+/* INFO IZQUIERDA */
+/* ===================== */
+
+.contact-info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.2rem;
+    gap: 3rem;
+}
 
-    label {
-        margin-bottom: .4rem;
-        font-weight: 600;
+.info-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    text-align: center;
+
+    .icon {
+        width: 50%;
+        height: 60px;
+        margin: 0 auto 0.8rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
     }
 
-    select {
-        padding: .8rem;
-        border-radius: .5rem;
-        color: v.$gray;
-        background-color: v.$glass-bg;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: border-color .3s ease, box-shadow .3s ease;
+    h4 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+        color: v.$white;
+    }
 
-        &:focus {
-            border-color: #4a7dff;
-            box-shadow: 0 0 5px rgba(74, 125, 255, 0.5);
-            outline: none;
-        }
-
-        option {
-            padding: .5rem;
-            background-color: v.$glass-bg;
-            color: v.$gray;
-        }
+    p {
+        font-size: 0.8rem;
+        color: v.$muted;
+        line-height: 1.4;
     }
 }
 
+.image-box {
+    justify-content: center;
+    align-items: center;
+    img {
+        padding-left: 80px;
+        width: 80%;
+        height: auto;
+    }
+}
 
-// Encabezado
+//glass container del formulario
+
+.contact-container {
+    background: v.$glass-bg;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 30px;
+    padding: 3rem;
+}
+
+//header del formulario
 
 .contact-header {
-    // Reducimos el margen inferior
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
+    text-align: left;
 
     .contact-title {
-        // Reducimos ligeramente el tamaño de la fuente
-        font-size: 2em;
+        text-align: center;
+        font-size: 1.6rem;
         color: v.$white;
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
     }
 
     .contact-subtitle {
-        font-size: 1.2em;
+        text-align: center;
+        font-size: 0.95rem;
         color: v.$muted;
-        max-width: 70%;
-        margin: 0 auto;
-
-    }
-
-    img {
-        width: 50%;
-        height: auto;
-        margin-top: 20px;
+        max-width: 90%;
     }
 }
+
+//formulario 
 
 .contact-formulario {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 24px 60px;
 }
 
-// Estilos del Formulario
 .contact-form {
+    width: 100%;
     display: flex;
-    width: 70%;
     flex-direction: column;
-    // Reducimos el espacio entre elementos
     gap: 15px;
-    // Reducimos el padding interno del formulario
-    padding: 25px;
-    background-color: v.$glass-bg;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: left;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
 
-    .form-group {
-        display: flex;
-        flex-direction: column;
+//form group styles
 
-        label {
-            font-size: 0.85em;
-            color: v.$muted;
-            margin-bottom: 5px; // Reducimos el espacio debajo del label
-            font-weight: bold;
-        }
+.form-group {
+    display: flex;
+    flex-direction: column;
 
-        input,
-        textarea {
-            padding: 10px 12px; // Reducimos el padding de los inputs
-            background-color: v.$charcoal;
-            color: v.$text;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            font-size: 0.95em;
-            transition: border-color 0.3s, box-shadow 0.3s;
+    label {
+        font-size: 0.85em;
+        color: v.$muted;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
 
-            &:focus {
-                outline: none;
-                border-color: v.$blue;
-                box-shadow: 0 0 0 2px rgba(45, 106, 255, 0.3);
-            }
+    input,
+    textarea,
+    select {
+        padding: 10px 12px;
+        background-color: v.$charcoal;
+        color: v.$text;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        font-size: 0.95em;
 
-            &::placeholder {
-                color: v.$muted;
-                opacity: 0.5;
-            }
-        }
-
-        textarea {
-            resize: vertical;
+        &:focus {
+            outline: none;
+            border-color: v.$blue;
+            box-shadow: 0 0 0 2px rgba(45, 106, 255, 0.3);
         }
     }
 
-    .submit-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        // Reducimos el padding del botón
-        padding: 12px 25px;
-        background-image: v.$cta-bg;
-        color: v.$charcoal;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 25px;
-        font-size: 1em; // Mantenemos un buen tamaño de fuente en el botón
-        border: none;
-        cursor: pointer;
-        margin-top: 5px; // Reducimos el margen superior
-        transition: transform 0.3s, opacity 0.3s;
-
-        &:hover {
-            transform: scale(1.01);
-            opacity: 0.95;
-        }
-
-        .arrow-icon {
-            margin-left: 8px;
-            font-size: 1.1em;
-            transition: margin-left 0.3s;
-        }
-
-        &:hover .arrow-icon {
-            margin-left: 13px;
-        }
+    textarea {
+        resize: vertical;
     }
 }
+
+//boton de submit
+
+.submit-button {
+    align-self: center ;
+    padding: 12px 30px;
+    background-image: v.$cta-bg;
+    color: v.$charcoal;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+
+    &:hover {
+        transform: scale(1.03);
+        opacity: 0.95;
+    }
+
+    .arrow-icon {
+        margin-left: 8px;
+        transition: margin-left 0.3s;
+    }
+
+    &:hover .arrow-icon {
+        margin-left: 14px;
+    }
+}
+
 
 //pequeños detalles visuales
 
