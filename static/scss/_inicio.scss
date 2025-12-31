@@ -1,55 +1,11 @@
 @use "variables" as v;
 
 // hero de sitio web
-body {
-    margin: 0;
-}
-
-#container {
-    display: flex;
-    height: 100vh;
-
-    & article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        flex: 1;
-        background-size: cover;
-    }
-
-    & h2 {
-        z-index: 1;
-        color: #FFF;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 4px 4px 12px rgba(0, 0, 0, 0.4);
-        font-family: 'Georgia', serif;
-        text-transform: uppercase;
-    }
-}
-
-.illuminated-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.flashlight {
-    position: absolute;
-    border-radius: 50%;
-    background-color: transparent;
-    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8);
-    transition: filter 0.5s ease;
-    pointer-events: none;
-
-    filter: blur(100px);
-    /* fallback */
-    filter: url(#blur-filter);
-    /* actual filter using SVG */
-}
-
 .hero {
-    background-color: #000000;
-    min-height: 100vh;
     position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     z-index: 10;
     display: flex;
     gap: 20px;
@@ -57,6 +13,27 @@ body {
     align-items: center;
     text-align: center;
     animation: fadeIn 1s ease forwards;
+}
+
+#fluid-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
 }
 
 .hero-inner {
@@ -169,12 +146,13 @@ body {
 // section de tags o habilidades
 
 .v-section-modulos {
-    padding: 120px 20px;
-    color: v.$text;
-    background-color: v.$bg-color;
     position: relative;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+    padding: 120px 20px;
+    color: v.$text;
+
 }
 
 .v-container {
@@ -277,34 +255,25 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     color: v.$white;
     overflow: hidden;
 }
-
-/* Overlay con paleta VitaDev */
 .join-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
 }
-
-/* Contenido */
 .join-content {
     position: relative;
     z-index: 2;
     max-width: 900px;
     padding: 40px 20px;
 }
-
-/* Título */
 .join-title {
     font-size: clamp(28px, 5vw, 48px);
     font-weight: 700;
     margin-bottom: 20px;
 }
-
-/* Texto */
 .join-text {
     font-size: 16px;
     line-height: 1.6;
@@ -312,8 +281,6 @@ body {
     max-width: 720px;
     margin: 0 auto 30px;
 }
-
-/* Roles */
 .join-roles {
     list-style: none;
     padding: 0;
@@ -326,7 +293,6 @@ body {
     }
 }
 
-/* Botón */
 .join-btn {
     display: inline-flex;
     align-items: center;
@@ -352,8 +318,6 @@ body {
     transform: translateY(-2px);
 }
 
-
-// Estilos del pie de página y botón
 .blog-footer {
     text-align: center;
 
@@ -392,7 +356,6 @@ body {
 
 .clients-section {
     padding: 100px 20px;
-    background: #fff;
     text-align: center;
 }
 
@@ -415,7 +378,6 @@ body {
     margin: 0 auto;
 }
 
-/* Slider */
 .clients-slider {
     overflow: hidden;
     max-width: 1100px;
@@ -474,7 +436,6 @@ body {
     align-items: center;
     height: 100vh;
     padding: 100px 20px;
-    background-color: v.$bg-color;
     color: v.$text;
     text-align: center;
 }
@@ -487,7 +448,6 @@ body {
     padding: 80px 20px;
     justify-content: center;
     align-items: center;
-    background-color: v.$bg-color;
     color: v.$text;
     text-align: center;
 }

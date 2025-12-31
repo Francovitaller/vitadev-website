@@ -5,11 +5,12 @@
 .footer {
     height: auto;
     width: 100%;
-    background-color: v.$charcoal;
     padding: 70px 0 40px 0;
     border-radius: 14px 14px 0 0;
 
     .container {
+        align-items: center;
+        justify-content: center;
         max-width: v.$max-width;
         margin: 0 auto;
         display: grid;

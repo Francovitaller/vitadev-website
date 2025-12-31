@@ -20,6 +20,8 @@
 </head>
 
 <body>
+    
+    <canvas id="fluid-canvas"></canvas>
 
     <div class="bg-wrap" aria-hidden="true"></div>
 
@@ -49,7 +51,7 @@
     <main role="main">
 
         <section id="inicio" class="hero">
-            <div class="hero-inner">
+            <div class="hero-inner" class="hero-content">
                 <div class="kicker">
                     <span class="led"></span>
                     Conecta con tus clientes 24/7
@@ -85,6 +87,7 @@
 
 
         <section id="soluciones" class="v-section-modulos">
+            <canvas id="fluid-canvas"></canvas>
             <div class="v-container">
                 <div class="v-modulos-kicker">
                     <span class="v-led"></span>
@@ -172,16 +175,16 @@
             <div class="clients-slider">
                 <div class="clients-track">
                     <div class="client-logo">
-                        <img src="assets/logos/tate.png" alt="Tate">
+                        <img src="" alt="Tate">
                     </div>
                     <div class="client-logo">
-                        <img src="assets/logos/cornaglia.png" alt="Cornaglia & Asociados">
+                        <img src="" alt="Cornaglia & Asociados">
                     </div>
                     <div class="client-logo">
-                        <img src="assets/logos/ramosapp.png" alt="Ramos App">
+                        <img src="" alt="Ramos App">
                     </div>
                     <div class="client-logo">
-                        <img src="assets/logos/guiasdels.png" alt="Guías Dels">
+                        <img src="" alt="Guías Dels">
                     </div>
                 </div>
             </div>
@@ -283,7 +286,7 @@
             <p>VitaDev © 2025 — Desarrollo Web a Medida</p>
         </div>
     </footer>
-
+    <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 

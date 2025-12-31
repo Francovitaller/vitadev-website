@@ -1,19 +1,20 @@
 
-// Variables
+/// Base colors
 $blue: #2D6AFF;
-$charcoal: #0F1115;
-$white: #ffffff;
 $cyan: #00E0A1;
+$white: #ffffff;
 $gray: #A7B0C2;
+$charcoal: #0F1115;
+
+// Layout
 $max-width: 1200px;
 
-// Custom Variables
-$bg-color: #060606;
+// Theme
+$bg-color: #000000; // negro puro
 $glass-bg: rgba(255,255,255,0.03);
 $cta-bg: linear-gradient(90deg, $blue, $cyan);
 $text: #e9eef0;
 $muted: rgba(255,255,255,0.6);
-$max-width: 1200px;
 
 // Animaciones
 $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
@@ -21,6 +22,7 @@ $ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $anim-fast: 0.3s;
 $anim-medium: 0.6s;
 $anim-slow: 0.9s;
+
 
 @keyframes fadeUp {
     from {
@@ -55,62 +57,15 @@ html, body { height: 100%; }
 body {
 margin: 0;
 font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-background: linear-gradient(180deg, rgba(15,17,21,1) 0%, rgba(6,8,10,1) 100%);
+background-color: #000000;
 color: white;
 -webkit-font-smoothing: antialiased;
+main, header, section, footer {
+    position: relative;
+    z-index: 1;
+}
 }
 
 html {
     scroll-behavior: smooth;
-}
-/* =========================
-   SCROLL ANIMATIONS
-   ========================= */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Variantes */
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: 0.8s ease;
-}
-
-.reveal-right {
-    opacity: 0;
-    transform: translateX(40px);
-    transition: 0.8s ease;
-}
-
-.reveal-left.show,
-.reveal-right.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Cards con delay automático */
-.reveal-delay {
-    transition-delay: var(--delay, 0s);
-}
-
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .reveal-left,
-    .reveal-right {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
 }
