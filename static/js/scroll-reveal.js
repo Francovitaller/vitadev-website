@@ -65,3 +65,77 @@ function draw() {
 }
 
 draw();
+
+
+// h1 movimiento
+
+document.addEventListener('DOMContentLoaded', () => {
+    const words = [
+        'a medida',
+        'profesional',
+        'moderno',
+        'escalable',
+        'de alto impacto'
+    ];
+
+    const textEl = document.getElementById('rotating-text');
+
+    const changeDelay = 3200;      // tiempo total entre palabras
+    const transitionTime = 650;    // debe coincidir con SCSS
+    const letterDelay = 40;        // stagger entre letras (ms)
+
+    let index = 0;
+    let isAnimating = false;
+
+    function createWord(word) {
+        textEl.innerHTML = '';
+
+        const fragment = document.createDocumentFragment();
+
+        [...word].forEach((char, i) => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.transitionDelay = `${i * letterDelay}ms`;
+            fragment.appendChild(span);
+        });
+
+        textEl.appendChild(fragment);
+    }
+
+    function showWord() {
+        textEl.classList.remove('is-hidden');
+        textEl.classList.add('is-visible');
+    }
+
+    function hideWord() {
+        textEl.classList.remove('is-visible');
+        textEl.classList.add('is-hidden');
+    }
+
+    function nextWord() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        hideWord();
+
+        setTimeout(() => {
+            createWord(words[index]);
+            index = (index + 1) % words.length;
+            // Forzar reflow para reiniciar animación
+            // eslint-disable-next-line no-unused-expressions
+            void textEl.offsetWidth;
+
+            showWord();
+            isAnimating = false;
+        }, transitionTime);
+    }
+
+    // INIT
+    createWord(words[index]);
+    showWord();
+    index++;
+
+    // LOOP CONTROLADO
+    setInterval(nextWord, changeDelay);
+});

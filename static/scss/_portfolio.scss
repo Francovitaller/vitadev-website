@@ -18,6 +18,7 @@
         align-items: center;
         text-align: center;
         justify-content: center;
+        
 
         &::after {
             content: "";
@@ -67,17 +68,17 @@
 }
 
 .card {
+    position: relative;
     background: v.$glass-bg;
-    border-radius: 10px;
-    padding: 32px 24px;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 32px;
+    padding: 3.5rem 2.5rem 2.5rem;
     text-align: center;
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fade 0.3s ease;
+    transition: transform v.$anim-fast, v.$anim-fast;
 
     &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 10px 30px rgb(15, 19, 245);
     }
 
     &__logo {
@@ -123,3 +124,5 @@ p {
         transform: translateY(0);
     }
 }
+
+

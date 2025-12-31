@@ -1,5 +1,7 @@
 @use "variables" as v;
 
+
+// first section about us
 .about {
     padding: 6rem 1.5rem;
     animation: fadeUp v.$anim-medium v.$ease-smooth both;
@@ -42,54 +44,226 @@
     }
 }
 
-.card {
+.about__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tarjet {
+    position: relative;
     background: v.$glass-bg;
-    border-radius: 16px;
-    overflow: hidden;
-    padding-bottom: 2rem;
-    backdrop-filter: blur(12px);
-    transition: transform v.$anim-fast v.$ease-smooth;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 32px;
+    padding: 3.5rem 2.5rem 2.5rem;
+    text-align: center;
+    transition: transform v.$anim-fast, v.$anim-fast;
 
     &:hover {
-        transform: translateY(-6px);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     }
-
     img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin: 0 auto 1.5rem;
+        display: block;
+        filter: drop-shadow(0 0 25px rgba(0, 120, 255, 0.35));
     }
-
     &__icon {
-        width: 48px;
-        height: 48px;
+        width: 14px;
+        height: 14px;
         background: v.$blue;
         border-radius: 50%;
-        margin: -24px auto 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: v.$white;
-        font-size: 1.2rem;
+        margin: -0.5rem auto 1.5rem;
+        box-shadow: 0 0 20px rgba(0, 120, 255, 0.8);
     }
 
     h3 {
+        font-size: 1.2rem;
         margin-bottom: 0.75rem;
+        color: v.$white;
     }
 
-    p,
-    ul {
+    p {
         color: v.$muted;
         font-size: 0.95rem;
-        padding: 0 1.5rem;
+        line-height: 1.6;
+        padding: 0 0.5rem;
     }
 
     ul {
         list-style: none;
-        padding-left: 0;
+        padding: 0;
+        margin: 0;
 
         li {
-            margin-bottom: 0.4rem;
+            color: v.$muted;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
         }
     }
 }
+
+
+// process section
+
+.process {
+    padding: 6rem 0;
+    background-color: #ffffff;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    &-header {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0b0b0b;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #6b7280;
+        }
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    &-column {
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+    }
+
+    &-item {
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0d4bff;
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1rem;
+
+            &::before {
+                content: "›";
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #0d4bff;
+                font-size: 1.4rem;
+                line-height: 1;
+            }
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+    }
+}
+
+// section foq 
+
+.faq {
+    padding: 6rem 0;
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    &-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #c0c1c2;
+        }
+    }
+
+    &-list {
+        border-top: 1px solid v.$blue;
+    }
+
+    &-item {
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    &-question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 1.4rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+
+        &:hover {
+            color: #0d4bff;
+        }
+    }
+
+    &-icon {
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid #111827;
+        border-bottom: 2px solid #111827;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease;
+    }
+
+    &-answer {
+        max-height: 0; 
+        padding-top: 1rem;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+
+        p {
+            padding-bottom: 1.4rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d3d1d1;
+        }
+    }
+    .active {
+        .faq-answer {
+    max-height: 0; 
+    overflow: hidden;
+        }
+
+        .faq-icon {
+            transform: rotate(-135deg);
+            border-color: #0d4bff;
+        }
+    }
+}
+

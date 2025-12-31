@@ -1,5 +1,114 @@
 @use "variables" as v;
 
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 34px;
+    height: 34px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 900px;
+    background: v.$glass-bg;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px 24px;
+    z-index: 9999;
+    animation: fadeUp v.$anim-medium v.$ease-smooth;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        color:  v.$muted;
+        line-height: 1.5;
+
+        a {
+            color: v.$cyan;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Botones reutilizables */
+.btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all v.$anim-fast v.$ease-soft;
+
+    &.primary {
+        background: v.$cta-bg;
+        color: v.$white;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(45,106,255,0.35);
+        }
+    }
+
+    &.secondary {
+        background: transparent;
+        color: v.$muted;
+        border: 1px solid rgba(255,255,255,0.2);
+
+        &:hover {
+            color: v.$white;
+            border-color: rgba(255,255,255,0.4);
+        }
+    }
+}
+
+
 // hero de sitio web
 .hero {
     position: relative;
@@ -8,10 +117,10 @@
     overflow: hidden;
     z-index: 10;
     display: flex;
-    gap: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 1.5rem; 
     animation: fadeIn 1s ease forwards;
 }
 
@@ -25,26 +134,28 @@
 }
 
 .hero-content {
+    max-width: 1200px;
+    width: 100%;
     position: relative;
     z-index: 1;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    gap: 1.5rem;
 }
 
 .hero-inner {
     max-width: v.$max-width;
-    padding: 0 20px;
     animation: fadeUp 1s v.$ease-smooth forwards;
 }
 
 .kicker {
     color: v.$cyan;
     font-weight: 700;
+    margin-top: 40px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -60,10 +171,43 @@
 }
 
 .hero-title {
-    font-size: clamp(28px, 6vw, 56px);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
-    margin-bottom: 20px;
-    animation: fadeUp 0.8s v.$ease-smooth forwards;
+    line-height: 1.1;
+    color: v.$white;
+    gap: 0.75rem;
+    text-align: center;
+
+    .rotating-word {
+        display: inline-flex;
+        gap: 0.02em;
+        margin-left: 0.3em;
+        padding: 0.18em 0.4em;
+
+        background-color: v.$cyan;
+        color: v.$charcoal;
+        border-radius: 0.35rem;
+
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .char {
+        display: inline-block;
+        transform: translateY(100%);
+        opacity: 0;
+
+        transition:
+            transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.6s ease;
+    }
+    .rotating-word.is-visible .char {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .rotating-word.is-hidden .char {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
 }
 
 .hero-sub {
@@ -76,16 +220,17 @@
 }
 
 .cta-wrap {
+    padding: 30px 1.5rem;
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .btn-cta {
     background: v.$cta-bg;
     border: none;
-    padding: 18px 34px;
+    padding: 10px 34px;
     border-radius: 999px;
     font-weight: 700;
     cursor: pointer;
@@ -119,11 +264,11 @@
 }
 
 .pills {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -132,7 +277,7 @@
     border-radius: 28px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.92rem;
+    font-size: 1rem;
     transition:
         transform 0.25s v.$ease-soft,
         background 0.25s ease;
@@ -148,7 +293,7 @@
 .v-section-modulos {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 80vh;   
     overflow: hidden;
     padding: 120px 20px;
     color: v.$text;
@@ -359,6 +504,7 @@
     }
 }
 
+
 .clients-section {
     padding: 100px 20px;
     text-align: center;
@@ -385,56 +531,38 @@
 
 .clients-slider {
     overflow: hidden;
-    max-width: 1100px;
-    margin: 0 auto 40px;
+    width: 100%;
+    position: relative;
 }
 
 .clients-track {
     display: flex;
-    transition: transform 0.5s ease;
+    gap: 80px; /* espacio entre logos */
+    width: max-content;
+    align-items: center;
 }
 
 /* Logos */
 .client-logo {
-    min-width: 100%;
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .client-logo img {
-    max-width: 220px;
+    width: 180px;
     opacity: 0.4;
     filter: grayscale(100%);
     transition: opacity 0.3s ease, filter 0.3s ease;
+    will-change: transform;
 }
 
 .client-logo img:hover {
     opacity: 1;
     filter: grayscale(0%);
 }
-
-/* Dots */
-.clients-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #dcdcdc;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.dot.active {
-    background: #1e63ff;
-}
-
-/* CONTACTO */
+// section de contacto
 .contact-section {
     min-height: 100vh;
     padding: 100px 20px;
@@ -443,7 +571,7 @@
     align-items: center;
 }
 
-/* GRID PRINCIPAL */
+//grid del contacto
 #contacto {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -453,9 +581,7 @@
     width: 100%;
 }
 
-/* ===================== */
-/* INFO IZQUIERDA */
-/* ===================== */
+//info de contacto
 
 .contact-info {
     display: flex;
@@ -595,6 +721,19 @@
     }
 }
 
+
+
+/*-- Error mensaje recaptcha --*/
+.input-error {
+    color: #FF3B30;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 4px;
+    display: block;
+}
+
+
+
 //boton de submit
 
 .submit-button {
@@ -625,6 +764,28 @@
 }
 
 
+/*-- spinner carga encima de flecha --*/
+.spinner {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+
 //pequeños detalles visuales
 
 a {
@@ -634,3 +795,100 @@ a {
 strong {
     color: v.$white;
 }
+
+
+
+/* Fondo oscuro con glass */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn v.$anim-fast v.$ease-soft;
+}
+
+/* Tarjeta */
+.modal-card {
+    background: v.$glass-bg;
+    padding: 2.2rem 3rem;
+    border-radius: 22px;
+    border: 1px solid rgba(v.$cyan, 0.4);
+    text-align: center;
+    box-shadow: 0 0 40px rgba(v.$cyan, 0.25);
+    animation: scaleIn v.$anim-medium v.$ease-smooth;
+    max-width: 420px;
+    color: v.$text;
+}
+
+/* Icono */
+.check-circle {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 2px solid v.$cyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-size: 42px;
+    color: v.$cyan;
+    background: rgba(v.$cyan, 0.08);
+}
+
+/* Texto */
+.modal-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: v.$muted;
+    margin-bottom: 1.8rem;
+}
+
+/* Botones */
+.modal-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.btn-accept {
+    background: v.$cta-bg;
+    color: v.$white;
+    border: none;
+    padding: 0.65rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform v.$anim-fast v.$ease-smooth,
+                box-shadow v.$anim-fast v.$ease-smooth;
+}
+
+.btn-accept:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(v.$cyan, 0.35);
+}
+
+.btn-reject {
+    background: transparent;
+    border: 1px solid rgba(v.$white, 0.25);
+    color: v.$muted;
+    padding: 0.65rem 1.6rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all v.$anim-fast v.$ease-smooth;
+}
+
+.btn-reject:hover {
+    border-color: v.$white;
+    color: v.$white;
+}
+
+/* Oculto */
+.hidden {
+    display: none !important;
+}
+
+

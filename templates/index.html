@@ -9,7 +9,7 @@
     <!-- SEO Meta Tags -->
 
     <meta name="description"
-        content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales." />
+        content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales."/>
 
     <!-- link to css -->
 
@@ -20,6 +20,29 @@
 </head>
 
 <body>
+
+    <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <p>
+            Usamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar contenido.
+            <!-- <a href="/politica-de-cookies">Saber más</a> -->
+        </p>
+
+        <div class="cookie-actions">
+            <button class="btn secondary" id="rejectCookies">Rechazar</button>
+            <button class="btn primary" id="acceptCookies">Aceptar</button>
+        </div>
+    </div>
+    </div>
+
+
+<a href="https://wa.me/5491127592733?text=Hola!%20Quiero%20hacer%20una%20consulta"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Contactar por WhatsApp">
+    <img src="{{ url_for('static', filename='assets/whatsapp-ICON.PNG') }}" alt="WhatsApp">
+</a>
+
 
     <canvas id="fluid-canvas"></canvas>
 
@@ -44,11 +67,13 @@
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
                 ☰
             </button>
-            <a class="btn" href="#">Cotizá tu idea</a>
+            <a class="btn" href="#contacto">Cotizá tu idea</a>
         </div>
     </header>
 
     <main role="main">
+
+        <!-- hero de mi sitio web  -->
 
         <section id="inicio" class="hero">
             <div class="hero-inner" class="hero-content">
@@ -57,17 +82,19 @@
                     Conecta con tus clientes 24/7
                 </div>
 
-                <h1 class="hero-title">
-                    Desarrollo web a medida para hacer crecer tu negocio
-                </h1>
+<h1 class="hero-title">
+    Desarrollo web
+    <span class="rotating-word" id="rotating-text"></span>
+</h1>
+
+
 
                 <p class="hero-sub">
-                    Construimos sitios web optimizados y automatizaciones inteligentes para que tu negocio funcione de
-                    forma más rápida y eficiente.
+Construimos sitios web optimizados y soluciones digitales inteligentes que combinan diseño, rendimiento y automatización, ayudando a que tu negocio funcione de forma más rápida, eficiente y escalable, ahorrando tiempo y mejorando la experiencia de tus clientes.
                 </p>
 
                 <div class="cta-wrap">
-                    <button class="btn-cta">Cotizá tu idea →</button>
+                    <button class="btn-cta" href = "#contacto">Cotizá tu idea →</button>
                     <a class="btn-ghost" href="{{ url_for('portfolio') }}">Ver portfolio</a>
                 </div>
 
@@ -145,6 +172,10 @@
                 </div>
             </div>
         </section>
+
+        <!-- section de trabajo -->
+
+
         <section class="join-section">
             <div class="join-overlay"></div>
 
@@ -175,46 +206,46 @@
             <div class="clients-slider">
                 <div class="clients-track">
                     <div class="client-logo">
-                        <img src="" alt="Tate">
+                        <img src="{{ url_for('static', filename='assets/isologopucara.png') }}" alt="pucaraturismo">
                     </div>
                     <div class="client-logo">
-                        <img src="" alt="Cornaglia & Asociados">
+                        <img src="{{ url_for('static', filename='assets/direccion-icon.png') }}"
+                            alt="Cornaglia & Asociados">
                     </div>
                     <div class="client-logo">
-                        <img src="" alt="Ramos App">
+                        <img src="{{ url_for('static', filename='assets/direccion-icon.png') }}" alt="Ramos App">
                     </div>
                     <div class="client-logo">
-                        <img src="" alt="Guías Dels">
+                        <img src="{{ url_for('static', filename='assets/direccion-icon.png') }}" alt="Guías Dels">
                     </div>
                 </div>
             </div>
-
-            <div class="clients-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
         </section>
+
+
+        <!-- section de contacto -->
 
 
         <section id="contacto" class="contact-section">
             <div class="contact-info">
                 <div class="info-items">
                     <div class="info-item">
-                        <div class="icon"><img src="{{ url_for('static', filename='assets/direccion-icon.png') }}" alt=""></div>
+                        <div class="icon"><img src="{{ url_for('static', filename='assets/direccion-icon.png') }}"
+                                alt=""></div>
                         <h4>DIRECCIÓN</h4>
                         <p>Buenos Aires<br>ARGENTINA</p>
                     </div>
 
                     <div class="info-item">
-                        <div class="icon"><img src="{{ url_for('static', filename='assets/whatsapp-icon.png') }}" alt=""></div>
+                        <div class="icon"><img src="{{ url_for('static', filename='assets/whatsapp-icon.png') }}"
+                                alt=""></div>
                         <h4>WHATSAPP</h4>
                         <p>+54 9 1127592733</p>
                     </div>
 
                     <div class="info-item">
-                        <div class="icon"><img src="{{ url_for('static', filename='assets/gmail-icon.png') }}" alt=""></div>
+                        <div class="icon"><img src="{{ url_for('static', filename='assets/gmail-icon.png') }}" alt="">
+                        </div>
                         <h4>EMAIL</h4>
                         <p>vitadev03@gmail.com</p>
                     </div>
@@ -222,7 +253,7 @@
                 </div>
 
                 <div class="image-box">
-                <img src="{{ url_for('static', filename='assets/Contactoimagen2.png') }}" alt="">
+                    <img src="{{ url_for('static', filename='assets/Contactoimagen2.png') }}" alt="">
                 </div>
             </div>
             <div class="contact-container">
@@ -266,9 +297,20 @@
                             </select>
                         </div>
 
+
+
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LfqVjwsAAAAAGkX54DT_ZLAksJrYb0WPSfHrhrC"
+                                data-theme="dark" data-size="normal">
+                            </div>
+                            <span id="recaptcha-error" class="input-error"></span>
+                        </div>
+
+
                         <button type="submit" class="submit-button">
                             Enviar Mensaje
                             <span class="arrow-icon">→</span>
+                            <span class="spinner hidden"></span>
                         </button>
                     </form>
                 </div>
@@ -296,17 +338,21 @@
             <div class="footer-col social">
                 <h4 class="footer-title">Redes</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
                     <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}"
+                            alt="instagram-imagen">
                     </a>
                     <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="tiktok-imagen">
                     </a>
-                    <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}" alt=""></a>
-                        <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}" alt=""></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev.+Me+comunico+para+solicitar+informaci%C3%B3n+sobre+sus+servicios.+Quedo+atento%2Fa+a+su+respuesta.+Muchas+gracias&type=phone_number&app_absent=0"
+                        target="_blank">
+                        <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}"
+                            alt="whatsapp-imagen"></a>
+                    <a href="https://mail.google.com/mail/?view=cm&to=vitadev03@gmail.com&su=Consulta%20sobre%20servicios&body=Estimado/a%20VitaDev:%0D%0A%0D%0AMe%20comunico%20con%20usted%20para%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20que%20ofrece.%0D%0A%0D%0AQuedo%20atento/a%20a%20su%20respuesta.%0D%0AMuchas%20gracias%20por%20su%20tiempo.%0D%0A%0D%0ASaludos%20cordiales"
+                        target="_blank">
+                        <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}"
+                            alt="gmail-imagen"></a>
                 </div>
             </div>
         </div>
@@ -315,9 +361,23 @@
             <p>VitaDev © 2025 — Desarrollo Web a Medida</p>
         </div>
     </footer>
+
+
+    <!-- Modal éxito -->
+    <div id="modal-exito" class="modal hidden">
+        <div class="modal-card">
+            <div class="check-circle">✓</div>
+            <p class="modal-text">Formulario enviado</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/clients-slider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cookie-banner.js') }}"></script>
     <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/clients-slider.js') }}"></script>
+
 
 </body>
 

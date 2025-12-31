@@ -7,9 +7,25 @@
     <title>Sobre Nosotros - VitaDev</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
+
+</script>
+
+
 </head>
 
 <body>
+
+<a href="https://wa.me/5491127592733?text=Hola!%20Quiero%20hacer%20una%20consulta"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Contactar por WhatsApp">
+    <img src="{{ url_for('static', filename='assets/whatsapp-ICON.PNG') }}" alt="WhatsApp">
+</a>
+
+    
+    <canvas id="fluid-canvas"></canvas>
+
+    <div class="bg-wrap" aria-hidden="true"></div>
     <header class="nav-glass" role="banner" aria-label="Navegación principal">
         <div class="nav-left">
             <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
@@ -18,85 +34,256 @@
         </div>
 
         <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
-            <a href="{{ url_for('home') }}">Inicio</a>
-            <a href="{{ url_for('home') }}">Nuestras soluciones</a>
-            <a href="{{ url_for('home') }}">Contacto</a>
+            <a href="{{ url_for('home') }}#inicio">Inicio</a>
+            <a href="{{ url_for('home') }}#soluciones">Nuestras soluciones</a>
+            <a href="{{ url_for('home') }}#contacto">Contacto</a>
             <a href="{{ url_for('portfolio') }}">Portfolio</a>
             <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
         </nav>
-
 
         <div class="nav-right">
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
                 ☰
             </button>
-            <a class="btn" href="#">Cotizá tu idea</a>
+            <a class="btn" href="#contacto">Cotizá tu idea</a>
         </div>
     </header>
     <main>
-    <section class="about reveal">
-        <div class="about__container">
-            <header class="about__header">
-                <h2>¿Quiénes somos?</h2>
-                <span class="about__divider"></span>
+        <section class="about reveal">
+            <div class="about__container">
+                <header class="about__header">
+                    <h2>¿Quiénes somos?</h2>
+                    <span class="about__divider"></span>
 
-                <p>
-                    Brithers es una empresa multinacional de <strong>desarrollo de software</strong>
-                    que se formó hace más de 20 años a partir de la fusión de dos destacadas startup
-                    <em>Carvear</em> y <em>Bortic</em>, la primera orientada al desarrollo web mientras
-                    que la segunda al móvil.
-                </p>
-
-                <p>
-                    Somos un equipo de profesionales con diferentes habilidades y experiencias,
-                    programadores, diseñadores gráficos y desarrolladores que disfrutamos nuestro
-                    trabajo reflejándolo en los buenos resultados obtenidos por nuestra empresa.
-                </p>
-
-                <p>
-                    Acompañamos a nuestros clientes garantizando productos de calidad, diseño único
-                    y soluciones seguras, siempre alineadas a las últimas tendencias tecnológicas.
-                </p>
-            </header>
-
-            <div class="about__cards">
-                <article class="card reveal reveal-delay" style="--delay: 0.1s">
-                    <img src="" alt="Nuestra Misión">
-                    <div class="card__icon">🎯</div>
-                    <h3>Nuestra Misión</h3>
                     <p>
-                        Crear soluciones confiables e innovadoras de software que permitan a empresas
-                        y personas organizar su información de forma eficiente, segura y accesible.
+                        <strong>VitaDev</strong> es una agencia de desarrollo digital especializada en la creación de
+                        <strong>sitios web profesionales</strong>, <strong>plataformas a medida</strong> y
+                        <strong>soluciones tecnológicas escalables</strong>, orientadas a potenciar el crecimiento de
+                        marcas y empresas en el entorno digital.
                     </p>
-                </article>
 
-                <article class="card reveal reveal-delay" style="--delay: 0.25s">
-                    <img src="" alt="Nuestra Visión">
-                    <div class="card__icon">👁</div>
-                    <h3>Nuestra Visión</h3>
                     <p>
-                        Ser referentes en el campo de la información ofreciendo soluciones que
-                        impulsen la productividad y mejoren la organización empresarial y personal.
+                        Contamos con un equipo multidisciplinario de <strong>desarrolladores web</strong> y
+                        <strong>diseñadores UI/UX</strong> con experiencia en tecnologías modernas, enfocados en
+                        rendimiento, usabilidad y conversión. Trabajamos con código limpio, arquitectura optimizada
+                        y diseño funcional para obtener resultados reales.
                     </p>
-                </article>
 
-                <article class="card reveal reveal-delay" style="--delay: 0.4s">
-                    <img src="" alt="Nuestros Valores">
-                    <div class="card__icon">📋</div>
-                    <h3>Nuestros Valores</h3>
-                    <ul>
-                        <li>Innovación</li>
-                        <li>Compromiso</li>
-                        <li>Eficacia</li>
-                        <li>Responsabilidad</li>
-                        <li>Trabajo en equipo</li>
-                    </ul>
-                </article>
+                    <h2>Nuestro enfoque</h2>
+                    <p>
+                        Acompañamos a nuestros clientes en cada etapa del proyecto, desde la planificación y el diseño
+                        hasta el desarrollo y la puesta en producción. Garantizamos
+                        <strong>soluciones personalizadas</strong>, <strong>seguras</strong> y alineadas con las
+                        <strong>últimas tendencias tecnológicas</strong> y estándares de calidad.
+                    </p>
+                </header>
+
+                <div class="about__cards">
+                    <article class="tarjet reveal reveal-delay" style="--delay: 0.1s">
+                        <img src="{{ url_for('static', filename='assets/mision-icon.png') }}" alt="Nuestra Misión">
+                        <div class="tarjet__icon"></div>
+                        <h3>Nuestra Misión</h3>
+                        <p>
+                            Crear soluciones confiables e innovadoras de software que permitan a empresas
+                            y personas organizar su información de forma eficiente, segura y accesible.
+                        </p>
+                    </article>
+
+                    <article class="tarjet reveal reveal-delay" style="--delay: 0.25s">
+                        <img src="{{ url_for('static', filename='assets/vision-icon.png') }}" alt="Nuestra Visión">
+                        <div class="tarjet__icon"></div>
+                        <h3>Nuestra Visión</h3>
+                        <p>
+                            Ser referentes en el campo de la información ofreciendo soluciones que
+                            impulsen la productividad y mejoren la organización empresarial y personal.
+                        </p>
+                    </article>
+
+                    <article class="tarjet reveal reveal-delay" style="--delay: 0.4s">
+                        <img src="{{ url_for('static', filename='assets/valor-icon.png') }}" alt="Nuestros Valores">
+                        <div class="tarjet__icon"></div>
+                        <h3>Nuestros Valores</h3>
+                        <ul>
+                            <li>Innovación</li>
+                            <li>Compromiso</li>
+                            <li>Eficacia</li>
+                            <li>Responsabilidad</li>
+                            <li>Trabajo en equipo</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <section id="proceso-vitadev" class="process">
+            <div class="container">
+
+                <header class="process-header">
+                    <h2>¿Cómo logramos un desarrollo exitoso?</h2>
+                    <p>Principios clave que aplicamos en VitaDev para crear productos digitales eficientes y escalables.
+                    </p>
+                </header>
+
+                <div class="process-grid">
+
+                    <!-- Columna izquierda -->
+                    <div class="process-column">
+                        <article class="process-item">
+                            <h3>Velocidad de carga</h3>
+                            <p>
+                                Optimizamos cada proyecto para garantizar tiempos de carga rápidos mediante
+                                diseño eficiente, imágenes optimizadas y código limpio, mejorando la experiencia
+                                del usuario y el posicionamiento SEO.
+                            </p>
+                        </article>
+
+                        <article class="process-item">
+                            <h3>Compatibilidad</h3>
+                            <p>
+                                Desarrollamos sitios y aplicaciones compatibles con los principales navegadores
+                                y dispositivos, asegurando una correcta visualización en desktop, tablet y mobile.
+                            </p>
+                        </article>
+
+                        <article class="process-item">
+                            <h3>Información clara y precisa</h3>
+                            <p>
+                                Estructuramos el contenido para que el usuario encuentre exactamente lo que necesita,
+                                priorizando claridad, jerarquía visual y optimización para motores de búsqueda.
+                            </p>
+                        </article>
+
+                        <article class="process-item">
+                            <h3>Seguridad</h3>
+                            <p>
+                                Implementamos buenas prácticas de seguridad para proteger la información,
+                                garantizando estabilidad, respaldo de datos y continuidad operativa.
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Columna derecha -->
+                    <div class="process-column">
+                        <article class="process-item">
+                            <h3>Estructura de la información</h3>
+                            <p>
+                                Diseñamos arquitecturas de información escalables y actualizables,
+                                alineadas a los objetivos del negocio y a la experiencia del usuario.
+                            </p>
+                        </article>
+
+                        <article class="process-item">
+                            <h3>Tecnología</h3>
+                            <p>
+                                Utilizamos tecnologías modernas y frameworks actuales para crear soluciones
+                                robustas, eficientes y preparadas para crecer.
+                            </p>
+                        </article>
+
+                        <article class="process-item">
+                            <h3>Interactividad</h3>
+                            <p>
+                                Incorporamos interacciones dinámicas que mejoran la experiencia del usuario
+                                y fomentan una mayor participación y conversión.
+                            </p>
+                        </article>
+
+                        <article class="process-item">
+                            <h3>Aspecto visual</h3>
+                            <p>
+                                Creamos interfaces profesionales alineadas a la identidad de marca,
+                                transmitiendo confianza, modernidad y credibilidad.
+                            </p>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- section foq -->
+        <section id="faq-vitadev" class="faq">
+            <div class="container">
+
+                <header class="faq-header">
+                    <h2>Preguntas frecuentes</h2>
+                    <p>Conocé más sobre VitaDev y nuestra forma de trabajar</p>
+                </header>
+
+                <div class="faq-list">
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            ¿Qué es VitaDev?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                VitaDev es una agencia de desarrollo web especializada en crear soluciones digitales
+                                modernas, escalables y orientadas a resultados para empresas y emprendedores.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            ¿Qué servicios ofrece VitaDev?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Ofrecemos desarrollo web a medida, diseño UI/UX, optimización SEO,
+                                landing pages, sistemas personalizados y mantenimiento técnico.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            ¿Dónde trabaja VitaDev?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Trabajamos de forma remota, brindando servicios a clientes de Argentina
+                                y otros países, con comunicación directa y procesos claros.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            ¿Cuál es la misión de VitaDev?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Nuestra misión es ayudar a marcas y negocios a crecer digitalmente
+                                mediante soluciones tecnológicas eficientes, seguras y bien diseñadas.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            ¿Cómo garantiza VitaDev la calidad de sus proyectos?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Aplicamos buenas prácticas de desarrollo, testing, control de versiones
+                                y revisión constante para asegurar calidad, rendimiento y escalabilidad.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
     </main>
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-inner container">
             <div class="footer-col">
                 <h4 class="footer-title">Servicios</h4>
@@ -115,13 +302,21 @@
             <div class="footer-col social">
                 <h4 class="footer-title">Redes</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
                     <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}"
+                            alt="instagram-imagen">
                     </a>
                     <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="tiktok-imagen">
                     </a>
+                    <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev.+Me+comunico+para+solicitar+informaci%C3%B3n+sobre+sus+servicios.+Quedo+atento%2Fa+a+su+respuesta.+Muchas+gracias&type=phone_number&app_absent=0"
+                        target="_blank">
+                        <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}"
+                            alt="whatsapp-imagen"></a>
+                    <a href="https://mail.google.com/mail/?view=cm&to=vitadev03@gmail.com&su=Consulta%20sobre%20servicios&body=Estimado/a%20VitaDev:%0D%0A%0D%0AMe%20comunico%20con%20usted%20para%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20que%20ofrece.%0D%0A%0D%0AQuedo%20atento/a%20a%20su%20respuesta.%0D%0AMuchas%20gracias%20por%20su%20tiempo.%0D%0A%0D%0ASaludos%20cordiales"
+                        target="_blank">
+                        <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}"
+                            alt="gmail-imagen"></a>
                 </div>
             </div>
         </div>
@@ -131,9 +326,12 @@
         </div>
     </footer>
 
-    <script src="js/main.js" defer></script>
-    <script src="js/nav.js" defer></script>
-    <script src="js/scroll-reveal.js" defer></script>
+    <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foq.js') }}"></script>
+
+
 
 
 </body>

@@ -37,7 +37,8 @@ navToggle.addEventListener("click", () => {
     }
 });
 
-// Efecto de scroll en header
+// Efecto de scroll en header navegación
+
 const header = document.querySelector("header.nav-glass");
 
 window.addEventListener("scroll", () => {
@@ -49,24 +50,52 @@ window.addEventListener("scroll", () => {
         header.style.boxShadow = "none";
     }
 })
+
+// no tocar de aquí hacia abajo 
+
 const container = document.getElementById('container');
 const illuminatedItem = document.querySelector('.illuminated-item');
 const flashlight = document.querySelector('.flashlight');
 const blurFilter = document.querySelector('#blur-filter feGaussianBlur');
 
-// You can customize the intensity of the blur filter and light radius 
-const filterIntensity = 100;
-const lightRadius = 500;
-//-----------------------------------------------------
-const flashlightOffset = lightRadius / 2;
+if (container && illuminatedItem && flashlight && blurFilter) {
+    const filterIntensity = 100;
+    const lightRadius = 500;
+    const flashlightOffset = lightRadius / 2;
 
-blurFilter.setAttribute('stdDeviation', filterIntensity);
-flashlight.style.width = flashlight.style.height = `${lightRadius}px`;
+    blurFilter.setAttribute('stdDeviation', filterIntensity);
+    flashlight.style.width = flashlight.style.height = `${lightRadius}px`;
 
-const followMouseFlashlight = ({ clientX, clientY }) => {
-    const { left, top } = illuminatedItem.getBoundingClientRect();
-    flashlight.style.left = `${clientX - left - flashlightOffset}px`;
-    flashlight.style.top = `${clientY - top - flashlightOffset}px`;
-};
+    const followMouseFlashlight = ({ clientX, clientY }) => {
+        const { left, top } = illuminatedItem.getBoundingClientRect();
+        flashlight.style.left = `${clientX - left - flashlightOffset}px`;
+        flashlight.style.top = `${clientY - top - flashlightOffset}px`;
+    };
 
-container.addEventListener('mousemove', followMouseFlashlight);
+    container.addEventListener('mousemove', followMouseFlashlight);
+}
+// hasta aca
+
+//whatsapp
+
+const whatsapp = document.querySelector('.whatsapp-float');
+
+let position = 0;
+let direction = 1;
+const speed = 0.7;
+const limit = 10;
+
+function floatAnimation() {
+    position += speed * direction;
+
+    if (position >= limit || position <= -limit) {
+        direction *= -1;
+    }
+
+    whatsapp.style.transform = `translateY(${position}px)`;
+    requestAnimationFrame(floatAnimation);
+}
+
+floatAnimation();
+//fin whatsapp
+
