@@ -2,7 +2,6 @@
 
 .portfolio {
     padding: 170px 0;
-    background-color: v.$bg-color;
 
     &__container {
         max-width: v.$max-width;
@@ -18,7 +17,7 @@
         align-items: center;
         text-align: center;
         justify-content: center;
-        
+
 
         &::after {
             content: "";
@@ -124,5 +123,92 @@ p {
         transform: translateY(0);
     }
 }
+
+.proceso-job {
+    padding: 120px 20px;
+    color: v.$text;
+
+    &__container {
+        max-width: v.$max-width;
+        margin: 0 auto;
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: 72px;
+
+        h2 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 600;
+        }
+
+        p {
+            margin-top: 12px;
+            color: v.$muted;
+            font-size: 1rem;
+        }
+    }
+
+    &__steps {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 520px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__step {
+
+        
+        border-radius: 20px;
+        padding: 40px 28px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+        }
+
+        h3 {
+            margin: 18px 0 10px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: v.$muted;
+            line-height: 1.6;
+        }
+    }
+
+    &__icon img {
+        width: 100px;
+    }
+
+    &__time {
+        display: inline-block;
+        margin-top: 18px;
+        font-size: 0.85rem;
+        color: v.$cyan;
+        font-weight: 500;
+    }
+}
+
+/*.polla {
+    width: 32px;
+    height: 2px;
+    background-color: blue;
+    margin: 0 auto;
+}*/
+
+
 
 

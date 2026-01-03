@@ -10,120 +10,175 @@
 
 <body>
 
-    <a href="https://wa.me/5491127592733?text=Hola!%20Quiero%20hacer%20una%20consulta"
-    class="whatsapp-float"
-    target="_blank"
-    aria-label="Contactar por WhatsApp">
-    <img src="{{ url_for('static', filename='assets/whatsapp-ICON.PNG') }}" alt="WhatsApp">
-</a>
+    <canvas id="fluid-canvas"></canvas>
+
+    <a href="https://wa.me/5491127592733?text=Hola!%20Quiero%20hacer%20una%20consulta" class="whatsapp-float"
+        target="_blank" aria-label="Contactar por WhatsApp">
+        <img src="{{ url_for('static', filename='assets/whatsapp-ICON.PNG') }}" alt="WhatsApp">
+    </a>
 
 
     <header>
-    <div class="bg-wrap" aria-hidden="true"></div>
+        <div class="bg-wrap" aria-hidden="true"></div>
 
-    <header class="nav-glass" role="banner" aria-label="Navegación principal">
-        <div class="nav-left">
-            <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
-                <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
-            </a>
-        </div>
-
-        <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
-            <a href="{{ url_for('home') }}#inicio">Inicio</a>
-            <a href="{{ url_for('home') }}#soluciones">Nuestras soluciones</a>
-            <a href="{{ url_for('home') }}#contacto">Contacto</a>
-            <a href="{{ url_for('portfolio') }}">Portfolio</a>
-            <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
-        </nav>
-
-        <div class="nav-right">
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
-                ☰
-            </button>
-            <a class="btn" href="{{ url_for('home') }}#contacto">Cotizá tu idea</a>
-        </div>
-    </header>
-
-    <main>
-    <section class="portfolio">
-        <div class="portfolio__container">
-            <h2 class="portfolio__title">Nuestros Proyectos</h2>
-
-            <div class="portfolio__tabs">
-                <button class="tab active">Desarrollo Web</button>
+        <header class="nav-glass" role="banner" aria-label="Navegación principal">
+            <div class="nav-left">
+                <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
+                    <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}"
+                        alt="Logo VitaDev" />
+                </a>
             </div>
 
-            <div class="portfolio__grid">
-                <article class="card">
-                    <div class="card__logo"><a href="https://pucaraturismo.com.ar/" target="_blank"><img src="{{ url_for('static', filename='assets/isologopucara.png') }}" alt="Logo Pucara Turismo"></a></div>
-                    <h3>Pucara Turismo</h3>
-                    <p>Desarrollo web para empresa de turismo</p>
-                </article>
+            <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
+                <a href="{{ url_for('home') }}#inicio">Inicio</a>
+                <a href="{{ url_for('home') }}#soluciones">Nuestras soluciones</a>
+                <a href="{{ url_for('home') }}#contacto">Contacto</a>
+                <a href="{{ url_for('portfolio') }}">Portfolio</a>
+                <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
+            </nav>
 
-                <article class="card">
-                    <div class="card__logo"><a href="https://coderhouse-dreadmari-francovitaller.vercel.app/" target="_blank"><img src="{{ url_for('static', filename='assets/isologodmi.png') }}" alt="Logo Dread Mar I"></a></div>
-                    <h3>Dread Mar I</h3>
-                    <p>Sitio Institucional</p>
-                </article>
-
-                <article class="card">
-                    <div class="card__logo"><a href="https://xbox-web.netlify.app/" target="_blank"><img src="{{ url_for('static', filename='assets/isologoxbox.png') }}" alt="Logo Page Xbox"></a></div>
-                    <h3>Page Xbox</h3>
-                    <p>Rebranding Xbox</p>
-                </article>
+            <div class="nav-right">
+                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
+                    ☰
+                </button>
+                <a class="btn" href="{{ url_for('home') }}#contacto">Cotizá tu idea</a>
             </div>
-        </div>
-    </section>
-    </main>
+        </header>
 
-    <footer class="footer">
-        <div class="footer-inner container">
-            <div class="footer-col">
-                <h4 class="footer-title">Servicios</h4>
-                <p>Desarrollo Web</p>
-                <p>Aplicaciones a Medida</p>
-                <p>Automatizaciones</p>
-            </div>
+        <main>
+            <section class="portfolio">
+                <div class="portfolio__container">
+                    <h2 class="portfolio__title">Nuestros Proyectos</h2>
 
-            <div class="footer-col">
-                <h4 class="footer-title">Contacto</h4>
-                <p>vitadev03@gmail.com</p>
-                <p>+54 11 2759 2733</p>
-                <p>Argentina</p>
-            </div>
+                    <div class="portfolio__tabs">
+                        <button class="tab active">Desarrollo Web</button>
+                    </div>
 
-            <div class="footer-col social">
-                <h4 class="footer-title">Redes</h4>
-                <div class="social-icons">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
-                    <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
-                    </a>
-                    <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
-                    </a>
-                    <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev.+Me+comunico+para+solicitar+informaci%C3%B3n+sobre+sus+servicios.+Quedo+atento%2Fa+a+su+respuesta.+Muchas+gracias&type=phone_number&app_absent=0"
-                        target="_blank">
-                        <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}"
-                            alt="whatsapp-imagen"></a>
-                    <a href="https://mail.google.com/mail/?view=cm&to=vitadev03@gmail.com&su=Consulta%20sobre%20servicios&body=Estimado/a%20VitaDev:%0D%0A%0D%0AMe%20comunico%20con%20usted%20para%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20que%20ofrece.%0D%0A%0D%0AQuedo%20atento/a%20a%20su%20respuesta.%0D%0AMuchas%20gracias%20por%20su%20tiempo.%0D%0A%0D%0ASaludos%20cordiales"
-                        target="_blank">
-                        <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}"
-                            alt="gmail-imagen"></a>
+                    <div class="portfolio__grid">
+                        <article class="card">
+                            <div class="card__logo"><a href="https://pucaraturismo.com.ar/" target="_blank"><img
+                                        src="{{ url_for('static', filename='assets/isologopucara.png') }}"
+                                        alt="Logo Pucara Turismo"></a></div>
+                            <h3>Pucara Turismo</h3>
+                            <p>Desarrollo web para empresa de turismo</p>
+                        </article>
+
+                        <article class="card">
+                            <div class="card__logo"><a href="https://coderhouse-dreadmari-francovitaller.vercel.app/"
+                                    target="_blank"><img src="{{ url_for('static', filename='assets/isologodmi.png') }}"
+                                        alt="Logo Dread Mar I"></a></div>
+                            <h3>Dread Mar I</h3>
+                            <p>Sitio Institucional</p>
+                        </article>
+
+                        <article class="card">
+                            <div class="card__logo"><a href="https://xbox-web.netlify.app/" target="_blank"><img
+                                        src="{{ url_for('static', filename='assets/isologoxbox.png') }}"
+                                        alt="Logo Page Xbox"></a></div>
+                            <h3>Page Xbox</h3>
+                            <p>Rebranding Xbox</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="proceso-job">
+                <div class="proceso-job__container">
+                    <header class="proceso-job__header">
+                        <h2>Nuestro Proceso de Trabajo</h2>
+                        <p></p>
+                    </header>
+
+                    <div class="proceso-job__steps">
+                        <div class="proceso-job__step">
+                            <div class="proceso-job__icon">
+                                <img src="{{ url_for('static', filename='assets/consulta-imagen.png') }}" alt="">
+                            </div>
+                            <h3>Consulta Inicial</h3>
+                            <p>Hablamos de tu proyecto y objetivos</p>
+                            <span class="proceso-job__time">1 día</span>
+                        </div>
+                        <!-- <div class="polla"></div> -->
+                        <div class="proceso-job__step">
+                            <div class="proceso-job__icon">
+                                <img src="{{ url_for('static', filename='assets/propuesta-comercial-imagen.png') }}" alt="">
+                            </div>
+                            <h3>Propuesta</h3>
+                            <p>Presupuesto detallado y planificación</p>
+                            <span class="proceso-job__time">1–3 días</span>
+                        </div>
+
+                        <div class="proceso-job__step">
+                            <div class="proceso-job__icon">
+                                <img src="{{ url_for('static', filename='assets/desarrollo-imagen.png') }}" alt="">
+                            </div>
+                            <h3>Desarrollo</h3>
+                            <p>Construcción de tu sitio web</p>
+                            <span class="proceso-job__time">7–25 días</span>
+                        </div>
+
+                        <div class="proceso-job__step">
+                            <div class="proceso-job__icon">
+                                <img src="{{ url_for('static', filename='assets/puesta-en-marcha-imagen.png') }}" alt="">
+                            </div>
+                            <h3>Entrega</h3>
+                            <p>Lanzamiento </p>
+                            <span class="process__time"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner container">
+                <div class="footer-col">
+                    <h4 class="footer-title">Servicios</h4>
+                    <p>Desarrollo Web</p>
+                    <p>Aplicaciones a Medida</p>
+                    <p>Automatizaciones</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contacto</h4>
+                    <p>vitadev03@gmail.com</p>
+                    <p>+54 11 2759 2733</p>
+                    <p>Argentina</p>
+                </div>
+
+                <div class="footer-col social">
+                    <h4 class="footer-title">Redes</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
+                        <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
+                            <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                        </a>
+                        <a href="https://www.tiktok.com/@_vitadev" target="_blank">
+                            <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev.+Me+comunico+para+solicitar+informaci%C3%B3n+sobre+sus+servicios.+Quedo+atento%2Fa+a+su+respuesta.+Muchas+gracias&type=phone_number&app_absent=0"
+                            target="_blank">
+                            <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}"
+                                alt="whatsapp-imagen"></a>
+                        <a href="https://mail.google.com/mail/?view=cm&to=vitadev03@gmail.com&su=Consulta%20sobre%20servicios&body=Estimado/a%20VitaDev:%0D%0A%0D%0AMe%20comunico%20con%20usted%20para%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20que%20ofrece.%0D%0A%0D%0AQuedo%20atento/a%20a%20su%20respuesta.%0D%0AMuchas%20gracias%20por%20su%20tiempo.%0D%0A%0D%0ASaludos%20cordiales"
+                            target="_blank">
+                            <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}"
+                                alt="gmail-imagen"></a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer-bottom">
-            <p>VitaDev © 2025 — Desarrollo Web a Medida</p>
-        </div></footer>
+            <div class="footer-bottom">
+                <p>VitaDev © 2025 — Desarrollo Web a Medida</p>
+            </div>
+        </footer>
 
-    <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/foq.js') }}"></script>
-    <script src="js/main.js"></script>
-    <script src="portfolio-title-shine.js"></script>
+        <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/foq.js') }}"></script>
+        <script src="js/main.js"></script>
+        <script src="portfolio-title-shine.js"></script>
 
 </body>
 

@@ -1024,7 +1024,6 @@ header.nav-glass {
 }
 .portfolio {
   padding: 170px 0;
-  background-color: #000000;
 }
 .portfolio__container {
   max-width: 1200px;
@@ -1132,6 +1131,79 @@ p {
     transform: translateY(0);
   }
 }
+.proceso-job {
+  padding: 120px 20px;
+  color: #e9eef0;
+}
+.proceso-job__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.proceso-job__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.proceso-job__header h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+}
+.proceso-job__header p {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+.proceso-job__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  .proceso-job__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .proceso-job__steps {
+    grid-template-columns: 1fr;
+  }
+}
+.proceso-job__step {
+  border-radius: 20px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.proceso-job__step:hover {
+  transform: translateY(-8px);
+}
+.proceso-job__step h3 {
+  margin: 18px 0 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.proceso-job__step p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+.proceso-job__icon img {
+  width: 100px;
+}
+.proceso-job__time {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #00E0A1;
+  font-weight: 500;
+}
+
+/*.polla {
+    width: 32px;
+    height: 2px;
+    background-color: blue;
+    margin: 0 auto;
+}*/
 .about {
   padding: 6rem 1.5rem;
   animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
