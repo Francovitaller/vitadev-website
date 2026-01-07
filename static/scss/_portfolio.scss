@@ -1,71 +1,5 @@
 @use "variables" as v;
 
-.portfolio {
-    padding: 170px 0;
-
-    &__container {
-        max-width: v.$max-width;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    &__title {
-        font-size: 2.4rem;
-        margin-bottom: 32px;
-        color: v.$white;
-        position: relative;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-
-
-        &::after {
-            content: "";
-            width: 40px;
-            height: 3px;
-            background: v.$blue;
-            display: block;
-            margin: 12px auto 0;
-        }
-    }
-
-    &__tabs {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        margin-bottom: 48px;
-
-        .tab {
-            padding: 10px 18px;
-            background: transparent;
-            border: 1px solid v.$gray;
-            color: v.$gray;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &.active {
-                background: v.$blue;
-                color: v.$white;
-                border-color: v.$blue;
-            }
-
-            &:hover {
-                background: v.$blue;
-                color: v.$white;
-                border-color: v.$white;
-            }
-        }
-    }
-
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 32px;
-        object-fit: cover;
-    }
-}
-
 .card {
     position: relative;
     background: v.$glass-bg;
@@ -166,7 +100,7 @@ p {
 
     &__step {
 
-        
+
         border-radius: 20px;
         padding: 40px 28px;
         text-align: center;
@@ -202,13 +136,243 @@ p {
     }
 }
 
-/*.polla {
-    width: 32px;
-    height: 2px;
-    background-color: blue;
-    margin: 0 auto;
-}*/
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel__viewport {
+    height: 100%;
+}
+
+.carousel__track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel__slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, var(--overlay));
+}
+
+.carousel__content {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    max-width: 480px;
+    z-index: 2;
+}
+
+.carousel__content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.carousel__content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Controles */
+.carousel__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.3s;
+}
+
+.carousel__control:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel__control.prev {
+    left: 2rem;
+}
+
+.carousel__control.next {
+    right: 2rem;
+}
+
+/* Indicadores */
+.carousel__indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+    z-index: 6;
+}
+
+.carousel__indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carousel__indicators button.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
 
 
 
+// testimonios
 
+
+.flow {
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0;
+    overflow: hidden;
+    .flow__inner{
+        justify-content: center;
+        .flow__intro{
+            justify-content: center;
+            text-align: center;
+            h2{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.2rem;
+                padding-bottom: 60px;
+            }
+        }
+    }
+}
+
+/* ===== Rail ===== */
+
+.rail {
+    position: relative;
+    cursor: grab;
+    user-select: none;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+}
+
+/* ===== Track ===== */
+
+.rail__track {
+    display: flex;
+    gap: 2.5rem;
+    will-change: transform;
+}
+
+/* ===== Units ===== */
+
+.unit {
+    flex: 0 0 360px;
+    padding: 5rem;
+    background: v.$glass-bg;
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    color: var(--text-main);
+    animation: scaleIn v.$anim-medium v.$ease-smooth both;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    transition:
+        transform v.$anim-fast v.$ease-smooth,
+        box-shadow v.$anim-fast v.$ease-smooth;
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow:
+            0 8px 6px rgba(10, 207, 233, 0.959),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* ===== Unit Content ===== */
+
+.unit__title {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.unit__text {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+/* ===== Markers ===== */
+
+.markers {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.markers__track {
+    display: flex;
+    gap: 0.75rem;
+    transition: transform v.$anim-medium v.$ease-smooth;
+}
+
+.markers__track button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--text-soft);
+    opacity: 0.35;
+    cursor: pointer;
+
+    transition:
+        transform v.$anim-fast v.$ease-smooth,
+        opacity v.$anim-fast v.$ease-smooth,
+        background v.$anim-fast v.$ease-smooth;
+}
+
+.markers__track button.is-active {
+    background: var(--accent);
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+/* ===== Micro hint (opcional) ===== */
+
+.flow__hint {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: v.$muted;
+    animation: fadeIn v.$anim-slow v.$ease-soft both;
+}

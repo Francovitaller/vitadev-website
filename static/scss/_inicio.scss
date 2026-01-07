@@ -387,122 +387,131 @@
     opacity: 0.9;
 }
 
-/* trabaja con nostros */
 
 .join-section {
-    position: relative;
-    min-height: 50vh;
+    padding: clamp(80px, 10vw, 140px) 6vw;
+    background-color: transparent;
+}
+
+/* Contenedor general */
+.join-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+}
+
+/* Caja azul (card) */
+.join-card {
+    width: 100%;
+    max-width: 1300px;
+    padding: clamp(48px, 6vw, 80px);
     text-align: center;
-    background-image: url("../assets/imagenfondo.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+background:
+    radial-gradient(
+        1200px 400px at top center,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+    ),
+linear-gradient(
+    180deg,
+    rgba(25, 227, 166, 0.95),
+    rgba(25, 227, 166, 0.85)
+);
+
+    backdrop-filter: blur(20px);
+
+
     color: v.$white;
-    overflow: hidden;
-}
+    border-radius: 14px;
 
-.join-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-}
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
 
-.join-content {
     position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 40px 20px;
+    overflow: hidden;
+
+    
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.12),
+            transparent 60%
+        );
+        pointer-events: none;
+    }
 }
+
+//contenido
 
 .join-title {
-    font-size: clamp(28px, 5vw, 48px);
-    font-weight: 700;
+    font-size: clamp(32px, 4vw, 48px);
+color: #0b0f14; // charcoal profundo
+font-weight: 700;
+
     margin-bottom: 20px;
 }
 
 .join-text {
-    font-size: 16px;
-    line-height: 1.6;
-    opacity: 0.95;
     max-width: 720px;
-    margin: 0 auto 30px;
+    margin: 0 auto 36px;
+color: #0b0f14; // charcoal profundo
+font-weight: 700;
+
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.95;
 }
 
 .join-roles {
     list-style: none;
     padding: 0;
-    margin: 0 0 40px;
-
+    margin-bottom: 48px;
+opacity: 0.85;
     li {
+        color: #0b0f14; // charcoal profundo
+font-weight: 700;
+
         font-size: 15px;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         opacity: 0.9;
     }
 }
+
+//botom 
 
 .join-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 36px;
+
+    padding: 14px 40px;
     border-radius: 999px;
+
     font-weight: 700;
     text-decoration: none;
 
+    color: v.$charcoal;
+    border: 2px solid v.$charcoal;
     background: transparent;
-    color: v.$white;
-    border: 2px solid v.$white;
 
     transition:
-        transform 0.3s ease,
         background 0.3s ease,
-        color 0.3s ease;
-}
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
-.join-btn:hover {
-    background: v.$white;
-    color: v.$charcoal;
-    transform: translateY(-2px);
-}
-
-.blog-footer {
-    text-align: center;
-
-    .view-more-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 30px;
-        // Usamos tu variable de gradiente $cta-bg para el fondo del botón
-        background-image: v.$cta-bg;
-        color: v.$charcoal; // Texto oscuro sobre el CTA de color
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 30px;
-        font-size: 1.1em;
-        transition: transform 0.3s, opacity 0.3s;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            transform: scale(1.02);
-            opacity: 0.95;
-        }
-
-        .arrow-icon {
-            margin-left: 10px;
-            font-size: 1.2em;
-            transition: margin-left 0.3s;
-        }
-
-        &:hover .arrow-icon {
-            margin-left: 15px;
-        }
+    &:hover {
+        background: v.$charcoal;
+        color: v.$white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 }
+
 
 
 .clients-section {
@@ -537,7 +546,9 @@
 
 .clients-track {
     display: flex;
-    gap: 80px; /* espacio entre logos */
+    justify-content: center;
+    align-items: center;
+    gap: 90px; /* espacio entre logos */
     width: max-content;
     align-items: center;
 }
@@ -551,7 +562,7 @@
 }
 
 .client-logo img {
-    width: 180px;
+    width: 200px;
     opacity: 0.4;
     filter: grayscale(100%);
     transition: opacity 0.3s ease, filter 0.3s ease;

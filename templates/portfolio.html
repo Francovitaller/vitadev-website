@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Document</title>
+    <title>Portfolio - VitaDev</title>
 </head>
 
 <body>
@@ -46,41 +46,56 @@
         </header>
 
         <main>
-            <section class="portfolio">
-                <div class="portfolio__container">
-                    <h2 class="portfolio__title">Nuestros Proyectos</h2>
+            <section class="carousel" aria-label="Carrusel principal">
+                <div class="carousel__viewport">
+                    <div class="carousel__track">
 
-                    <div class="portfolio__tabs">
-                        <button class="tab active">Desarrollo Web</button>
-                    </div>
-
-                    <div class="portfolio__grid">
-                        <article class="card">
-                            <div class="card__logo"><a href="https://pucaraturismo.com.ar/" target="_blank"><img
-                                        src="{{ url_for('static', filename='assets/isologopucara.png') }}"
-                                        alt="Logo Pucara Turismo"></a></div>
-                            <h3>Pucara Turismo</h3>
-                            <p>Desarrollo web para empresa de turismo</p>
+                        <article class="carousel__slide active">
+                            <img src="{{ url_for('static', filename='assets/pucaratemplate.png') }}"
+                                alt="Fútbol competitivo">
+                            <div class="carousel__content">
+                                <h2>Competí al Máximo Nivel</h2>
+                                <p>Organizá y visualizá torneos de forma profesional.</p>
+                            </div>
                         </article>
 
-                        <article class="card">
-                            <div class="card__logo"><a href="https://coderhouse-dreadmari-francovitaller.vercel.app/"
-                                    target="_blank"><img src="{{ url_for('static', filename='assets/isologodmi.png') }}"
-                                        alt="Logo Dread Mar I"></a></div>
-                            <h3>Dread Mar I</h3>
-                            <p>Sitio Institucional</p>
+                        <article class="carousel__slide">
+                            <img src="{{ url_for('static', filename='assets/pelusaplaytemplate.png') }}"
+                                alt="Deporte en equipo">
+                            <div class="carousel__content">
+                                <h2>Diseño Pensado para Equipos</h2>
+                                <p>Claridad, estructura y control total.</p>
+                            </div>
                         </article>
 
-                        <article class="card">
-                            <div class="card__logo"><a href="https://xbox-web.netlify.app/" target="_blank"><img
-                                        src="{{ url_for('static', filename='assets/isologoxbox.png') }}"
-                                        alt="Logo Page Xbox"></a></div>
-                            <h3>Page Xbox</h3>
-                            <p>Rebranding Xbox</p>
+                        <article class="carousel__slide">
+                            <img src="{{ url_for('static', filename='assets/xbox-capture.png') }}"
+                                alt="Victoria deportiva">
+                            <div class="carousel__content">
+                                <h2>Experiencia Premium</h2>
+                                <p>Rendimiento, estética y escalabilidad.</p>
+                            </div>
                         </article>
+
+                        <article class="carousel__slide">
+                            <img src="{{ url_for('static', filename='assets/dreadmaritemplate.png') }}"
+                                alt="Victoria deportiva">
+                            <div class="carousel__content">
+                                <h2>Rebranding Dread Mar I</h2>
+                                <p>Rendimiento, estética y escalabilidad.</p>
+                            </div>
+                        </article>
+
                     </div>
                 </div>
+
+                <button class="carousel__control prev" aria-label="Slide anterior">&#10094;</button>
+                <button class="carousel__control next" aria-label="Slide siguiente">&#10095;</button>
+
+                <div class="carousel__indicators"></div>
             </section>
+
+
             <section class="proceso-job">
                 <div class="proceso-job__container">
                     <header class="proceso-job__header">
@@ -100,7 +115,8 @@
                         <!-- <div class="polla"></div> -->
                         <div class="proceso-job__step">
                             <div class="proceso-job__icon">
-                                <img src="{{ url_for('static', filename='assets/propuesta-comercial-imagen.png') }}" alt="">
+                                <img src="{{ url_for('static', filename='assets/propuesta-comercial-imagen.png') }}"
+                                    alt="">
                             </div>
                             <h3>Propuesta</h3>
                             <p>Presupuesto detallado y planificación</p>
@@ -118,7 +134,8 @@
 
                         <div class="proceso-job__step">
                             <div class="proceso-job__icon">
-                                <img src="{{ url_for('static', filename='assets/puesta-en-marcha-imagen.png') }}" alt="">
+                                <img src="{{ url_for('static', filename='assets/puesta-en-marcha-imagen.png') }}"
+                                    alt="">
                             </div>
                             <h3>Entrega</h3>
                             <p>Lanzamiento </p>
@@ -128,33 +145,76 @@
                 </div>
             </section>
 
+
+            <!-- testimonios -->
+            <section class="flow" data-flow-slider>
+                <div class="flow__inner">
+
+                    <header class="flow__intro">
+                        <h2>Clientes que confiaron en Nosotros</h2>
+                        <p></p>
+                    </header>
+
+                    <div class="rail" aria-label="Horizontal content slider">
+                        <div class="rail__track">
+
+                            <div class="unit">
+                                <h3>“La página quedó increíble, rápida y muy clara. Se nota el cuidado en los detalles.”</h3>
+                                <h4>Leandro Vitaller</h4>
+                                <p>CEO Pucara Turismo</p>
+                            </div>
+
+                            <div class="unit">
+                                <h3>“Excelente trabajo. El diseño es moderno y funciona perfecto en el celular.”</h3>
+                                <h4>Natalia Sagardoy</h4>
+                                <p>Emprendedora</p>
+                            </div>
+
+                            <div class="unit">
+                                <h3>“Muy buena comunicación y resultado final mejor de lo esperado.”</h3>
+                                <h4>Jonathan Mendez</h4>
+                                <p>Emprendedor</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="markers">
+                        <div class="markers__track"></div>
+                    </div>
+
+                </div>
+            </section>
+
+
         </main>
+
 
         <footer class="footer">
             <div class="footer-inner container">
                 <div class="footer-col">
                     <h4 class="footer-title">Servicios</h4>
                     <p>Desarrollo Web</p>
-                    <p>Aplicaciones a Medida</p>
-                    <p>Automatizaciones</p>
+                    <p>Apps web a Medida</p>
+                    <p>Sistemas de Gestión</p>
                 </div>
 
                 <div class="footer-col">
                     <h4 class="footer-title">Contacto</h4>
                     <p>vitadev03@gmail.com</p>
                     <p>+54 11 2759 2733</p>
-                    <p>Argentina</p>
+                    <p>Argentina (Buenos Aires) </p>
                 </div>
 
                 <div class="footer-col social">
                     <h4 class="footer-title">Redes</h4>
                     <div class="social-icons">
-                        <a href="#"><img src="{{ url_for('static', filename='assets/facebook.icon.png') }}" alt=""></a>
                         <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
-                            <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}" alt="">
+                            <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}"
+                                alt="instagram-imagen">
                         </a>
                         <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                            <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="">
+                            <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="tiktok-imagen">
                         </a>
                         <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev.+Me+comunico+para+solicitar+informaci%C3%B3n+sobre+sus+servicios.+Quedo+atento%2Fa+a+su+respuesta.+Muchas+gracias&type=phone_number&app_absent=0"
                             target="_blank">
@@ -173,12 +233,13 @@
             </div>
         </footer>
 
+
         <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
         <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
         <script src="{{ url_for('static', filename='js/foq.js') }}"></script>
-        <script src="js/main.js"></script>
-        <script src="portfolio-title-shine.js"></script>
+        <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/clients-slider.js') }}"></script>
 
 </body>
 

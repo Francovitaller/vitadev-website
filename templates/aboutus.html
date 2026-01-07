@@ -26,28 +26,33 @@
     <canvas id="fluid-canvas"></canvas>
 
     <div class="bg-wrap" aria-hidden="true"></div>
-    <header class="nav-glass" role="banner" aria-label="Navegación principal">
-        <div class="nav-left">
-            <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
-                <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
-            </a>
-        </div>
+    
+    <header>
+        <div class="bg-wrap" aria-hidden="true"></div>
 
-        <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
-            <a href="{{ url_for('home') }}#inicio">Inicio</a>
-            <a href="{{ url_for('home') }}#soluciones">Nuestras soluciones</a>
-            <a href="{{ url_for('home') }}#contacto">Contacto</a>
-            <a href="{{ url_for('portfolio') }}">Portfolio</a>
-            <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
-        </nav>
+        <header class="nav-glass" role="banner" aria-label="Navegación principal">
+            <div class="nav-left">
+                <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
+                    <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}"
+                        alt="Logo VitaDev" />
+                </a>
+            </div>
 
-        <div class="nav-right">
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
-                ☰
-            </button>
-            <a class="btn" href="#contacto">Cotizá tu idea</a>
-        </div>
-    </header>
+            <nav class="nav-center" role="navigation" aria-label="Secciones del sitio">
+                <a href="{{ url_for('home') }}#inicio">Inicio</a>
+                <a href="{{ url_for('home') }}#soluciones">Nuestras soluciones</a>
+                <a href="{{ url_for('home') }}#contacto">Contacto</a>
+                <a href="{{ url_for('portfolio') }}">Portfolio</a>
+                <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
+            </nav>
+
+            <div class="nav-right">
+                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú móvil">
+                    ☰
+                </button>
+                <a class="btn" href="{{ url_for('home') }}#contacto">Cotizá tu idea</a>
+            </div>
+        </header>
     <main>
         <section class="about reveal">
             <div class="about__container">

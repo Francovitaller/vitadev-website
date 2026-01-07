@@ -175,31 +175,33 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
 
         <!-- section de trabajo -->
 
+<section class="join-section">
+    <div class="join-container">
+        <div class="join-card reveal">
+            <h2 class="join-title">Trabajá con nosotros</h2>
 
-        <section class="join-section">
-            <div class="join-overlay"></div>
+            <p class="join-text">
+                Si te sentís identificado con alguno de los siguientes puestos envíanos un mail.<br>
+                Completá el asunto con el nombre del rol que pretendés, tu nombre y tu currículum adjunto.
+            </p>
 
-            <div class="join-content reveal">
-                <h2 class="join-title">Trabajá con nosotros</h2>
+            <ul class="join-roles">
+                <li>Programador</li>
+                <li>Diseñador gráfico</li>
+                <li>Vendedor</li>
+            </ul>
 
-                <p class="join-text">
-                    Si te sentís identificado con alguno de los siguientes puestos envíanos un mail.<br>
-                    Completá el asunto con el nombre del rol que pretendés, tu nombre y tu currículum adjunto.
-                </p>
+            <a href="#contacto" class="join-btn">Sumate</a>
+        </div>
+    </div>
+</section>
 
-                <ul class="join-roles">
-                    <li>Programador</li>
-                    <li>Diseñador gráfico</li>
-                    <li>Vendedor</li>
-                </ul>
+        <!-- section de clientes y logos -->
 
-                <a href="#contacto" class="join-btn">Sumate</a>
-            </div>
-        </section>
 
         <section class="clients-section">
             <div class="clients-header">
-                <h2 class="clients-title">Confían en nosotros</h2>
+                <h2 class="clients-title">Confían en Nosotros</h2>
                 <span class="clients-line"></span>
             </div>
 
@@ -209,14 +211,14 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                         <img src="{{ url_for('static', filename='assets/isologopucara.png') }}" alt="pucaraturismo">
                     </div>
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/direccion-icon.png') }}"
-                            alt="Cornaglia & Asociados">
+                        <img src="{{ url_for('static', filename='assets/isologodmi.png') }}"
+                            alt="Dread Mar I">
                     </div>
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/direccion-icon.png') }}" alt="Ramos App">
+                        <img src="{{ url_for('static', filename='assets/isologoxbox.png') }}" alt="Xbox Page">
                     </div>
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/direccion-icon.png') }}" alt="Guías Dels">
+                        <img src="{{ url_for('static', filename='assets/pelusaplay-isologo.png') }}" alt="Pelusa Play">
                     </div>
                 </div>
             </div>
@@ -293,6 +295,7 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                                 <option value="web">Diseño Web</option>
                                 <option value="seo">SEO</option>
                                 <option value="marketing">Landing Page</option>
+                                <option value="job">Trabajo</option>
                                 <option value="tienda">Tienda Online (E-commerce)</option>
                             </select>
                         </div>
@@ -377,6 +380,8 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/clients-slider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/carrousel-logos.js') }}" defer></script>
+
 
 
 </body>

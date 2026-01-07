@@ -1,8 +1,8 @@
 const FLUID_CONFIG = {
     color: '#2D6AFF',
-    cursorSize: 80,
+    cursorSize: 20,
     fadeAlpha: 0.1,
-    blur: 50,
+    blur: 20,
     mouseForce: 1,
     resolution: window.devicePixelRatio || 1
 };

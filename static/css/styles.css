@@ -1,4 +1,19 @@
 @charset "UTF-8";
+:root {
+  --bg-dark: #0e1325;
+  --primary: #2d6aff;
+  --text-light: #ffffff;
+  --overlay: rgba(0, 0, 0, 0.45);
+}
+
+:root {
+  --bg-base: #0e1325;
+  --surface: #141b3d;
+  --accent: #2d6aff;
+  --text-main: #ffffff;
+  --text-soft: #a7b0c2;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -31,7 +46,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -42,7 +58,10 @@ body {
   color: white;
   -webkit-font-smoothing: antialiased;
 }
-body main, body header, body section, body footer {
+body main,
+body header,
+body section,
+body footer {
   position: relative;
   z-index: 1;
 }
@@ -405,57 +424,69 @@ html {
   opacity: 0.9;
 }
 
-/* trabaja con nostros */
 .join-section {
-  position: relative;
-  min-height: 50vh;
+  padding: clamp(80px, 10vw, 140px) 6vw;
+  background-color: transparent;
+}
+
+/* Contenedor general */
+.join-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+}
+
+/* Caja azul (card) */
+.join-card {
+  width: 100%;
+  max-width: 1300px;
+  padding: clamp(48px, 6vw, 80px);
   text-align: center;
-  background-image: url("../assets/imagenfondo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: radial-gradient(1200px 400px at top center, rgba(255, 255, 255, 0.08), transparent 60%), linear-gradient(180deg, rgba(25, 227, 166, 0.95), rgba(25, 227, 166, 0.85));
+  backdrop-filter: blur(20px);
   color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  position: relative;
   overflow: hidden;
 }
-
-.join-overlay {
+.join-card::after {
+  content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
-}
-
-.join-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 40px 20px;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 60%);
+  pointer-events: none;
 }
 
 .join-title {
-  font-size: clamp(28px, 5vw, 48px);
+  font-size: clamp(32px, 4vw, 48px);
+  color: #0b0f14;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .join-text {
-  font-size: 16px;
-  line-height: 1.6;
-  opacity: 0.95;
   max-width: 720px;
-  margin: 0 auto 30px;
+  margin: 0 auto 36px;
+  color: #0b0f14;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.95;
 }
 
 .join-roles {
   list-style: none;
   padding: 0;
-  margin: 0 0 40px;
+  margin-bottom: 48px;
+  opacity: 0.85;
 }
 .join-roles li {
+  color: #0b0f14;
+  font-weight: 700;
   font-size: 15px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   opacity: 0.9;
 }
 
@@ -463,51 +494,20 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 36px;
+  padding: 14px 40px;
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
+  color: #0F1115;
+  border: 2px solid #0F1115;
   background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .join-btn:hover {
-  background: #ffffff;
-  color: #0F1115;
+  background: #0F1115;
+  color: #ffffff;
   transform: translateY(-2px);
-}
-
-.blog-footer {
-  text-align: center;
-}
-.blog-footer .view-more-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  background-image: linear-gradient(90deg, #2D6AFF, #00E0A1);
-  color: #0F1115;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 1.1em;
-  transition: transform 0.3s, opacity 0.3s;
-  border: none;
-  cursor: pointer;
-}
-.blog-footer .view-more-button:hover {
-  transform: scale(1.02);
-  opacity: 0.95;
-}
-.blog-footer .view-more-button .arrow-icon {
-  margin-left: 10px;
-  font-size: 1.2em;
-  transition: margin-left 0.3s;
-}
-.blog-footer .view-more-button:hover .arrow-icon {
-  margin-left: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .clients-section {
@@ -542,7 +542,9 @@ html {
 
 .clients-track {
   display: flex;
-  gap: 80px; /* espacio entre logos */
+  justify-content: center;
+  align-items: center;
+  gap: 90px; /* espacio entre logos */
   width: max-content;
   align-items: center;
 }
@@ -556,7 +558,7 @@ html {
 }
 
 .client-logo img {
-  width: 180px;
+  width: 200px;
   opacity: 0.4;
   filter: grayscale(100%);
   transition: opacity 0.3s ease, filter 0.3s ease;
@@ -1022,63 +1024,6 @@ header.nav-glass {
     gap: 30px;
   }
 }
-.portfolio {
-  padding: 170px 0;
-}
-.portfolio__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.portfolio__title {
-  font-size: 2.4rem;
-  margin-bottom: 32px;
-  color: #ffffff;
-  position: relative;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-.portfolio__title::after {
-  content: "";
-  width: 40px;
-  height: 3px;
-  background: #2D6AFF;
-  display: block;
-  margin: 12px auto 0;
-}
-.portfolio__tabs {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 48px;
-}
-.portfolio__tabs .tab {
-  padding: 10px 18px;
-  background: transparent;
-  border: 1px solid #A7B0C2;
-  color: #A7B0C2;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.portfolio__tabs .tab.active {
-  background: #2D6AFF;
-  color: #ffffff;
-  border-color: #2D6AFF;
-}
-.portfolio__tabs .tab:hover {
-  background: #2D6AFF;
-  color: #ffffff;
-  border-color: #ffffff;
-}
-.portfolio__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  object-fit: cover;
-}
-
 .card {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
@@ -1198,12 +1143,224 @@ p {
   font-weight: 500;
 }
 
-/*.polla {
-    width: 32px;
-    height: 2px;
-    background-color: blue;
-    margin: 0 auto;
-}*/
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel__viewport {
+  height: 100%;
+}
+
+.carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel__slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--overlay));
+}
+
+.carousel__content {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  max-width: 480px;
+  z-index: 2;
+}
+
+.carousel__content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.carousel__content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Controles */
+.carousel__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.3s;
+}
+
+.carousel__control:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel__control.prev {
+  left: 2rem;
+}
+
+.carousel__control.next {
+  right: 2rem;
+}
+
+/* Indicadores */
+.carousel__indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 6;
+}
+
+.carousel__indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel__indicators button.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+.flow {
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+.flow .flow__inner {
+  justify-content: center;
+}
+.flow .flow__inner .flow__intro {
+  justify-content: center;
+  text-align: center;
+}
+.flow .flow__inner .flow__intro h2 {
+  font-size: 3rem;
+}
+.flow .flow__inner .flow__intro p {
+  font-size: 1.2rem;
+  padding-bottom: 60px;
+}
+
+/* ===== Rail ===== */
+.rail {
+  position: relative;
+  cursor: grab;
+  user-select: none;
+}
+.rail:active {
+  cursor: grabbing;
+}
+
+/* ===== Track ===== */
+.rail__track {
+  display: flex;
+  gap: 2.5rem;
+  will-change: transform;
+}
+
+/* ===== Units ===== */
+.unit {
+  flex: 0 0 360px;
+  padding: 5rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+  color: var(--text-main);
+  animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.unit:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 6px rgba(10, 207, 233, 0.959), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Unit Content ===== */
+.unit__title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.unit__text {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+/* ===== Markers ===== */
+.markers {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.markers__track {
+  display: flex;
+  gap: 0.75rem;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.markers__track button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--text-soft);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.markers__track button.is-active {
+  background: var(--accent);
+  opacity: 1;
+  transform: scale(1.4);
+}
+
+/* ===== Micro hint (opcional) ===== */
+.flow__hint {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  animation: fadeIn 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 .about {
   padding: 6rem 1.5rem;
   animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;

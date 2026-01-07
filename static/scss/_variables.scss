@@ -1,4 +1,3 @@
-
 /// Base colors
 $blue: #2D6AFF;
 $cyan: #00E0A1;
@@ -6,15 +5,29 @@ $white: #ffffff;
 $gray: #A7B0C2;
 $charcoal: #0F1115;
 
+:root {
+    --bg-dark: #0e1325;
+    --primary: #2d6aff;
+    --text-light: #ffffff;
+    --overlay: rgba(0, 0, 0, 0.45);
+}
+:root {
+    --bg-base: #0e1325;
+    --surface: #141b3d;
+    --accent: #2d6aff;
+    --text-main: #ffffff;
+    --text-soft: #a7b0c2;
+}
+
 // Layout
 $max-width: 1200px;
 
 // Theme
 $bg-color: #000000; // negro puro
-$glass-bg: rgba(255,255,255,0.03);
+$glass-bg: rgba(255, 255, 255, 0.03);
 $cta-bg: linear-gradient(90deg, $blue, $cyan);
 $text: #e9eef0;
-$muted: rgba(255,255,255,0.6);
+$muted: rgba(255, 255, 255, 0.6);
 
 // Animaciones
 $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
@@ -29,6 +42,7 @@ $anim-slow: 0.9s;
         opacity: 0;
         transform: translateY(25px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -36,8 +50,13 @@ $anim-slow: 0.9s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes scaleIn {
@@ -45,6 +64,7 @@ $anim-slow: 0.9s;
         opacity: 0;
         transform: scale(0.96);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -52,18 +72,29 @@ $anim-slow: 0.9s;
 }
 
 // Reset
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-margin: 0;
-font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-background-color: #000000;
-color: white;
--webkit-font-smoothing: antialiased;
-main, header, section, footer {
-    position: relative;
-    z-index: 1;
+* {
+    box-sizing: border-box;
 }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background-color: #000000;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+
+    main,
+    header,
+    section,
+    footer {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 html {
