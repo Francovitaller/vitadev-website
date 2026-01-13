@@ -23,10 +23,12 @@ navToggle.addEventListener("click", () => {
         border:1px solid rgba(255,255,255,0.04)
     `;
         mobileNav.innerHTML = `
-        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Home</a>
-        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Nuestras soluciones</a>
-        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Como funciona</a>
-        <a href="#" style="display:block;padding:12px;color:white;text-decoration:none;">Blog</a>
+        <a href="/#inicio" style="display:block;padding:12px;color:white;text-decoration:none;">Inicio</a>
+        <a href="/#soluciones" style="display:block;padding:12px;color:white;text-decoration:none;">Nuestras soluciones</a>
+        <a href="/#contacto" style="display:block;padding:12px;color:white;text-decoration:none;">Contacto</a>
+        <a href="/portfolio" style="display:block;padding:12px;color:white;text-decoration:none;">Portfolio</a>
+        <a href="/servicios" style="display:block;padding:12px;color:white;text-decoration:none;">Servicios</a>
+        <a href="/aboutus" style="display:block;padding:12px;color:white;text-decoration:none;">Sobre Nosotros</a>
     `;
         document.body.appendChild(mobileNav);
         navToggle.textContent = "✕";

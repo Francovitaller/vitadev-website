@@ -6,6 +6,10 @@ from email.message import EmailMessage
 
 app = Flask(__name__)
 
+@app.route("/servicios")
+def servicios():
+    return render_template("servicios.html")
+
 @app.route("/portfolio")
 def portfolio():
     return render_template("portfolio.html")

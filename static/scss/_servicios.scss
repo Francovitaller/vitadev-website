@@ -1,0 +1,761 @@
+@use "variables" as v;
+//primer section
+
+
+.services {
+    padding: 6rem 1.5rem;
+    background-color: rgb(255, 255, 255);
+
+    &__container {
+        max-width: v.$max-width;
+        margin: 0 auto;
+        height: 50vh;
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeUp v.$anim-medium v.$ease-smooth both;
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: black;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #1e88e5;
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: black;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+.service-slug {
+    border-radius: 18px;
+    padding: 2.2rem;
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+    backdrop-filter: blur(40px);
+    transition: transform v.$anim-fast v.$ease-soft,
+        box-shadow v.$anim-fast v.$ease-soft;
+    animation: scaleIn v.$anim-medium v.$ease-smooth both;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    &__icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+        border-radius: 14px;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+        color: black;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: black;
+    }
+}
+
+.service-slug__icon img {
+    filter: brightness(0);
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+//Segundo section
+
+
+
+.preciospag {
+    padding-top: 8rem;
+
+    &__container {
+        max-width: v.$max-width;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+        align-items: stretch;
+        position: relative;
+    }
+
+    &__lok {
+        max-width: 720px;
+        margin: 0 auto 96px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    &__popin {
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    &__description {
+        font-size: 1.05rem;
+        color: v.$gray;
+        line-height: 1.65;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    &__badge {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: .72rem;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: v.$cyan;
+        border: 1px solid rgba(0, 224, 161, .35);
+        padding: 6px 14px;
+        border-radius: 999px;
+        margin-bottom: 18px;
+        background: rgba(0, 224, 161, .05);
+
+        &--primary {
+            color: v.$white;
+            background: linear-gradient(90deg, v.$blue, v.$cyan);
+            border: none;
+        }
+    }
+
+    &__cta {
+        margin-top: 24px;
+        display: inline-flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 20px;
+        border-radius: 14px;
+        font-size: .95rem;
+        font-weight: 500;
+        color: v.$white;
+        border: 1px solid rgba(255, 255, 255, .18);
+        transition:
+            background .3s ease,
+            transform .3s ease,
+            box-shadow .3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, .06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        &--primary {
+            background: linear-gradient(90deg, v.$blue, v.$cyan);
+            border: none;
+            box-shadow: 0 10px 40px rgba(45, 106, 255, .35);
+        }
+    }
+
+    &__pop--highlight {
+        position: relative;
+        transform: translateY(-14px);
+        box-shadow:
+            0 0 0 1px rgba(45, 106, 255, .25),
+            0 30px 80px rgba(0, 0, 0, .6);
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(180deg,
+                    rgba(45, 106, 255, .25),
+                    transparent 60%);
+            pointer-events: none;
+        }
+    }
+
+    &__footer {
+        margin-top: 60px;
+        text-align: center;
+        color: v.$gray;
+        font-size: .95rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+}
+
+.preciospag {
+    &__pop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+        padding: 36px 34px;
+        border-radius: 20px;
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+
+        &:hover {
+            transform: translateY(-6px);
+        }
+    }
+}
+
+.preciospag {
+
+    &__notes {
+        margin-top: 96px;
+        padding: 48px 42px;
+        max-width: 920px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+    }
+
+    &__notes-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 24px;
+        text-align: center;
+        color: v.$white;
+        letter-spacing: -0.01em;
+    }
+
+    &__notes-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: .95rem;
+        line-height: 1.6;
+        color: v.$gray;
+
+        li {
+            position: relative;
+            padding-left: 22px;
+
+            &::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: v.$cyan;
+                font-size: 1.2rem;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+.preciospag {
+
+    &__payments {
+        margin-top: 90px;
+        padding: 60px 48px;
+        max-width: 1020px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, .04);
+        backdrop-filter: blur(36px);
+        border: 1px solid rgba(255, 255, 255, .08);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+        text-align: center;
+    }
+
+    &__payments-highlight {
+        display: inline-flex;
+        padding: 10px 24px;
+        border-radius: 999px;
+        margin-bottom: 28px;
+        font-size: .78rem;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: v.$white;
+        background: linear-gradient(90deg, v.$blue, v.$cyan);
+        box-shadow: 0 12px 34px rgba(45, 106, 255, .5);
+    }
+
+    &__payments-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: v.$white;
+    }
+
+    &__payments-subtitle {
+        font-size: .95rem;
+        color: v.$gray;
+        margin-bottom: 44px;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    &__payments-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+    }
+
+    &__payments-cta {
+        margin-top: 48px;
+    }
+}
+
+.payment-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 26px 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+
+    img {
+        height: 36px;
+        object-fit: contain;
+        opacity: .85;
+        transition: all .3s ease;
+    }
+
+    span {
+        font-size: .9rem;
+        color: v.$white;
+        font-weight: 500;
+    }
+
+    small {
+        font-size: .75rem;
+        color: v.$gray;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, .06);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, .5);
+
+        img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.06);
+        }
+    }
+
+    &--highlight {
+        border-color: rgba(0, 224, 161, .45);
+        box-shadow:
+            0 0 0 1px rgba(0, 224, 161, .35),
+            0 25px 70px rgba(0, 0, 0, .65);
+    }
+}
+
+.payment-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: v.$white;
+    background: linear-gradient(90deg, v.$cyan, v.$blue);
+    box-shadow: 0 8px 20px rgba(0, 224, 161, .5);
+}
+
+.payments-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 26px;
+    border-radius: 16px;
+    font-size: .95rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: v.$white;
+    background: linear-gradient(90deg, v.$blue, v.$cyan);
+    box-shadow: 0 14px 40px rgba(45, 106, 255, .45);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 60px rgba(45, 106, 255, .6);
+    }
+}
+
+/* ---------- ≤ 768px (tablet / mobile grande) ---------- */
+
+@media (max-width: 1024px) {
+    .nav-glass {
+        overflow-x: auto;
+    }
+
+    .nav-glass::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .services {
+        padding: 72px 16px;
+    }
+
+    .services__container {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .services__header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .services__header h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+
+    .services__header p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    /* =====================
+    GRID
+  ====================== */
+
+    .services__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    /* =====================
+    CARDS
+  ====================== */
+
+    .service-slug {
+        padding: 28px 22px;
+        text-align: left;
+        border-radius: 16px;
+    }
+
+    .service-slug__icon {
+        margin-bottom: 18px;
+    }
+
+    .service-slug__icon img {
+        width: 64px;
+        height: auto;
+    }
+
+    .service-slug h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .service-slug p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* =====================
+    SECCIÓN GENERAL
+  ====================== */
+
+    .preciospag {
+        padding: 72px 16px;
+    }
+
+    /* =====================
+    HEADER
+  ====================== */
+
+    .preciospag__lok {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .preciospag__popin {
+        font-size: 1.7rem;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+
+    .preciospag__description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    /* =====================
+    CARDS / PLANES
+  ====================== */
+
+    .preciospag__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    @media (max-width: 768px) {
+
+        .preciospag__pop {
+            padding: 32px 22px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        /* Badge */
+        .preciospag__badge {
+            align-self: center;
+            font-size: 0.7rem;
+            padding: 6px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+        }
+
+        /* Título */
+        .preciospag__title {
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1.25;
+        }
+
+        /* Subtítulo */
+        .preciospag__subtitle {
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        /* Lista */
+        .preciospag__list {
+            margin-top: 8px;
+            padding-left: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .preciospag__list li {
+            font-size: 0.92rem;
+            line-height: 1.4;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .preciospag__list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Precio */
+        .preciospag__price {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .preciospag__price p {
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+
+        .preciospag__price span {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        /* Info */
+        .preciospag__info {
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        /* CTA */
+        .preciospag__cta {
+            margin-top: 12px;
+            padding: 16px;
+            font-size: 1rem;
+            border-radius: 14px;
+            text-align: center;
+        }
+    }
+
+    .preciospag__notes {
+        margin-top: 64px;
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .preciospag__notes-title {
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .preciospag__notes-list {
+        font-size: 0.85rem;
+        line-height: 1.55;
+        padding-left: 18px;
+    }
+
+    /* =====================
+    FOOTER
+  ====================== */
+
+    .preciospag__footer {
+        margin-top: 48px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    /* =====================
+    PAGOS
+  ====================== */
+
+    .preciospag__payments {
+        margin-top: 64px;
+        padding: 40px 20px;
+        border-radius: 18px;
+    }
+
+    .preciospag__payments-highlight {
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 12px;
+        margin-bottom: 24px;
+    }
+
+    .preciospag__payments-title {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .preciospag__payments-subtitle {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .preciospag__payments-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .payment-card {
+        padding: 16px 12px;
+        text-align: center;
+    }
+
+    .payment-card img {
+        width: 48px;
+        margin-bottom: 8px;
+    }
+
+    .payment-card span {
+        font-size: 0.85rem;
+    }
+
+    .payment-card small {
+        font-size: 0.75rem;
+    }
+
+    .payment-badge {
+        font-size: 0.7rem;
+    }
+
+    /* =====================
+    CTA FINAL
+  ====================== */
+
+    .preciospag__payments-cta {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .payments-cta-btn {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        font-size: 0.95rem;
+        border-radius: 14px;
+    }
+}

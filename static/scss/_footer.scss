@@ -71,21 +71,118 @@
 
 
 //  responsive
+/* =========================
+   RESPONSIVE – FOOTER
+========================= */
 
+/* ---------- ≤ 1200px (laptop) ---------- */
+@media (max-width: 1200px) {
+
+    .footer {
+        padding: 60px 0 36px 0;
+    }
+
+    .footer .container {
+        gap: 50px;
+    }
+}
+
+
+/* ---------- ≤ 992px (tablet landscape) ---------- */
+@media (max-width: 992px) {
+
+    .footer {
+        padding: 56px 20px 34px;
+    }
+
+    .footer .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer .social-icons {
+        justify-content: center;
+    }
+}
+
+
+/* ---------- ≤ 768px (tablet / mobile grande) ---------- */
 @media (max-width: 768px) {
+
     .footer {
-        .container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
+        padding: 50px 16px 32px;
+    }
+
+    .footer .container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding-bottom: 40px;
+    }
+
+    .footer-title {
+        font-size: 14px;
+    }
+
+    .footer p {
+        font-size: 13.5px;
+    }
+
+    .footer .social-icons a img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .footer-bottom {
+        margin-top: 32px;
+        font-size: 13px;
     }
 }
+
+
+/* ---------- ≤ 480px (mobile) ---------- */
 @media (max-width: 480px) {
+
     .footer {
-        .container {
-            grid-template-columns: 1fr;
-            gap: 30px;
+        padding: 44px 14px 28px;
+    }
+
+    .footer-title {
+        font-size: 13px;
+        letter-spacing: 0.4px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .footer .social-icons {
+        gap: 14px;
+    }
+
+    .footer .social-icons a {
+        transform: none;
+
+        &:hover {
+            transform: translateY(-1px);
         }
     }
 }
 
+
+/* ---------- ≤ 360px (mobile chico) ---------- */
+@media (max-width: 360px) {
+
+    .footer-title {
+        font-size: 12.5px;
+    }
+
+    .footer p {
+        font-size: 12.5px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}

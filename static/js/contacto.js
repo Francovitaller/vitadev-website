@@ -1,114 +1,90 @@
-// Selección del formulario y elementos del botón
-const form = document.querySelector(".contact-form");
-const submitBtn = form.querySelector(".submit-button");
-const spinner = submitBtn.querySelector(".spinner");
-const arrow = submitBtn.querySelector(".arrow-icon");
-const recaptchaError = document.getElementById("recaptcha-error");
+// Inicializar comportamiento cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact-form');
+    if (!form) return; // Si la página no tiene el formulario, no hacer nada
 
-// Escuchar el submit
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    const submitBtn = form.querySelector('.submit-button');
+    const spinner = submitBtn ? submitBtn.querySelector('.spinner') : null;
+    const arrow = submitBtn ? submitBtn.querySelector('.arrow-icon') : null;
+    const recaptchaError = document.getElementById('recaptcha-error');
 
-    // Limpiamos error previo del reCAPTCHA
-    if (recaptchaError) recaptchaError.textContent = "";
+    // Escuchar el submit
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    // Obtener token del reCAPTCHA
-    const recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaError) recaptchaError.textContent = '';
 
-    // No bloqueamos con alert, el backend validará también
-    // pero podemos mostrar el mensaje inmediatamente si no se completó
-    if (!recaptchaResponse && recaptchaError) {
-        recaptchaError.textContent = "Por favor, completa el reCAPTCHA";
-    }
+        const recaptchaResponse = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : null;
+        if (!recaptchaResponse && recaptchaError) {
+            recaptchaError.textContent = 'Por favor, completa el reCAPTCHA';
+        }
 
-    // Mostrar spinner y ocultar flecha
-    spinner.classList.remove("hidden");
-    arrow.style.display = "none";
-    submitBtn.disabled = true;
+        if (spinner) spinner.classList.remove('hidden');
+        if (arrow) arrow.style.display = 'none';
+        if (submitBtn) submitBtn.disabled = true;
 
-    // Crear objeto de datos
-    const data = {
-        name: document.getElementById("name").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        number: document.getElementById("number").value.trim(),
-        servicio: document.getElementById("servicio").value,
-        message: document.getElementById("message").value.trim(),
-        recaptcha: recaptchaResponse // enviamos el token al backend
-    };
+        const data = {
+            name: document.getElementById('name') ? document.getElementById('name').value.trim() : '',
+            email: document.getElementById('email') ? document.getElementById('email').value.trim() : '',
+            number: document.getElementById('number') ? document.getElementById('number').value.trim() : '',
+            servicio: document.getElementById('servicio') ? document.getElementById('servicio').value : '',
+            message: document.getElementById('message') ? document.getElementById('message').value.trim() : '',
+            recaptcha: recaptchaResponse
+        };
 
-    enviarFormulario(data);
-});
+        enviarFormulario(data);
+    });
 
-// Función para enviar datos al servidor
-async function enviarFormulario(data) {
-    try {
-        const response = await fetch("/contacto", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-
-        let res = {};
+    // Enviar datos al servidor
+    async function enviarFormulario(data) {
         try {
-            res = await response.json();
-            console.log("Respuesta del servidor:", res);
-        } catch (err) {
-            console.error("Error parseando JSON:", err);
-        }
+            const response = await fetch('/contacto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
 
-        // Ocultar spinner y mostrar flecha siempre que termine
-        spinner.classList.add("hidden");
-        arrow.style.display = "inline";
-        submitBtn.disabled = false;
+            let res = {};
+            try { res = await response.json(); } catch (err) { console.error('Error parseando JSON:', err); }
 
-        // ------------------------------
-        // Verificar éxito según Flask
-        if (response.ok && res.success) {
-            mostrarExito();   // Mostrar modal de éxito
-            form.reset();     // Limpiar campos
-            grecaptcha.reset(); // Resetear reCAPTCHA
-            if (recaptchaError) recaptchaError.textContent = "";
-        } else if (res.field) {
-            // Mostrar burbuja de error para el campo correspondiente
-            const inputConError = document.getElementById(res.field);
-            if (inputConError) {
-                inputConError.setCustomValidity(res.error);
-                inputConError.reportValidity();
-                inputConError.addEventListener("input", () => inputConError.setCustomValidity(""));
-            }
+            if (spinner) spinner.classList.add('hidden');
+            if (arrow) arrow.style.display = 'inline';
+            if (submitBtn) submitBtn.disabled = false;
 
-            // Mostrar error del reCAPTCHA si corresponde
-            if (res.field === "recaptcha" && recaptchaError) {
-                recaptchaError.textContent = res.error;
-            }
-        } else {
-            // Error genérico
-            if (recaptchaError && res.error.includes("reCAPTCHA")) {
-                recaptchaError.textContent = res.error;
+            if (response.ok && res.success) {
+                mostrarExito();
+                form.reset();
+                if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+                if (recaptchaError) recaptchaError.textContent = '';
+            } else if (res.field) {
+                const inputConError = document.getElementById(res.field);
+                if (inputConError) {
+                    inputConError.setCustomValidity(res.error);
+                    inputConError.reportValidity();
+                    inputConError.addEventListener('input', () => inputConError.setCustomValidity(''));
+                }
+                if (res.field === 'recaptcha' && recaptchaError) recaptchaError.textContent = res.error;
             } else {
-                alert(res.error || "Error al enviar el formulario");
+                if (recaptchaError && res.error && res.error.includes && res.error.includes('reCAPTCHA')) {
+                    recaptchaError.textContent = res.error;
+                } else {
+                    alert(res.error || 'Error al enviar el formulario');
+                }
             }
+
+        } catch (error) {
+            if (spinner) spinner.classList.add('hidden');
+            if (arrow) arrow.style.display = 'inline';
+            if (submitBtn) submitBtn.disabled = false;
+            console.error('Fetch error:', error);
+            alert('Error de conexión con el servidor');
         }
-
-    } catch (error) {
-        // Error de conexión u otros
-        spinner.classList.add("hidden");
-        arrow.style.display = "inline";
-        submitBtn.disabled = false;
-        console.error("Fetch error:", error);
-        alert("Error de conexión con el servidor");
     }
-}
 
-// Función para mostrar modal de éxito
-function mostrarExito() {
-    const modal = document.getElementById("modal-exito");
-    if (!modal) return;
-
-    modal.classList.remove("hidden");
-
-    // Se cierra solo a los 3 segundos
-    setTimeout(() => {
-        modal.classList.add("hidden");
-    }, 3000);
-}
+    function mostrarExito() {
+        const modal = document.getElementById('modal-exito');
+        if (!modal) return;
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.add('hidden'), 3000);
+    }
+});

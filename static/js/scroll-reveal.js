@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const textEl = document.getElementById('rotating-text');
+    if (!textEl) return; // Si no existe el elemento en esta sección, salir
 
     const changeDelay = 3200;      // tiempo total entre palabras
     const transitionTime = 650;    // debe coincidir con SCSS
