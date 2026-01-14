@@ -759,3 +759,26 @@
         border-radius: 14px;
     }
 }
+
+/* Ajuste para Tablet y Móvil */
+@media screen and (max-width: 1024px) {
+    
+    
+    .services {
+        padding-bottom: 0px !important; 
+        padding-top: 100px; 
+        min-height: auto;  
+        height: auto;      
+    }
+
+    .services__container, 
+    .services__grid {
+        margin-bottom: 0;
+    }
+
+    .services__grid {
+        gap: 20px; 
+    }
+}
+
+

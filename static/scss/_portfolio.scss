@@ -479,6 +479,7 @@
 }
 
 
+
 /* ---------- ≤ 576px (mobile) ---------- */
 @media (max-width: 576px) {
 
@@ -528,10 +529,6 @@
         padding: 4rem 0;
     }
 
-    .flow__intro h2 {
-        font-size: 2rem;
-    }
-
     .flow__intro p {
         font-size: 0.95rem;
         padding-bottom: 40px;
@@ -552,37 +549,20 @@
 }
 
 @media (max-width: 768px) {
-
-    /* =====================
-     SECCIÓN FLOW
-  ====================== */
-
     .flow {
         padding: 72px 16px;
-    }
-
-    .flow__inner {
+        .flow__inner {
         max-width: 100%;
-    }
-
-    /* =====================
-     HEADER
-  ====================== */
-
-    .flow__intro {
+        .flow__intro {
         text-align: center;
         margin-bottom: 32px;
-    }
-
-    .flow__intro h2 {
-        font-size: 1.7rem;
+        h2 {
+        font-size: 2rem;
         line-height: 1.3;
     }
-
-    /* =====================
-     SLIDER
-  ====================== */
-
+    }
+    }
+    }
     .rail {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -602,10 +582,6 @@
         border-radius: 14px;
     }
 
-    /* =====================
-     TEXTO
-  ====================== */
-
     .unit h3 {
         font-size: 1rem;
         line-height: 1.55;
@@ -622,7 +598,7 @@
     }
 
     /* =====================
-     INDICADORES
+    INDICADORES
   ====================== */
 
     .markers {
@@ -633,7 +609,7 @@
 @media (max-width: 768px) {
 
     /* =====================
-     CONTENEDOR
+    CONTENEDOR
   ====================== */
 
     .carousel {
@@ -646,7 +622,7 @@
     }
 
     /* =====================
-     SLIDES
+    SLIDES
   ====================== */
 
     .carousel__slide {
@@ -661,7 +637,7 @@
     }
 
     /* =====================
-     CONTENIDO
+    CONTENIDO
   ====================== */
 
     .carousel__content {
@@ -685,7 +661,7 @@
     }
 
     /* =====================
-     CONTROLES
+    CONTROLES
   ====================== */
 
     .carousel__control {
@@ -704,7 +680,7 @@
     }
 
     /* =====================
-     INDICADORES
+    INDICADORES
   ====================== */
 
     .carousel__indicators {
