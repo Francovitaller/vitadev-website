@@ -1150,10 +1150,11 @@ strong {
   .v-mod-card-img {
     display: flex;
     justify-content: center;
+    overflow: hidden;
   }
   .v-mod-card-img img {
     width: 90px;
-    height: auto;
+    overflow: hidden;
   }
 }
 /* ---------- ≤ 576px (mobile) ---------- */

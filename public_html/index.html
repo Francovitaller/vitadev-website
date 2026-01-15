@@ -6,49 +6,41 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>VitaDev — Desarrollo Web</title>
 
-    <!-- SEO Meta Tags -->
-
     <meta name="description"
-        content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales."/>
+        content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales." />
 
-    <!-- link to css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="assets/img/isologofv.png" type="image/x-icon">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../static/assets/isologofv.png" type="image/x-icon">
-
-    <meta name="og:title" content="VitaDev — Desarrollo Web">
-    <meta name="og:url" content="https://vitadev03.github.io/">
+    <meta property="og:title" content="VitaDev — Desarrollo Web">
+    <meta property="og:url" content="https://vitadev.com.ar">
     <meta name="description" content="VitaDev — Desarrollo web a medida. Soluciones full stack, escalables y profesionales.">
     <meta name="keywords" content="Desarrollo web, desarrollo a medida, soluciones digitales, diseño web, sitios web profesionales, automatización de procesos, sistemas de gestión, consultoría tecnológica">
     <meta name="author" content="VitaDev">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Francovitaller/vitadev-website/refs/heads/main/static/assets/ChatGPT%20Image%203%20dic%202025%2C%2006_07_49%20p.m..png">
+    <meta property="og:image" content="https://ferozo.host/hosting/filemanager/item/download?mode=download&preview=true&path=%2Fpublic_html%2Fassets%2Fimg%2FChatGPT+Image+3+dic+2025%2C+06_07_49+p.m..png">
 </head>
 
 <body>
 
     <div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-content">
-        <p>
-            Usamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar contenido.
-            <!-- <a href="/politica-de-cookies">Saber más</a> -->
-        </p>
+        <div class="cookie-content">
+            <p>
+                Usamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar contenido.
+            </p>
 
-        <div class="cookie-actions">
-            <button class="btn secondary" id="rejectCookies">Rechazar</button>
-            <button class="btn primary" id="acceptCookies">Aceptar</button>
+            <div class="cookie-actions">
+                <button class="btn secondary" id="rejectCookies">Rechazar</button>
+                <button class="btn primary" id="acceptCookies">Aceptar</button>
+            </div>
         </div>
     </div>
-    </div>
 
 
-<a href="https://wa.me/5491127592733?text=Hola!%20Quiero%20hacer%20una%20consulta"
-    class="whatsapp-float"
-    target="_blank"
-    aria-label="Contactar por WhatsApp">
-    <img src="{{ url_for('static', filename='assets/whatsapp-ICON.PNG') }}" alt="WhatsApp">
-</a>
+    <a href="https://wa.me/5491127592733?text=Hola!%20Quiero%20hacer%20una%20consulta" class="whatsapp-float"
+        target="_blank" aria-label="Contactar por WhatsApp">
+        <img src="assets/img/whatsapp-ICON.PNG" alt="WhatsApp">
+    </a>
 
 
     <canvas id="fluid-canvas"></canvas>
@@ -57,8 +49,8 @@
 
     <header class="nav-glass" role="banner" aria-label="Navegación principal">
         <div class="nav-left">
-            <a class="logo" href="{{ url_for('home') }}" aria-label="VitaDev - Ir al inicio">
-                <img src="{{ url_for('static', filename='assets/vitadev_logo_sin_fondo.png') }}" alt="Logo VitaDev" />
+            <a class="logo" href="index.html" aria-label="VitaDev - Ir al inicio">
+                <img src="assets/img/vitadev_logo_sin_fondo.png" alt="Logo VitaDev" />
             </a>
         </div>
 
@@ -66,9 +58,9 @@
             <a href="#inicio">Inicio</a>
             <a href="#soluciones">Nuestras soluciones</a>
             <a href="#contacto">Contacto</a>
-            <a href="{{ url_for('portfolio') }}">Portfolio</a>
-            <a href="{{ url_for('servicios') }}">Servicios</a>
-            <a href="{{ url_for('aboutus') }}">Sobre nosotros</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="aboutus.html">Sobre nosotros</a>
         </nav>
 
         <div class="nav-right">
@@ -81,8 +73,6 @@
 
     <main role="main">
 
-        <!-- hero de mi sitio web  -->
-
         <section id="inicio" class="hero">
             <div class="hero-inner" class="hero-content">
                 <div class="kicker">
@@ -90,20 +80,19 @@
                     Conecta con tus clientes 24/7
                 </div>
 
-<h1 class="hero-title">
-    Desarrollo web
-    <span class="rotating-word" id="rotating-text"></span>
-</h1>
-
-
+                <h1 class="hero-title">
+                    Desarrollo web
+                    <span class="rotating-word" id="rotating-text"></span>
+                </h1>
 
                 <p class="hero-sub">
-Construimos sitios web optimizados y soluciones digitales inteligentes que combinan diseño, rendimiento y automatización, ayudando a que tu negocio funcione de forma más rápida, eficiente y escalable, ahorrando tiempo y mejorando la experiencia de tus clientes.
+                    Construimos sitios web optimizados y soluciones digitales inteligentes que combinan diseño, rendimiento
+                    y automatización, ayudando a que tu negocio funcione de forma más rápida, eficiente y escalable.
                 </p>
 
                 <div class="cta-wrap">
-                    <button class="btn-cta" href = "#contacto">Cotizá tu idea →</button>
-                    <a class="btn-ghost" href="{{ url_for('portfolio') }}">Ver portfolio</a>
+                    <button class="btn-cta" onclick="window.location.href='#contacto'">Cotizá tu idea →</button>
+                    <a class="btn-ghost" href="portfolio.html">Ver portfolio</a>
                 </div>
 
                 <div class="pills">
@@ -116,50 +105,47 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                 </div>
             </div>
         </section>
+
         <section class="tecnologias">
-    <div class="tecnologias__content">
-    <div class="tecnologias__tech">
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/htmlnegro.png') }}" alt=""></span>
-        </article>
+            <div class="tecnologias__content">
+                <div class="tecnologias__tech">
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/htmlnegro.png" alt="HTML"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/cssnegro.png') }}" alt=""></span>
-        </article>
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/cssnegro.png" alt="CSS"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/sass negro.png') }}" alt=""></span>
-        </article>
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/sass negro.png" alt="SASS"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/jsnegro.png') }}" alt=""></span>
-        </article>
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/jsnegro.png" alt="JS"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/logopytonnegro.svg') }}" alt=""></span>
-        </article>
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/logopytonnegro.svg" alt="Python"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/supabase_logo.png') }}" alt=""></span>
-        </article>
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/supabase_logo.png" alt="Supabase"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/reactnegro.svg') }}" alt=""></span>
-        </article>
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/reactnegro.svg" alt="React"></span>
+                    </article>
 
-        <article class="tech-card">
-            <span class="tech-card__icon"><img src="{{ url_for('static', filename='assets/github_logo.png') }}" alt=""></span>
-        </article>
-    </div>
-</section>
-
-
-
-        <!-- section de soluciones -->
-
+                    <article class="tech-card">
+                        <span class="tech-card__icon"><img src="assets/img/github_logo.png" alt="Github"></span>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <section id="soluciones" class="v-section-modulos">
-            <canvas id="fluid-canvas"></canvas>
+            <canvas id="fluid-canvas-modulos"></canvas> 
             <div class="v-container">
                 <div class="v-modulos-kicker">
                     <span class="v-led"></span>
@@ -177,8 +163,7 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                             Sitios modernos, rápidos y optimizados para mejorar la experiencia de tus usuarios.
                         </p>
                         <div class="v-mod-card-img">
-                            <img src="{{ url_for('static', filename='assets/desarrollador-de-software.png') }}"
-                                alt="Desarrollo Web">
+                            <img src="assets/img/desarrollador-de-software.png" alt="Desarrollo Web">
                         </div>
                     </div>
 
@@ -188,8 +173,7 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                             Integraciones, flujos automáticos y tareas repetitivas delegadas a sistemas.
                         </p>
                         <div class="v-mod-card-img">
-                            <img src="{{ url_for('static', filename='assets/automatizacion.png') }}"
-                                alt="Automatización">
+                            <img src="assets/img/automatizacion.png" alt="Automatización">
                         </div>
                     </div>
 
@@ -199,8 +183,7 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                             Dashboards, paneles de control y herramientas internas construidas para tu operación.
                         </p>
                         <div class="v-mod-card-img">
-                            <img src="{{ url_for('static', filename='assets/reporte-de-desempeno.png') }}"
-                                alt="Sistemas a Medida">
+                            <img src="assets/img/reporte-de-desempeno.png" alt="Sistemas a Medida">
                         </div>
                     </div>
 
@@ -210,39 +193,33 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                             Diagnóstico, optimización continua y crecimiento digital escalable.
                         </p>
                         <div class="v-mod-card-img">
-                            <img src="{{ url_for('static', filename='assets/servicios-de-consultoria.png') }}"
-                                alt="Consultoría">
+                            <img src="assets/img/servicios-de-consultoria.png" alt="Consultoría">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- section de trabajo -->
+        <section class="join-section">
+            <div class="join-container">
+                <div class="join-card reveal">
+                    <h2 class="join-title">Trabajá con nosotros</h2>
 
-<section class="join-section">
-    <div class="join-container">
-        <div class="join-card reveal">
-            <h2 class="join-title">Trabajá con nosotros</h2>
+                    <p class="join-text">
+                        Si te sentís identificado con alguno de los siguientes puestos envíanos un mail.<br>
+                        Completá el asunto con el nombre del rol que pretendés, tu nombre y tu currículum adjunto.
+                    </p>
 
-            <p class="join-text">
-                Si te sentís identificado con alguno de los siguientes puestos envíanos un mail.<br>
-                Completá el asunto con el nombre del rol que pretendés, tu nombre y tu currículum adjunto.
-            </p>
+                    <ul class="join-roles">
+                        <li>Programador</li>
+                        <li>Diseñador gráfico</li>
+                        <li>Vendedor</li>
+                    </ul>
 
-            <ul class="join-roles">
-                <li>Programador</li>
-                <li>Diseñador gráfico</li>
-                <li>Vendedor</li>
-            </ul>
-
-            <a href="#contacto" class="join-btn">Sumate</a>
-        </div>
-    </div>
-</section>
-
-        <!-- section de clientes y logos -->
-
+                    <a href="#contacto" class="join-btn">Sumate</a>
+                </div>
+            </div>
+        </section>
 
         <section class="clients-section">
             <div class="clients-header">
@@ -253,46 +230,39 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
             <div class="clients-slider">
                 <div class="clients-track">
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/isologopucara.png') }}" alt="pucaraturismo">
+                        <img src="assets/img/isologopucara.png" alt="pucaraturismo">
                     </div>
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/isologodmi.png') }}"
-                            alt="Dread Mar I">
+                        <img src="assets/img/isologodmi.png" alt="Dread Mar I">
                     </div>
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/isologoxbox.png') }}" alt="Xbox Page">
+                        <img src="assets/img/isologoxbox.png" alt="Xbox Page">
                     </div>
                     <div class="client-logo">
-                        <img src="{{ url_for('static', filename='assets/pelusaplay-isologo1.png') }}" alt="Pelusa Play">
+                        <img src="assets/img/pelusaplay-isologo1.png" alt="Pelusa Play">
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- section de contacto -->
-
-
         <section id="contacto" class="contact-section">
             <div class="contact-info">
                 <div class="info-items">
                     <div class="info-item">
-                        <div class="icon"><img src="{{ url_for('static', filename='assets/direccion-icon.png') }}"
-                                alt=""></div>
+                        <div class="icon"><img src="assets/img/direccion-icon.png" alt=""></div>
                         <h4>DIRECCIÓN</h4>
                         <p>Buenos Aires<br>ARGENTINA</p>
                     </div>
 
                     <div class="info-item">
-                        <div class="icon"><img src="{{ url_for('static', filename='assets/whatsapp-icon.png') }}"
-                                alt=""></div>
+                        <div class="icon"><img src="assets/img/whatsapp-icon.png" alt=""></div>
                         <h4>WHATSAPP</h4>
                         <p>+54 9 1127592733</p>
                     </div>
 
                     <div class="info-item">
-                        <div class="icon"><img src="{{ url_for('static', filename='assets/gmail-icon.png') }}" alt="">
-                        </div>
+                        <div class="icon"><img src="assets/img/gmail-icon.png" alt=""></div>
                         <h4>EMAIL</h4>
                         <p>vitadev03@gmail.com</p>
                     </div>
@@ -300,7 +270,7 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                 </div>
 
                 <div class="image-box">
-                    <img src="{{ url_for('static', filename='assets/Contactoimagen2.png') }}" alt="">
+                    <img src="assets/img/Contactoimagen2.png" alt="">
                 </div>
             </div>
             <div class="contact-container">
@@ -345,15 +315,12 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                             </select>
                         </div>
 
-
-
                         <div class="form-group">
                             <div class="g-recaptcha" data-sitekey="6LfqVjwsAAAAAGkX54DT_ZLAksJrYb0WPSfHrhrC"
                                 data-theme="dark" data-size="normal">
                             </div>
                             <span id="recaptcha-error" class="input-error"></span>
                         </div>
-
 
                         <button type="submit" class="submit-button">
                             Enviar Mensaje
@@ -387,20 +354,17 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
                 <h4 class="footer-title">Redes</h4>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/_vitadev/?next=%2F" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.instagram.png') }}"
-                            alt="instagram-imagen">
+                        <img src="assets/img/icono.instagram.png" alt="instagram-imagen">
                     </a>
                     <a href="https://www.tiktok.com/@_vitadev" target="_blank">
-                        <img src="{{ url_for('static', filename='assets/icono.tiktok.png') }}" alt="tiktok-imagen">
+                        <img src="assets/img/icono.tiktok.png" alt="tiktok-imagen">
                     </a>
-                    <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev.+Me+comunico+para+solicitar+informaci%C3%B3n+sobre+sus+servicios.+Quedo+atento%2Fa+a+su+respuesta.+Muchas+gracias&type=phone_number&app_absent=0"
-                        target="_blank">
-                        <img src="{{ url_for('static', filename='assets/whatsapp-icon-blue.png') }}"
-                            alt="whatsapp-imagen"></a>
-                    <a href="https://mail.google.com/mail/?view=cm&to=vitadev03@gmail.com&su=Consulta%20sobre%20servicios&body=Estimado/a%20VitaDev:%0D%0A%0D%0AMe%20comunico%20con%20usted%20para%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20que%20ofrece.%0D%0A%0D%0AQuedo%20atento/a%20a%20su%20respuesta.%0D%0AMuchas%20gracias%20por%20su%20tiempo.%0D%0A%0D%0ASaludos%20cordiales"
-                        target="_blank">
-                        <img src="{{ url_for('static', filename='assets/gmail-icon-blue.png') }}"
-                            alt="gmail-imagen"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5491127592733&text=Hola+VitaDev..." target="_blank">
+                        <img src="assets/img/whatsapp-icon-blue.png" alt="whatsapp-imagen">
+                    </a>
+                    <a href="mailto:vitadev03@gmail.com" target="_blank">
+                        <img src="assets/img/gmail-icon-blue.png" alt="gmail-imagen">
+                    </a>
                 </div>
             </div>
         </div>
@@ -411,26 +375,21 @@ Construimos sitios web optimizados y soluciones digitales inteligentes que combi
     </footer>
 
 
-    <!-- Modal éxito -->
     <div id="modal-exito" class="modal hidden">
         <div class="modal-card">
             <div class="check-circle">✓</div>
             <p class="modal-text">Formulario enviado</p>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/clients-slider.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/cookie-banner.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/contacto.js') }}"></script>
+
+    <script src="assets/js/clients-slider.js"></script>
+    <script src="assets/js/cookie-banner.js"></script>
+    <script src="assets/js/scroll-reveal.js"></script>
+    <script src="assets/js/contacto.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/clients-slider.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/carrousel-logos.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/servicios.js') }}"></script>
-
-
-
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/carrousel-logos.js" defer></script>
+    <script src="assets/js/servicios.js"></script>
 
 </body>
-
 </html>

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (recaptchaError) recaptchaError.textContent = '';
 
-        const recaptchaResponse = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : null;
+        const recaptchaResponse = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : 'test'; // fallback para pruebas
         if (!recaptchaResponse && recaptchaError) {
             recaptchaError.textContent = 'Por favor, completa el reCAPTCHA';
         }
@@ -24,13 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
         if (submitBtn) submitBtn.disabled = true;
 
         const data = {
-            name: document.getElementById('name') ? document.getElementById('name').value.trim() : '',
-            email: document.getElementById('email') ? document.getElementById('email').value.trim() : '',
-            number: document.getElementById('number') ? document.getElementById('number').value.trim() : '',
-            servicio: document.getElementById('servicio') ? document.getElementById('servicio').value : '',
-            message: document.getElementById('message') ? document.getElementById('message').value.trim() : '',
+            name: document.getElementById('name')?.value.trim() || '',
+            email: document.getElementById('email')?.value.trim() || '',
+            number: document.getElementById('number')?.value.trim() || '',
+            servicio: document.getElementById('servicio')?.value || '',
+            message: document.getElementById('message')?.value.trim() || '',
             recaptcha: recaptchaResponse
         };
+
+        // Depuración: mostrar los datos que se van a enviar
+        console.log("Datos enviados al servidor:", data);
 
         enviarFormulario(data);
     });
@@ -38,14 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Enviar datos al servidor
     async function enviarFormulario(data) {
         try {
-            const response = await fetch('/contacto', {
+            const response = await fetch('/contacto.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
 
+            // Depuración: mostrar lo que responde el servidor
+            const text = await response.text();
+            console.log("Respuesta cruda del servidor:", text);
+
             let res = {};
-            try { res = await response.json(); } catch (err) { console.error('Error parseando JSON:', err); }
+            try {
+                res = JSON.parse(text);
+            } catch (err) {
+                console.error('Error parseando JSON:', err);
+                alert('Error en la respuesta del servidor. Revisa la consola.');
+            }
 
             if (spinner) spinner.classList.add('hidden');
             if (arrow) arrow.style.display = 'inline';

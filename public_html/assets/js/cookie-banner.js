@@ -40,7 +40,7 @@ function loadAnalytics() {
     // Script externo
     const s1 = document.createElement("script");
     s1.async = true;
-    s1.src = "https://www.googletagmanager.com/gtag/js?id=G-W0NCQP2PJD";
+    s1.src = "https://www.googletagmanager.com/gtag/js?id=G-MPJL7T4TEG";
     document.head.appendChild(s1);
 
     // Configuración
@@ -49,7 +49,7 @@ function loadAnalytics() {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-W0NCQP2PJD', { anonymize_ip: true });
+        gtag('config', 'G-MPJL7T4TEG', { anonymize_ip: true });
     `;
     document.head.appendChild(s2);
 }
