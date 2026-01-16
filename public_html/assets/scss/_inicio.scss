@@ -360,11 +360,15 @@
 .v-section-modulos {
     position: relative;
     width: 100%;
-    height: 80vh;
-    overflow: hidden;
+    min-height: 80vh;
+    overflow: visible;
     padding: 120px 20px;
     color: v.$text;
 
+}
+
+.v-mod-card-img {
+    overflow: visible;
 }
 
 .v-container {

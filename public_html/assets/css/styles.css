@@ -392,10 +392,14 @@ html {
 .v-section-modulos {
   position: relative;
   width: 100%;
-  height: 80vh;
-  overflow: hidden;
+  min-height: 80vh;
+  overflow: visible;
   padding: 120px 20px;
   color: #e9eef0;
+}
+
+.v-mod-card-img {
+  overflow: visible;
 }
 
 .v-container {
@@ -2956,18 +2960,41 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
   box-shadow: 0 20px 60px rgba(45, 106, 255, 0.6);
 }
 
-/* ---------- ≤ 768px (tablet / mobile grande) ---------- */
-@media (max-width: 1024px) {
+/*/* =========================================
+   1. TABLET Y LAPTOPS PEQUEÑAS (≤ 1024px)
+   ========================================= */
+@media screen and (max-width: 1024px) {
   .nav-glass {
     overflow-x: auto;
   }
   .nav-glass::-webkit-scrollbar {
     display: none;
   }
+  /* Ajustes generales de la sección servicios para pantallas medianas */
+  .services {
+    padding-top: 5rem; /* Reducido de 100px a aprox 80px */
+    padding-bottom: 0px !important;
+    min-height: auto;
+    height: auto;
+    /* Si aún ves una línea negra fina, descomenta la siguiente línea: */
+    /* margin-top: -1px; */
+  }
+  .services__container,
+  .services__grid {
+    margin-bottom: 0;
+  }
+  .services__grid {
+    gap: 20px;
+  }
 }
+/* =========================================
+   2. MÓVIL (≤ 768px)
+   (Este bloque va al final para tener prioridad)
+   ========================================= */
 @media (max-width: 768px) {
   .services {
-    padding: 72px 16px;
+    /* Ajuste crítico para móvil: sube el contenido blanco */
+    padding: 4rem 16px 0 16px !important;
   }
   .services__container {
     max-width: 100%;
@@ -2987,17 +3014,13 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     line-height: 1.6;
     opacity: 0.9;
   }
-  /* =====================
-    GRID
-  ====================== */
+  /* GRID */
   .services__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  /* =====================
-    CARDS
-  ====================== */
+  /* CARDS */
   .service-slug {
     padding: 28px 22px;
     text-align: left;
@@ -3018,17 +3041,12 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     font-size: 0.95rem;
     line-height: 1.55;
   }
-}
-@media (max-width: 768px) {
   /* =====================
-    SECCIÓN GENERAL
-  ====================== */
+     SECCIÓN PRECIOS (Móvil)
+     ====================== */
   .preciospag {
     padding: 72px 16px;
   }
-  /* =====================
-    HEADER
-  ====================== */
   .preciospag__lok {
     text-align: center;
     margin-bottom: 48px;
@@ -3043,16 +3061,12 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     line-height: 1.6;
     opacity: 0.9;
   }
-  /* =====================
-    CARDS / PLANES
-  ====================== */
   .preciospag__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
   }
-}
-@media (max-width: 768px) and (max-width: 768px) {
+  /* Detalles de la tarjeta de precios en móvil */
   .preciospag__pop {
     padding: 32px 22px;
     border-radius: 20px;
@@ -3060,7 +3074,6 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     flex-direction: column;
     gap: 18px;
   }
-  /* Badge */
   .preciospag__badge {
     align-self: center;
     font-size: 0.7rem;
@@ -3068,19 +3081,16 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     border-radius: 999px;
     letter-spacing: 0.04em;
   }
-  /* Título */
   .preciospag__title {
     font-size: 1.5rem;
     text-align: center;
     line-height: 1.25;
   }
-  /* Subtítulo */
   .preciospag__subtitle {
     font-size: 1rem;
     text-align: center;
     margin-top: 4px;
   }
-  /* Lista */
   .preciospag__list {
     margin-top: 8px;
     padding-left: 0;
@@ -3102,7 +3112,6 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     font-size: 0.85rem;
     opacity: 0.9;
   }
-  /* Precio */
   .preciospag__price {
     text-align: center;
     margin-top: 12px;
@@ -3117,13 +3126,11 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     opacity: 0.8;
     margin-top: 4px;
   }
-  /* Info */
   .preciospag__info {
     text-align: center;
     font-size: 0.85rem;
     opacity: 0.85;
   }
-  /* CTA */
   .preciospag__cta {
     margin-top: 12px;
     padding: 16px;
@@ -3131,8 +3138,7 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     border-radius: 14px;
     text-align: center;
   }
-}
-@media (max-width: 768px) {
+  /* Notas y Footer */
   .preciospag__notes {
     margin-top: 64px;
     padding: 28px 22px;
@@ -3148,19 +3154,12 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     line-height: 1.55;
     padding-left: 18px;
   }
-}
-@media (max-width: 768px) {
-  /* =====================
-    FOOTER
-  ====================== */
   .preciospag__footer {
     margin-top: 48px;
     text-align: center;
     font-size: 0.9rem;
   }
-  /* =====================
-    PAGOS
-  ====================== */
+  /* Pagos */
   .preciospag__payments {
     margin-top: 64px;
     padding: 40px 20px;
@@ -3204,9 +3203,6 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
   .payment-badge {
     font-size: 0.7rem;
   }
-  /* =====================
-    CTA FINAL
-  ====================== */
   .preciospag__payments-cta {
     margin-top: 40px;
     text-align: center;
@@ -3219,20 +3215,40 @@ RESPONSIVE – ABOUT · PROCESS · FAQ
     border-radius: 14px;
   }
 }
-/* Ajuste para Tablet y Móvil */
-@media screen and (max-width: 1024px) {
-  .services {
-    padding-bottom: 0px !important;
-    padding-top: 100px;
-    min-height: auto;
-    height: auto;
+/* =========================================
+   SOLUCIÓN DEFINITIVA: SECCIÓN SERVICIOS
+   ========================================= */
+@media (max-width: 768px) {
+  body .services {
+    margin-top: 0;
+    position: relative;
+    background-color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    z-index: 1;
   }
-  .services__container,
-  .services__grid {
-    margin-bottom: 0;
+  body .services::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #ffffff;
+    z-index: -1;
   }
-  .services__grid {
-    gap: 20px;
+  body .services__container {
+    margin-top: 0;
+    padding: 0 20px;
+  }
+  body .services__header {
+    margin-top: 20px;
+    text-align: center;
+  }
+  body .services__header h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
   }
 }
 
